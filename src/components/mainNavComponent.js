@@ -36,10 +36,11 @@ class MainNav extends Component {
             <div className="navbar-wrap sticky-top bg-info">
                 <Container fluid="xl" className="p-0">
                     <Navbar dark expand="sm">
-                        <NavbarBrand href="/" className="text-hide main-logo ">
+                        <NavbarBrand href="/" className="text-hide main-logo">
                             {this.props.siteName}
+                            <img src={"/RMLOGO2020whiteHZ.svg"} alt="rm logo" style={{ opacity: .90, width: 165 }} />
                         </NavbarBrand>
-                        <NavbarToggler onClick={toggle} />
+                        <NavbarToggler onClick={toggle} style={{ fontSize: 13, padding: 4 }} />
                         <Collapse isOpen={this.state.isOpen} navbar className="flex-grow-0 ml-auto" id="mainNavLinks" >
                             <Nav className="flex-column flex-sm-row " navbar>
                                 {items}
