@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Sidenav, Summary, Tools, Skills, Experience, Awards, Languages, Education, Certs, References } from './resumeComponents'
+import '../css/resumeStyles.css';
 
 function Resume(props) {
 

@@ -1,0 +1,134 @@
+.res-sec h4,
+.res-sec h5,
+.res-sec h6 {
+  margin-bottom: 0;
+}
+.res-sec h4,
+.res-sec h5,
+.res-sec .employer {
+  text-transform: uppercase;
+}
+.res-sec h4,
+.res-sec .stack,
+.res-sec .employer,
+.res-sec .dates {
+  font-weight: bold;
+}
+
+/*--type colors--*/
+.res-sec h5,
+.res-sec .edu-inst,
+.res-sec .award-name,
+.res-sec .award-list > li:before,
+.res-sec .statement > strong,
+.badges > span {
+  color: rgba(27, 70, 125, 1);
+}
+.res-sec .dates {
+  color: rgba(0, 0, 0, 0.6);
+}
+.res-sec .stack {
+  color: rgba(27, 70, 125, 0.6);
+}
+.res-sec .employer {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+/*--type colors--*/
+
+.res-sec {
+  font-family: Rajdhani;
+}
+.res-sec .sec-hed {
+  margin-top: 0.25em;
+  margin-bottom: 0;
+}
+
+.project-list,
+.badge-list,
+.history-list,
+.edu-list {
+  margin: 0;
+  margin-top: 0.5em;
+  padding: 0;
+  font-size: 90%;
+  list-style: none;
+}
+
+.job-des-list > li,
+.edu-list > li {
+  margin-bottom: 0.5em;
+}
+
+.res-sec .statement {
+  font-size: 105%;
+  margin: 0;
+}
+
+.edu-list {
+  padding-left: 1.5em;
+}
+
+.edu-list > li:before {
+  content: "☆";
+  font-size: 80%;
+  float: left;
+  margin-left: -1.5em;
+}
+
+.edu-list > li .job-des-list > li {
+  margin-bottom: 0.375em;
+}
+
+.badge-list.row {
+  margin-top: 0.25em !important;
+}
+
+.badge-list,
+.employer .city {
+  font-size: 80%;
+}
+
+.res-sec .employer {
+  line-height: 1;
+}
+.res-sec .employer .city {
+  font-weight: 400;
+  display: inline-block;
+  text-transform: none;
+}
+
+.res-sec .stack {
+  margin-top: -1em;
+}
+
+.badge-list {
+  margin: 0 -0.5em;
+  padding: 0;
+}
+
+li.badges.col-6 {
+  padding: 0 0.5em;
+}
+
+.badges > span {
+  font-weight: 700;
+  border-radius: 50em;
+  background: rgba(55, 98, 105, 0.15);
+  padding: 0.125em 0.67em;
+  margin: 0.5em 0;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.65);
+  display: block;
+}
+.job-des-list {
+  list-style-type: square;
+  margin-left: -1.5em;
+}
+
+.res-sec {
+  margin-bottom: 0.25em;
+  padding-bottom: 1em;
+}
+.res-sec + .res-sec {
+  border-top: 1px solid #ccc;
+}
