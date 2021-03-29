@@ -1,102 +1,176 @@
-import React, { Components } from 'react';
+import React, { Fragment } from 'react';
 import { Row, Col } from 'reactstrap';
 
-function ResSecTitle(props) {
+function ResumeSection(props) {
+    let id = props.id || null;
     return (
-        <h3>{props.title}</h3>
+        <Row className="res-sec">
+            <Col tag="h4" className="sec-hed" xs="12" lg="3" id={id}>{props.secTitle}</Col>
+            {props.children}
+        </Row>
     )
 }
 
-function ResumeItem(props) {
-    let liClass = "col " + (props.level ? props.level + " " : "") + props.type;
-    let text = props.level ? (<span className={props.level}>{props.name}</span>) : props.name;
+export function BadgeList(props) {
+    let items = Array.isArray(props.items) ? props.items.map(item => (<Col tag="li" xs="6" sm="4" md="3" className="badges"><span>{item}</span></Col>)) : null;
     return (
-        <li className={liClass} key={props.type + props.id}>{text}</li>
-    )
+        <Row tag="ul" className="badge-list no-gutters">
+            {items}
+        </Row>
+    );
+}
+
+export function EduList(props) {
+    let items = Array.isArray(props.items) ? props.items.map(item => (
+        <li><strong className="edu-deg">{item.name}</strong>{' from ' + (item.the || '') + ' ' + item.inst}{item.detail ? (<em className="edu-detail" dangerouslySetInnerHTML={{ __html: '–' + item.detail }} />) : null}</li>
+    )) : null;
+    return (
+        <ul className="edu-list">
+            {items}
+        </ul>
+    );
+}
+
+export function AwardList(props) {
+    let items = Array.isArray(props.items) ? props.items.map(item => (
+        <li><strong className="award-name" dangerouslySetInnerHTML={{ __html: item.name }} />{item.detail ? (<Fragment dangerouslySetInnerHTML={{ __html: ' ' + item.detail }} />) : null}</li>
+    )) : null;
+    return (
+        <ul className="edu-list">
+            {items}
+        </ul>
+    );
+}
+
+export function JobHighlightsList(props) {
+    let items = Array.isArray(props.items) ? props.items.map(item => (<li dangerouslySetInnerHTML={{ __html: item }} />)) : null;
+    return (
+        <ul className="job-des-list">
+            {items}
+        </ul>
+    );
+}
+
+export function ProjectList(props) {
+    let items = Array.isArray(props.items) ? props.items.map(item => (
+        <li >
+            <h5>{item.link ?
+                <a href={item.link} target="_blank">{item.name}</a>
+                : item.name
+            }</h5>
+            <p dangerouslySetInnerHTML={item.desc} />
+            <p className="stack">[ {item.stack} ]</p>
+        </li>
+    )) : null;
+    return (
+        <ul className="project-list"  >
+            {items}
+        </ul>
+    );
+}
+
+export function EmployerList(props) {
+    let items = Array.isArray(props.items) ? props.items.map(item => (
+        <Row className="history-item">
+            <Col xs="12" lg="3" >
+                <h6 className="dates float-sm-left">{item.startDate}{' — '}{item.endDate}</h6>
+                <h6 className="employer float-sm-right float-lg-left">
+                    {item.employer}
+                    <span className="d-lg-none">,</span>
+                    <span className="city d-inline-block d-lg-block">{item.location}</span>
+                </h6>
+
+            </Col>
+            <Col xs="12" lg="9" >
+                <h5 className="title ">{item.title}</h5>
+                {(item.desc && item.showDesc) ? <p className="job-desc">{item.desc}</p> : null}
+                {Array.isArray(item.highligh) ? <JobHighlightsList items={item.accomp} /> : null}
+            </Col>
+        </Row>
+    )) : null;
+    return (
+        <ul className="history-list"  >
+            {items}
+        </ul>
+    );
 }
 
 export function Summary(props) {
-    return (
-        <div>
-            <ResSecTitle tilte="Summary" />
-            <p className="summary">Award winning, senior level designer/developer with over 20 years of professional experience in Marketing and Communications. A coder who designs and a designer who codes. Demonstrated ability to translate client ideas into functioning reality. Has passion for learning and well-honed trouble shooting and problem solving skills. A strategic and conceptual thinker with a balanced of mix of creative talent and technical know how. Leads by example with an easy-going manner and builds trust by sharing knowledge, vision and experience with colleagues.</p>
-        </div>
-    );
-}
-
-export function Tools(props) {
-    const toolItems = resumeData.tools.map(tool => (<ResumeItem name={tool.name} level={tool.level} id={tool.id} type="tool" />));
-    return (
-        <div>
-            <ResSecTitle tilte="Tools" />
-            <ul className="row tool-list">
-                {toolItems}
-            </ul>
-        </div>
-    );
+    let em = props.em ? <strong>{props.em}</strong> : null;
+    let summary = props.children;
+    let id = props.id || 'summary';
+    let title = props.title || 'Summary';
+    return (em || summary) ? (
+        <ResumeSection secTitle={title} id={id}>
+            <Col tag="p">
+                {em}
+                {summary}
+            </Col>
+        </ResumeSection>
+    ) : null;
 }
 
 export function Skills(props) {
-    const skillItems = resumeData.skills.map(skill => (<ResumeItem name={skill.name} id={skill.id} type="skill" />));
-    return (
-        <div>
-            <ResSecTitle tilte="Skills" />
-            <ul className="row skill-list">
-                {skillItems}
-            </ul>
-        </div>
-    );
-}
-
-export function Languages(props) {
-    const langItems = resumeData.langs.map(lang => (<ResumeItem name={lang.name} level={lang.level} id={lang.id} type="lang" />));
-    return (
-        <div>
-            <ResSecTitle tilte="Languages" />
-            <ul className="row lang-list">
-                {langItems}
-            </ul>
-        </div>
-    );
+    let id = props.id || 'skills';
+    let title = props.title || 'Skills';
+    return props.items ? (
+        <ResumeSection secTitle={title} id={id}>
+            <Col>
+                <BadgeList items={props.items} />
+            </Col>
+        </ResumeSection>
+    ) : null;
 }
 
 export function Education(props) {
-    return (
-        <div>
-            <ResSecTitle tilte="Eductation" />
-            <p><strong>BFA Degree from the State University of New York at Oswego.</strong> Concentrations in <em>Studio Art</em> and <em>Graphic Design</em>, <em>Minor</em> in <em>English</em>—May 1994; graduate standing <em>Cum Laude</em>.</p>
-        </div>
-    );
+    let id = props.id || 'education';
+    let title = props.title || 'Education';
+    return props.items ? (
+        <ResumeSection secTitle={title} id={id}>
+            <Col>
+                <EduList items={props.items} />
+            </Col>
+        </ResumeSection>
+    ) : null;
 }
 
-export function Certs(props) {
-    return (
-        <div>
-            <ResSecTitle tilte="Certifications" />
-            <p><strong>Fullstack Developer Certification</strong> from <i>NuCamp Coding</i> Bootcamp emphasis on Bootstrap, React, React Native, Node, and Mongo DB</p>
-        </div>
-    );
-}
-
-
-export function References(props) {
-    return (
-        <div>
-            <ResSecTitle tilte="References" />
-            <p>References available upon request.</p>
-        </div>
-    );
-}
 
 export function Awards(props) {
-    const awardItems = resumeData.awards.map(award => (<li className="acolade" dangerouslySetInnerHTML={award.desc} key={"award" + award.id} />
-    ));
-    return (
-        <div>
-            <ResSecTitle tilte="Acolades" />
-            <ul className="row award-list">
-                {awardItems}
-            </ul>
-        </div>
-    );
+    let id = props.id || 'awards';
+    let title = props.title || 'Awards';
+    return props.items ? (
+        <ResumeSection secTitle={title} id={id}>
+            <Col>
+                <AwardList items={props.items} />
+            </Col>
+        </ResumeSection>
+    ) : null;
+}
+
+export function Projects(props) {
+    let id = props.id || 'projects';
+    let title = props.title || 'Projects';
+    return props.items ? (
+        <ResumeSection secTitle={title} id={id}>
+            <Col>
+                <ProjectList items={props.items} />
+            </Col>
+        </ResumeSection>
+    ) : null;
+}
+
+export function WorkHist(props) {
+    let id = props.id || 'experience';
+    let title = props.title || 'Work History';
+    return props.items ? (
+        <ResumeSection secTitle={title} id={id}>
+            <Col>
+                <EmployerList items={props.items} />
+            </Col>
+        </ResumeSection>
+    ) : null;
+}
+
+export function SideNav(props) {
+    return null;
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Sidenav, Summary, Tools, Skills, Experience, Awards, Languages, Education, Certs, References } from './resumeComponents'
+import { Row, Col } from 'reactstrap';
+import { SideNav, Summary } from './resumeComponents'
 import '../css/resumeStyles.css';
 
 function Resume(props) {
@@ -11,15 +12,9 @@ function Resume(props) {
             </Col>
             <Col xs="12" sm="auto" >
                 <Summary />
-                <Tools />
-                <Skills />
-                <Experience />
-                <Awards />
-                <Languages />
-                <Education />
-                <Certs />
-                <References />
             </Col>
         </Row>
     )
 }
+
+export default Resume;

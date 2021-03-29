@@ -4,7 +4,7 @@ import { Container } from 'reactstrap';
 import SiteData from '../shared/siteData'
 import MainNav from './mainNavComponent';
 import Footer from './footerComponent';
-import ContactForm from './contactForm';
+import Resume from './resumePageComponent';
 
 class Main extends Component {
 
@@ -12,7 +12,7 @@ class Main extends Component {
         return (
             <Container fluid className="p-0">
                 <MainNav url="/home/" children={SiteData.pages} siteName={SiteData.info.siteName} />
-                <ContactForm />
+                <Resume />
                 <Footer social={SiteData.social} info={SiteData.info} />
             </Container>
         );
