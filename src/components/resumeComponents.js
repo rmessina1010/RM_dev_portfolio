@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react';
-import { Row, Col } from 'reactstrap';
+import React from 'react';
+import { Row, Col, Nav, NavItem, NavLink } from 'reactstrap';
 
 function ResumeSection(props) {
     let id = props.id || null;
@@ -11,8 +11,16 @@ function ResumeSection(props) {
     )
 }
 
+export function ResNav(props) {
+    return (
+        <Nav vertical tag="ul">
+            {props.children}
+        </Nav>
+    )
+}
+
 export function BadgeList(props) {
-    let items = Array.isArray(props.items) ? props.items.map(item => (<Col tag="li" xs="6" sm="4" md="3" className="badges"><span>{item}</span></Col>)) : null;
+    let items = Array.isArray(props.items) ? props.items.map(item => (<Col tag="li" xs="6" sm="4" md="3" className="badges"> <span>{item.name}{item.extra ? <small>{item.extra}</small> : null}</span></Col>)) : null;
     return (
         <Row tag="ul" className="badge-list no-gutters">
             {items}
@@ -22,7 +30,7 @@ export function BadgeList(props) {
 
 export function EduList(props) {
     let items = Array.isArray(props.items) ? props.items.map(item => (
-        <li><strong className="edu-deg">{item.name}</strong>{' from ' + (item.the || '') + ' ' + item.inst}{item.detail ? (<em className="edu-detail" dangerouslySetInnerHTML={{ __html: '–' + item.detail }} />) : null}</li>
+        <li><strong className="edu-deg">{item.name}</strong>{' from ' + (item.the || '') + ' ' + item.inst}{item.detail ? (<em className="edu-detail" dangerouslySetInnerHTML={{ __html: '—' + item.detail }} />) : null}</li>
     )) : null;
     return (
         <ul className="edu-list">
@@ -33,7 +41,7 @@ export function EduList(props) {
 
 export function AwardList(props) {
     let items = Array.isArray(props.items) ? props.items.map(item => (
-        <li><strong className="award-name" dangerouslySetInnerHTML={{ __html: item.name }} />{item.detail ? (<Fragment dangerouslySetInnerHTML={{ __html: ' ' + item.detail }} />) : null}</li>
+        <li><strong className="award-name" dangerouslySetInnerHTML={{ __html: item.name }} />{item.detail ? (<span dangerouslySetInnerHTML={{ __html: ' ' + item.detail }} />) : null}</li>
     )) : null;
     return (
         <ul className="edu-list">
@@ -55,10 +63,10 @@ export function ProjectList(props) {
     let items = Array.isArray(props.items) ? props.items.map(item => (
         <li >
             <h5>{item.link ?
-                <a href={item.link} target="_blank">{item.name}</a>
+                <a href={item.link} target="_blank" rel="noreferrer">{item.name}</a>
                 : item.name
             }</h5>
-            <p dangerouslySetInnerHTML={item.desc} />
+            <p dangerouslySetInnerHTML={{ __html: item.desc }} />
             <p className="stack">[ {item.stack} ]</p>
         </li>
     )) : null;
@@ -84,7 +92,7 @@ export function EmployerList(props) {
             <Col xs="12" lg="9" >
                 <h5 className="title ">{item.title}</h5>
                 {(item.desc && item.showDesc) ? <p className="job-desc">{item.desc}</p> : null}
-                {Array.isArray(item.highligh) ? <JobHighlightsList items={item.accomp} /> : null}
+                {Array.isArray(item.highlighs) ? <JobHighlightsList items={item.highlighs} /> : null}
             </Col>
         </Row>
     )) : null;
@@ -99,11 +107,11 @@ export function Summary(props) {
     let em = props.em ? <strong>{props.em}</strong> : null;
     let summary = props.children;
     let id = props.id || 'summary';
-    let title = props.title || 'Summary';
+    let title = props.secTitle || 'Summary';
     return (em || summary) ? (
         <ResumeSection secTitle={title} id={id}>
-            <Col tag="p">
-                {em}
+            <Col tag="p" className="statement">
+                {em}{' '}
                 {summary}
             </Col>
         </ResumeSection>
@@ -112,7 +120,7 @@ export function Summary(props) {
 
 export function Skills(props) {
     let id = props.id || 'skills';
-    let title = props.title || 'Skills';
+    let title = props.secTitle || 'Skills';
     return props.items ? (
         <ResumeSection secTitle={title} id={id}>
             <Col>
@@ -124,7 +132,7 @@ export function Skills(props) {
 
 export function Education(props) {
     let id = props.id || 'education';
-    let title = props.title || 'Education';
+    let title = props.secTitle || 'Education';
     return props.items ? (
         <ResumeSection secTitle={title} id={id}>
             <Col>
@@ -137,7 +145,7 @@ export function Education(props) {
 
 export function Awards(props) {
     let id = props.id || 'awards';
-    let title = props.title || 'Awards';
+    let title = props.secTitle || 'Awards';
     return props.items ? (
         <ResumeSection secTitle={title} id={id}>
             <Col>
@@ -149,7 +157,7 @@ export function Awards(props) {
 
 export function Projects(props) {
     let id = props.id || 'projects';
-    let title = props.title || 'Projects';
+    let title = props.secTitle || 'Projects';
     return props.items ? (
         <ResumeSection secTitle={title} id={id}>
             <Col>
@@ -161,7 +169,7 @@ export function Projects(props) {
 
 export function WorkHist(props) {
     let id = props.id || 'experience';
-    let title = props.title || 'Work History';
+    let title = props.secTitle || 'Work History';
     return props.items ? (
         <ResumeSection secTitle={title} id={id}>
             <Col>

@@ -22,9 +22,8 @@ const DBUG = 'Debug';
 const STUP = 'SetUp';
 
 
-export const projects = {
+export const projects =
     [
-
         {
             id: 1,
             thumb: '',
@@ -35,4 +34,4 @@ export const projects = {
             url: '',
             repo: '',
         }
-    ]}
+    ];
