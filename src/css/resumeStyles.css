@@ -55,7 +55,7 @@
   list-style: none;
 }
 
-.job-des-list > li,
+
 .edu-list > li {
   margin-bottom: 0.5em;
 }
@@ -131,4 +131,8 @@ li.badges.col-6 {
 }
 .res-sec + .res-sec {
   border-top: 1px solid #ccc;
+}
+
+.history-item  {
+   padding-bottom:.67em;
 }

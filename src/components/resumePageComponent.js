@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Row, Col, NavItem, NavLink } from 'reactstrap';
 import { ResNav, Summary, Skills, WorkHist, Projects, Awards, Education } from './resumeComponents';
 import resData from '../shared/resumeData';
 import '../css/resumeStyles.css';
+
+resData.experience.sort((a, b) => a.endDate < b.endDate);
 
 function Resume() {
     let resumeSections = [];

@@ -1,5 +1,14 @@
 import React from 'react';
-import { Row, Col, Nav, NavItem, NavLink } from 'reactstrap';
+import { Row, Col, Nav } from 'reactstrap';
+import { CURRENT_DATE } from '../shared/resumeData';
+
+function dateToMoYear(date, Present = 'Present') {
+    if (date === CURRENT_DATE) { return Present; }
+    let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(date);
+    let mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(date);
+    if (mo !== 'May' && mo !== 'June' && mo !== 'July') { mo = mo + '.'; }
+    return mo + String.fromCharCode(160) + ye;
+}
 
 function ResumeSection(props) {
     let id = props.id || null;
@@ -81,10 +90,10 @@ export function EmployerList(props) {
     let items = Array.isArray(props.items) ? props.items.map(item => (
         <Row className="history-item">
             <Col xs="12" lg="3" >
-                <h6 className="dates float-sm-left">{item.startDate}{' — '}{item.endDate}</h6>
+                <h6 className="dates float-sm-left">{dateToMoYear(item.startDate)}{' — '}{dateToMoYear(item.endDate)}</h6>
                 <h6 className="employer float-sm-right float-lg-left">
                     {item.employer}
-                    <span className="d-lg-none">,</span>
+                    <span className="d-lg-none">, </span>
                     <span className="city d-inline-block d-lg-block">{item.location}</span>
                 </h6>
 

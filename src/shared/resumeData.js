@@ -1,4 +1,4 @@
-const CURRENT_DATE = new Date();
+export const CURRENT_DATE = new Date();
 const resData = {
     sections: [
         {
@@ -126,17 +126,53 @@ const resData = {
 
 
     ],
-    hist: [
+    experience: [
         {
-            employer: 'Hy Cite Enterprises, LLC',
-            title: 'Sr. Graphic Designer',
+            employer: 'Hy Cite Enterprises,' + String.fromCharCode(160) + 'LLC',
+            title: 'Sr. Graphic' + String.fromCharCode(160) + 'Designer / Web' + String.fromCharCode(160) + 'Designer',
             showDesc: false,
             desc: null,
-            startDate: new Date(2013, 11, 11, 0, 0, 0, 0),
+            startDate: new Date(2013, 10, 11, 0, 0, 0, 0),
             endDate: CURRENT_DATE,
             location: 'Madison, WI',
-            hilights: []
+            highlighs: [
+                'Oversaw the design and development of corporate(HyCite.com) and customer (RoyalPrestige.com) websites; provided art direction, wire framing and information architecture',
+                'Oversaw the design and development of corporate(HyCite.com) and customer (RoyalPrestige.com) websites; provided art direction, wire framing and information architecture',
+                'Oversaw the design and development of corporate(HyCite.com) and customer (RoyalPrestige.com) websites; provided art direction, wire framing and information architecture'
+            ]
+        },
+        {
+            employer: 'Rockford Register' + String.fromCharCode(160) + 'Star',
+            title: 'Marketing Graphic' + String.fromCharCode(160) + 'Designer',
+            showDesc: false,
+            desc: null,
+            startDate: new Date(1998, 8, 28, 0, 0, 0, 0),
+            endDate: new Date(2008, 7, 20, 0, 0, 0, 0),
+            location: 'Rockford, IL',
+            highlighs: []
+        },
+        {
+            employer: 'Fat Wallet',
+            title: 'Web Designer',
+            showDesc: false,
+            desc: null,
+            startDate: new Date(2008, 9, 13, 0, 0, 0, 0),
+            endDate: new Date(2012, 4, 25, 0, 0, 0, 0),
+            location: 'Rockford, IL',
+            highlighs: []
+        },
+        {
+            employer: 'DazzleFish',
+            title: 'Art Director',
+            showDesc: false,
+            desc: null,
+            startDate: new Date(2002, 2, 5, 0, 0, 0, 0),
+            endDate: new Date(2013, 10, 10, 0, 0, 0, 0),
+            location: 'Rockford, IL',
+            highlighs: []
         }
+
+
     ],
     projs: [
         {
