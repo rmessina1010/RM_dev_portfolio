@@ -63,15 +63,11 @@ function Resume() {
             return resumeSections.length > oldLen ? (<NavItem tag="li"><NavLink href={'#' + section.id}>{section.name || section.title}</NavLink></NavItem>) : null;
         }) : [];
 
-    if (resData.dlfile) {
-        navItems.push(<NavItem tag="li" className="dlfile"><NavLink href={resData.dlfile.link} download={resData.dlfile.name}>Download PDF</NavLink></NavItem>)
-    }
-
     return (
         <div className="container-fluid container-lg">
             <Row>
-                <Col xs="12" md="2" className="d-none d-md-block" >
-                    <ResNav children={navItems} />
+                <Col xs="12" md="2" className="d-none d-md-block res-sidenav" >
+                    <ResNav children={navItems} dlfile={resData.dlfile || null} title="Résumé" />
                 </Col>
                 <Col xs="12" md="10" >
                     {resumeSections}

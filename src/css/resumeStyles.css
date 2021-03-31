@@ -3,6 +3,10 @@
 .res-sec h6 {
   margin-bottom: 0;
 }
+.res-sec > h4 {
+  scroll-margin-top: 2.5em;
+  -webkit-scroll-snap-margin-top: 2.5em;
+}
 .res-sec h4,
 .res-sec h5,
 .res-sec .employer {
@@ -36,7 +40,7 @@
 
 /*--type colors--*/
 
-.res-sec {
+.res-sec, .res-sidenav{
   font-family: Rajdhani;
 }
 .res-sec .sec-hed {
@@ -128,11 +132,42 @@ li.badges.col-6 {
 .res-sec {
   margin-bottom: 0.25em;
   padding-bottom: 1em;
-}
+ }
 .res-sec + .res-sec {
   border-top: 1px solid #ccc;
 }
 
 .history-item  {
    padding-bottom:.67em;
+}
+
+
+/*Resume navigation*/
+.res-sidenav {
+  background: rgba(55, 98, 105, 0.15);
+  border-left: 1px solid  rgba(55, 98, 105, 0.15);
+}
+.resnav{
+  font-size: 90%;
+  top: 6.625em;
+  }
+
+.navList{
+  border-radius: 0 .5em  .5em 0    ;
+  border:1px solid #ccc;
+  border-left-color: #fff;
+  overflow:hidden;
+  margin: 1.625em 0 0 -17px ;
+ }
+
+.navList a {
+  color:rgba(27, 70, 125, 1);
+  background-color:#fff;
+  padding-top:.375em;
+  padding-bottom:.375em;
+}
+
+.navList a:hover{ color:#fff; background:  rgba(27, 70, 125, 0.6); font-weight: bold;}
+.navList li + li{
+	border-top:1px solid #ccc;
 }

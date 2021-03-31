@@ -1,5 +1,10 @@
 export const CURRENT_DATE = new Date();
 const resData = {
+    dlfile: {
+        url: '../filepath/file.pdf',
+        name: 'RM_resume.pdf',
+        text: 'PDF'
+    },
     sections: [
         {
             type: 'summ',

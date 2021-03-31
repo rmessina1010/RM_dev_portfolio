@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Nav } from 'reactstrap';
+import { Row, Col, Nav, Button } from 'reactstrap';
 import { CURRENT_DATE } from '../shared/resumeData';
 
 function dateToMoYear(date, Present = 'Present') {
@@ -14,17 +14,28 @@ function ResumeSection(props) {
     let id = props.id || null;
     return (
         <Row className="res-sec">
-            <Col tag="h4" className="sec-hed" xs="12" lg="3" id={id}>{props.secTitle}</Col>
+            <Col tag="h4" className="sec-hed" xs="12" lg="3" xl="2" id={id}>{props.secTitle}</Col>
             {props.children}
         </Row>
     )
 }
 
 export function ResNav(props) {
+    let dlButton = props.dlfile ?
+        <Button className="dlfile-button mr-3" size='sm' href={props.dlfile.url} download={props.dlfile.name || null}>{'Download ' + (props.dlfile.text || 'File')}</Button>
+        :
+        null;
+
     return (
-        <Nav vertical tag="ul">
-            {props.children}
-        </Nav>
+        <div className="resnav sticky-top">
+            {props.title ? <h3>{props.title}</h3> : null}
+            <Nav className="navList sticky-top mr-lg-1 mr-xl-3 mb-3" vertical tag="ul">
+                {props.children}
+            </Nav>
+
+            {dlButton}
+
+        </div>
     )
 }
 
@@ -188,6 +199,3 @@ export function WorkHist(props) {
     ) : null;
 }
 
-export function SideNav(props) {
-    return null;
-}
