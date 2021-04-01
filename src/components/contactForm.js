@@ -10,6 +10,9 @@ class ContactForm extends Component {
             email: null,
             message: null,
             subject: null,
+            x: null,
+            y: null,
+            subbed: false
         }
         this.email = React.createRef();
         this.name = React.createRef();
@@ -67,11 +70,14 @@ class ContactForm extends Component {
                         <Label>Topic</Label>
                         <Input type="select" name="subject" className="custom-select" htmlRef={this.subject} invalid={errors.subject}>
                             <option value="">Regarding</option>
-                            <option value="1">1</option>
-                            <option value="1">2</option>
-                            <option value="1">3</option>
-                            <option value="1">4</option>
-                            <option value="1">5</option>
+                            <option value="1">Print Project</option>
+                            <option value="1">Branding Project</option>
+                            <option value="1">CopyWriting Project</option>
+                            <option value="1">Web Design Project</option>
+                            <option value="1">Front End Development Project</option>
+                            <option value="1">Back End Development Project</option>
+                            <option value="1">Full Stack Project</option>
+                            <option value="1">Other</option>
                         </Input>
                         <FormFeedback>{errors.subject}</FormFeedback>
                     </FormGroup>

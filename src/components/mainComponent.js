@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-//import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import { Container } from 'reactstrap';
 import SiteData from '../shared/siteData'
 import MainNav from './mainNavComponent';
 import Footer from './footerComponent';
 import Resume from './resumePageComponent';
+import ContactForm from './contactForm';
+import { Project } from './projectsComponent';
 
 class Main extends Component {
 
@@ -12,8 +14,14 @@ class Main extends Component {
         return (
             <Container fluid className="p-0">
                 <MainNav url="/home/" children={SiteData.pages} siteName={SiteData.info.siteName} />
-                <Resume />
-                <Footer social={SiteData.social} info={SiteData.info} />
+                <Switch>
+                    {/* <Route exact path="/about" component={ContactForm} /> */}
+                    {/* <Route exact path="/projects" component={Project} /> */}
+                    {/* <Route exact path="/rants" component={ContactForm} /> */}
+                    <Route exact path="/resume" component={Resume} />
+                    <Route exact path="/contact" component={ContactForm} />
+                </Switch>
+                <Footer social={SiteData.social} info={SiteData.info} links={SiteData.pages} />
             </Container>
         );
     }

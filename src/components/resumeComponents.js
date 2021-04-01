@@ -22,14 +22,14 @@ function ResumeSection(props) {
 
 export function ResNav(props) {
     let dlButton = props.dlfile ?
-        <Button className="dlfile-button mr-3" size='sm' href={props.dlfile.url} download={props.dlfile.name || null}>{'Download ' + (props.dlfile.text || 'File')}</Button>
+        <Button className="dlfile-button mr-3 mb-3" size='sm' href={props.dlfile.url} download={props.dlfile.name || null}>{'Download ' + (props.dlfile.text || 'File')}</Button>
         :
         null;
 
     return (
-        <div className="resnav sticky-top">
+        <div className="resnav position-sticky">
             {props.title ? <h3>{props.title}</h3> : null}
-            <Nav className="navList sticky-top mr-lg-1 mr-xl-3 mb-3" vertical tag="ul">
+            <Nav className="navList  position-sticky mr-lg-1 mr-xl-3 mb-3" vertical tag="ul">
                 {props.children}
             </Nav>
 

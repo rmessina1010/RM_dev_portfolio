@@ -4,8 +4,8 @@
   margin-bottom: 0;
 }
 .res-sec > h4 {
-  scroll-margin-top: 2.5em;
-  -webkit-scroll-snap-margin-top: 2.5em;
+  scroll-margin-top: 3em;
+  -webkit-scroll-snap-margin-top: 3em;
 }
 .res-sec h4,
 .res-sec h5,

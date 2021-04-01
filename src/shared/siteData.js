@@ -20,7 +20,7 @@ const SiteData = {
 			id: 2,
 			text: "Projects",
 			icon: "fa fa-house",
-			url: "/home",
+			url: "/projects",
 			include: [],
 			exclude: []
 		},
@@ -28,7 +28,7 @@ const SiteData = {
 			id: 3,
 			text: "Resume",
 			icon: "fa fa-house",
-			url: "/home",
+			url: "/resume",
 			include: [],
 			exclude: []
 		},
@@ -36,7 +36,7 @@ const SiteData = {
 			id: 4,
 			text: "Rants",
 			icon: "fa fa-house",
-			url: "/home",
+			url: "/rants",
 			include: [],
 			exclude: ['main']
 		},
@@ -44,7 +44,7 @@ const SiteData = {
 			id: 5,
 			text: "Contact",
 			icon: "fa fa-house",
-			url: "/home",
+			url: "/contact",
 			include: [],
 			exclude: []
 		},

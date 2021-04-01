@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { AnchorLink, IconLink } from './navigational';
+import { Row, Col } from 'reactstrap';
 
 
 
@@ -48,9 +49,12 @@ class Footer extends Component {
         let siteInfo = this.props.info;
         copyrightDate = (copyrightDate > siteInfo.copyright) ? siteInfo.copyright + '-' + copyrightDate : siteInfo.copyright;
         return (
-            <footer className="site-footer container-fluid container-xl py-3">
-                <SocialFooterLinks children={this.props.social} />
-                <div className="copyright">&copy; {copyrightDate} {siteInfo.author}</div>
+            <footer className="site-footer container-fluid container-xl py-3 text-center">
+                <Row>
+                    <Col xs="12" sm="6" md="5"><FooterLinks children={this.props.links} /></Col>
+                    <Col xs="12" sm="6" md="5" ><SocialFooterLinks children={this.props.social} /></Col>
+                    <Col className="copyright" xs="12" md="2">&copy; {copyrightDate} {siteInfo.author}</Col>
+                </Row>
             </footer>
         );
     }
