@@ -6,7 +6,7 @@ import MainNav from './mainNavComponent';
 import Footer from './footerComponent';
 import Resume from './resumePageComponent';
 import ContactForm from './contactForm';
-import { Project } from './projectsComponent';
+import ProjectsPage from './projectsComponent';
 
 class Main extends Component {
 
@@ -16,7 +16,7 @@ class Main extends Component {
                 <MainNav url="/home/" children={SiteData.pages} siteName={SiteData.info.siteName} />
                 <Switch>
                     {/* <Route exact path="/about" component={ContactForm} /> */}
-                    {/* <Route exact path="/projects" component={Project} /> */}
+                    <Route exact path="/projects" component={ProjectsPage} />
                     {/* <Route exact path="/rants" component={ContactForm} /> */}
                     <Route exact path="/resume" component={Resume} />
                     <Route exact path="/contact" component={ContactForm} />

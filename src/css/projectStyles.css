@@ -1,0 +1,65 @@
+			.proj-page {
+				font-family: Rajdhani;
+				background-color: #fafafa;
+				padding-bottom: 1px;
+			}
+
+			.proj-page .card {
+				font-weight: 500;
+				margin-bottom:3em;
+ 				box-shadow: 1px 3px 4px rgba(0,0,0,.4);
+				background: #fff;
+				border-right-color: rgba(0,0,0,.5);
+				border-bottom-color: rgba(0,0,0,.5);
+
+			}
+
+			.proj-page .card-header, .proj-page .card .btn{
+				background-color:  rgba(27, 70, 125, .5);
+				border: 2px solid transparent;
+				font-weight: 500;
+
+			}
+			.proj-page .card .btn:hover {
+				background-color:  rgba(27, 70, 125, .65);
+
+			}
+			  .proj-page .card .btn[disabled]{
+				border-color:  rgba(27, 70, 125, 1);
+				color:  rgba(27, 70, 125, 1);
+				background-color:  rgba(27, 70, 125, .15);
+;
+ 			}
+			  .proj-page .card .btn[disabled]:hover{
+				background-color:  rgba(14, 35, 63, .15);
+				color:red;
+				border-color:  rgba(14, 35, 63, 1);
+
+
+			   }
+
+
+
+			.proj-page .card-image{ width: 100%;  display:block; margin-bottom: 2em; border: 1px solid; }
+
+			.proj-stack{
+ 				list-style: none;
+				border: 1px solid #ccc;
+				margin-top: 0;
+				border-radius: .125em;
+				padding:  .5em 1em ;
+				display: inline-block;
+
+			}
+			.proj-stack li{
+				display:inline;
+				padding: 0;
+				font-weight: bold;
+
+			}
+			.proj-stack li+ li:before{
+				content: ", "
+ 			}
+ 			.proj-page .card h3{  font-weight: bold; color: #fff; text-shadow: 1px -1px 0 rgba(0,0,0,.6);   }
+ 			.proj-page .card h5{ margin-bottom: .125em; margin-left: .75em; margin-top:.5em ; text-transform: uppercase; color: #555;
+ }

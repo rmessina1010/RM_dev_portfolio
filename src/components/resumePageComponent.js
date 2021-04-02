@@ -66,7 +66,7 @@ function Resume() {
     return (
         <div className="container-fluid container-lg">
             <Row>
-                <Col xs="12" md="2" className="d-none d-md-block res-sidenav" >
+                <Col xs="12" md="2" className="res-sidenav" >
                     <ResNav children={navItems} dlfile={resData.dlfile || null} title="Résumé" />
                 </Col>
                 <Col xs="12" md="10" >

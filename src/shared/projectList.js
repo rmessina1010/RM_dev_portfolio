@@ -7,12 +7,16 @@ const WP = 'WordPress';
 const CSS = 'CSS';
 const SASS = 'SASS';
 const HTML = 'HTML';
-const RE = 'React';
-const RNTV = 'React Native';
+const REACT = 'React';
+const RDX = 'Redux';
+const REACT_NTV = 'React Native';
 const BOOT = 'Bootstrap';
-const mSQL = 'MySQL';
+const MSQL = 'MySQL';
 const MONG = 'MongoDB';
 
+const DEV = 'Development';
+const FRONT = 'Front End';
+const BACK = 'Back End';
 const ARCH = 'Site Architecture';
 const DSGN = 'Graphic Design';
 const WRT = 'Copy Writing';
@@ -22,16 +26,79 @@ const DBUG = 'Debug';
 const STUP = 'SetUp';
 
 
-export const projects =
+
+
+const projectData =
     [
         {
             id: 1,
-            thumb: '',
-            name: 'project',
-            desc: 'lorem...',
-            tech: [],
+            inactive: false,
+            thumb: 'https://via.placeholder.com/320x180',
+            name: 'Project Title',
+            desc: 'lorem... text or mething',
+            stack: [JS, PHP, HTML, CSS, REACT, RDX],
             skills: [],
-            url: '',
-            repo: '',
+            roles: [DSGN, DEV, FRONT, BACK],
+            links: [
+                {
+                    url: 'apple.com',
+                    text: 'apple',
+                    disabled: true
+                },
+                {
+                    url: 'apple.com',
+                    text: 'another',
+
+                }
+
+            ]
+        },
+        {
+            id: 2,
+            inactive: false,
+            thumb: 'https://via.placeholder.com/360x225',
+            name: 'Project Title',
+            desc: 'lorem... text or mething',
+            stack: [JS, PHP, HTML, CSS, REACT, RDX],
+            skills: [],
+            roles: [DSGN, DEV, FRONT, BACK],
+            links: [
+                {
+                    url: 'apple.com',
+                    text: 'apple',
+                    disabled: true
+                },
+                {
+                    url: 'apple.com',
+                    text: 'another',
+
+                }
+            ]
+        },
+        {
+            id: 3,
+            inactive: false,
+            thumb: 'https://via.placeholder.com/360x225',
+            name: 'Project Title',
+            desc: 'lorem... text or mething',
+            stack: [JS, PHP, HTML, CSS, REACT, RDX],
+            skills: [],
+            roles: [DSGN, DEV, FRONT, BACK],
+            links: [
+                {
+                    url: 'apple.com',
+                    text: 'apple',
+                    disabled: true
+                },
+                {
+                    url: 'apple.com',
+                    text: 'another',
+
+                }
+
+            ]
         }
+
     ];
+
+export default projectData;
