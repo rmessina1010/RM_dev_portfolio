@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { AnchorLink, IconLink } from './navigational';
-import { Row, Col } from 'reactstrap';
+import { Row, Col, Container } from 'reactstrap';
+import '../css/footerStyles.css';
 
 
 
@@ -31,7 +32,7 @@ class SocialFooterLinks extends Component {
         if (this.props.children && this.props.children.forEach) {
             this.props.children.forEach((child) => {
                 children.push(
-                    <IconLink href={child.url} key={"footsocial" + child.id} attrs={{ target: (child.url.indexOf('http') === 0 ? "_blank" : null), className: "text-primary btn" }} icon={{ icon: child.icon }} />
+                    <IconLink href={child.url} key={"footsocial" + child.id} attrs={{ target: (child.url.indexOf('http') === 0 ? "_blank" : null) }} icon={{ icon: child.icon }} />
                 );
             });
         }
@@ -49,13 +50,15 @@ class Footer extends Component {
         let siteInfo = this.props.info;
         copyrightDate = (copyrightDate > siteInfo.copyright) ? siteInfo.copyright + '-' + copyrightDate : siteInfo.copyright;
         return (
-            <footer className="site-footer container-fluid container-xl py-3 text-center">
-                <Row>
-                    <Col xs="12" sm="6" md="5"><FooterLinks children={this.props.links} /></Col>
-                    <Col xs="12" sm="6" md="5" ><SocialFooterLinks children={this.props.social} /></Col>
-                    <Col className="copyright" xs="12" md="2">&copy; {copyrightDate} {siteInfo.author}</Col>
-                </Row>
-            </footer>
+            <div className="site-footer">
+                <Container className=" py-3 " fluid="xl">
+                    <Row>
+                        <Col xs="12" md="6" lg="4" className="text-center text-md-left "><FooterLinks children={this.props.links} /></Col>
+                        <Col xs="12" lg="4" className="text-center order-md-3 text-lg-right"><SocialFooterLinks children={this.props.social} /></Col>
+                        <Col className="copyright" xs="12" md="6" lg="4" className="text-center text-md-right ">&copy; {copyrightDate} {siteInfo.author}</Col>
+                    </Row>
+                </Container>
+            </div>
         );
     }
 }

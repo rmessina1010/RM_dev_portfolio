@@ -61,8 +61,7 @@ export function ProjectDeck(props) {
     cardTag = (cardTag === 'UL' || cardTag === 'OL') ? 'li' : 'div';
     let projectItems = Array.isArray(props.projs) ? props.projs.map(proj => (!proj.inactive || proj.inclInact) ? <ProjectCard cardTag={cardTag} proj={proj} /> : false) : null;
     return (
-        <Container tag={props.tag} >
-            <h2>Projects</h2>
+        <Container tag={props.tag} fluid='xl' >
             {projectItems}
         </Container>
     )
@@ -70,9 +69,12 @@ export function ProjectDeck(props) {
 
 function ProjectsPage(props) {
     return (
-        <Container className="proj-page" fluid>
+        <div className="proj-page" >
+            <div className="page-title">
+                <Container fluid='xl'><h2>Projects</h2></Container>
+            </div>
             <ProjectDeck tag={props.tag} projs={projectData} />
-        </Container>
+        </div>
     )
 }
 

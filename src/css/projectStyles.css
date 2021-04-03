@@ -4,6 +4,16 @@
 				padding-bottom: 1px;
 			}
 
+			.proj-page .page-title{
+				  background: rgba(55, 98, 105, 0.15);
+				  padding: 1em  .5em;
+				  margin-bottom: 2em;
+
+			}
+			.proj-page .page-title h2{
+				font-size: 175%;
+				text-shadow: 1px 1px 0 #fff;
+			}
 			.proj-page .card {
 				font-weight: 500;
 				margin-bottom:3em;
@@ -15,40 +25,48 @@
 			}
 
 			.proj-page .card-header, .proj-page .card .btn{
-				background-color:  rgba(27, 70, 125, .5);
+				background-color:  rgba(59, 91, 120, 1);
 				border: 2px solid transparent;
 				font-weight: 500;
 
 			}
 			.proj-page .card .btn:hover {
-				background-color:  rgba(27, 70, 125, .65);
+				background-color:  rgba(21, 53, 98, 1);
 
 			}
-			  .proj-page .card .btn[disabled]{
-				border-color:  rgba(27, 70, 125, 1);
-				color:  rgba(27, 70, 125, 1);
-				background-color:  rgba(27, 70, 125, .15);
-;
- 			}
-			  .proj-page .card .btn[disabled]:hover{
+			.proj-page .card .btn[disabled]:hover{
 				background-color:  rgba(14, 35, 63, .15);
-				color:red;
 				border-color:  rgba(14, 35, 63, 1);
 
 
-			   }
+			}
+			.proj-page .card .btn[disabled]{
+				border-color:  rgba(21, 53, 98, 1);
+				color:  rgba(21, 53, 98, 1);
+				background-color:  rgba(59, 91, 120, .07);
+				opacity: .6;
+ 			}
 
 
 
-			.proj-page .card-image{ width: 100%;  display:block; margin-bottom: 2em; border: 1px solid; }
+			.proj-page .card-img{
+				width: 100%;
+				display:block;
+				margin: 0 auto 2em auto;
+				 border: 1px solid;
+				 max-width:500px;
+			}
 
 			.proj-stack{
  				list-style: none;
 				border: 1px solid #ccc;
 				margin-top: 0;
 				border-radius: .125em;
-				padding:  .5em 1em ;
+				padding:  .5em .675em ;
 				display: inline-block;
+				color: rgba(59, 91, 120, 1);
+				line-height: 1.2;
+  				background: rgba(55, 98, 105, 0.15);
 
 			}
 			.proj-stack li{
@@ -60,6 +78,6 @@
 			.proj-stack li+ li:before{
 				content: ", "
  			}
- 			.proj-page .card h3{  font-weight: bold; color: #fff; text-shadow: 1px -1px 0 rgba(0,0,0,.6);   }
- 			.proj-page .card h5{ margin-bottom: .125em; margin-left: .75em; margin-top:.5em ; text-transform: uppercase; color: #555;
+ 			.proj-page .card h3{  font-weight: bold; color: #fff; text-shadow: 1px -1px 0 rgba(0,0,0,.6); margin-bottom: 0;  }
+ 			.proj-page .card h5{ margin-bottom: .125em; margin-left: .5em; margin-top:.5em ;  text-transform: uppercase; color: #555;
  }

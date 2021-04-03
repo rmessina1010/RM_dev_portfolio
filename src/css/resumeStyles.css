@@ -6,6 +6,7 @@
 .res-sec > h4 {
   scroll-margin-top: 3em;
   -webkit-scroll-snap-margin-top: 3em;
+  letter-spacing: -1px;
 }
 .res-sec h4,
 .res-sec h5,
@@ -117,7 +118,7 @@ li.badges.col-6 {
 
 .badges > span {
   font-weight: 700;
-  border-radius: 50em;
+  border-radius: 3px;
   background: rgba(55, 98, 105, 0.15);
   padding: 0.125em 0.67em;
   margin: 0.5em 0;
@@ -153,7 +154,7 @@ li.badges.col-6 {
   }
 
 .navList{
-  border-radius: 0 .5em  .5em 0    ;
+  border-radius: 0 4px  4px 0    ;
   border:1px solid #ccc;
   border-left-color: #fff;
   overflow:hidden;
@@ -167,7 +168,7 @@ li.badges.col-6 {
   padding-bottom:.375em;
 }
 
-.navList a:hover{ color:#fff; background:  rgba(27, 70, 125, 0.6); font-weight: bold;}
+.navList a:hover{ color:#fff; background:  rgba(27, 70, 125, 1); font-weight: bold;}
 .navList li + li{
 	border-top:1px solid #ccc;
 }
