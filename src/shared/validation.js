@@ -4,17 +4,12 @@ class validator {
         this.fields = fields;
     }
 
-    isInvalid(state) {
-        let isInvalid = [];
-        for (let field in this.fields) {
-            if (state && this.errors[field] === undefined) {
-                this.validate(state, { [field]: this.fields[field] });
-            }
-            if (this.errors[field] || this.errors[field] === undefined) {
-                isInvalid.push(field);
-            }
+    isValid(state) {
+        this.validate(state);
+        for (let field in this.errors) {
+            if (this.errors[field]) { return false; }
         }
-        return isInvalid.length > 0 ? isInvalid : false;
+        return true;
     }
 
     isValidEmail = email => { return /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(email); }
@@ -23,11 +18,11 @@ class validator {
 
     isValidZip = str => { return /^\d{5}(?:-\d{4})?$/.test(str); }
 
-    isValidName = str => { return /[A-Za-z]{1,}(?:\s[A-Za-z]{1,})*/.test(str); }
+    isValidName = str => { return /^[A-Za-z]{1,}(?:\s[A-Za-z]+)*$/.test(str); }
 
     match = (str1, str2) => { return (str1 === str2) ? true : false; }
 
-    required = str => { console.log(str); return this.minLen(str); }
+    required = str => { return str !== null && this.minLen(str); }
 
     requiredTrue = el => { return el ? true : false; }
 
@@ -39,17 +34,19 @@ class validator {
 
     validate(data = {}, fields = null) {
         if (!fields) { fields = this.fields; }
-        let field;
-        for (field in fields) {
+        for (let field in fields) {
             let value = data[field];
             let tests = fields[field];
-
             let error = '';
             tests.forEach(test => {
-                console.log(data)
-                if (this[test.test]) {
-                    let arg = test.test === 'match' ? data[test.arg] : test.arg
-                    if (!this[test.test].call(this, value, arg)) { error += test.err + ' '; }
+                if (this[test.test]) { /// checks this object to see if test is defined
+                    let arg = test.test === 'match' ? data[test.arg] : test.arg;
+                    console.log(field, ':', value, 'about to test', test.test)
+                    if (!this[test.test].call(this, value, arg)) {
+                        error += test.err + ' ';
+                    }
+                    console.log(this[test.test])
+
                 }
             });
             this.errors[field] = error ? error : null;

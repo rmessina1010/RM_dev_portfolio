@@ -5,7 +5,7 @@ import SiteData from '../shared/siteData'
 import MainNav from './mainNavComponent';
 import Footer from './footerComponent';
 import Resume from './resumePageComponent';
-import ContactForm from './contactForm';
+import ContactPage from './contactForm';
 import ProjectsPage from './projectsComponent';
 
 class Main extends Component {
@@ -19,7 +19,7 @@ class Main extends Component {
                     <Route exact path="/projects" component={ProjectsPage} />
                     {/* <Route exact path="/rants" component={ContactForm} /> */}
                     <Route exact path="/resume" component={Resume} />
-                    <Route exact path="/contact" component={ContactForm} />
+                    <Route exact path="/contact" component={ContactPage} />
                 </Switch>
                 <Footer social={SiteData.social} info={SiteData.info} links={SiteData.pages} />
             </Container>
