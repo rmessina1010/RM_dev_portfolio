@@ -2,6 +2,18 @@ import React, { Component } from 'react';
 import validator from '../shared/validation';
 import { Form, FormFeedback, FormGroup, Label, Row, Input, Button, Container, Col } from 'reactstrap';
 
+const subjectOptions = [
+    'Print Project',
+    'Branding Project',
+    'CopyWriting Project',
+    'Web Design Project',
+    'Front End Development Project',
+    'Back End Development Project',
+    'Full Stack Project'
+];
+
+const formOptions = subjectOptions.map(opt => <option value={opt}>{opt}</option>)
+
 class ContactForm extends Component {
     constructor(props) {
         super(props);
@@ -13,10 +25,6 @@ class ContactForm extends Component {
             refresh: false,
             auth: '1r0m1v0c_105'
         }
-        this.email = React.createRef();
-        this.name = React.createRef();
-        this.message = React.createRef();
-        this.subject = React.createRef();
 
         this.fieldTests = {
             name: [{ test: "required", err: "I'd prefer not to adress you as 'Hey, you'." }, { test: "isValidName", err: "Come on, your actual name." }],
@@ -62,27 +70,21 @@ class ContactForm extends Component {
                 <Row className="p-0">
                     <FormGroup className="col-sm-12 col-md">
                         <Label>Name</Label>
-                        <Input type="text" htmlRef={this.name} name="name" invalid={errors.name} />
+                        <Input type="text" name="name" invalid={errors.name} />
                         <FormFeedback>{errors.name}</FormFeedback>
                     </FormGroup>
                     <FormGroup className="col-sm-12 col-md">
                         <Label>Email</Label>
-                        <Input type="text" htmlRef={this.email} name="email" invalid={errors.email} />
+                        <Input type="text" name="email" invalid={errors.email} />
                         <FormFeedback>{errors.email}</FormFeedback>
                     </FormGroup>
                 </Row>
                 <Row>
                     <FormGroup className="col" >
                         <Label>Topic</Label>
-                        <Input type="select" name="subject" className="custom-select" htmlRef={this.subject} invalid={errors.subject}>
+                        <Input type="select" name="subject" className="custom-select" invalid={errors.subject}>
                             <option value="">Regarding</option>
-                            <option value="1">Print Project</option>
-                            <option value="1">Branding Project</option>
-                            <option value="1">CopyWriting Project</option>
-                            <option value="1">Web Design Project</option>
-                            <option value="1">Front End Development Project</option>
-                            <option value="1">Back End Development Project</option>
-                            <option value="1">Full Stack Project</option>
+                            {formOptions}
                             <option value="Other">Other</option>
                         </Input>
                         <FormFeedback>{errors.subject}</FormFeedback>
@@ -91,7 +93,7 @@ class ContactForm extends Component {
                 <Row>
                     <FormGroup className="col">
                         <Label >Message</Label>
-                        <Input type="textarea" htmlRef={this.message} name="message" invalid={errors.message} />
+                        <Input type="textarea" name="message" invalid={errors.message} />
                         <FormFeedback>{errors.message}</FormFeedback>
                     </FormGroup>
                 </Row>
