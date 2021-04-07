@@ -64,12 +64,12 @@ function Resume() {
         }) : [];
 
     return (
-        <div className="container-fluid container-lg">
+        <div className="container-fluid container-xl">
             <Row>
                 <Col xs="12" md="2" className="res-sidenav" >
                     <ResNav children={navItems} dlfile={resData.dlfile || null} title="Résumé" />
                 </Col>
-                <Col xs="12" md="10" >
+                <Col xs="12" md="10" className="res-cont" >
                     {resumeSections}
                 </Col>
             </Row>

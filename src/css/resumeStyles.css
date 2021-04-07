@@ -3,6 +3,9 @@
 .res-sec h6 {
   margin-bottom: 0;
 }
+.res-cont{
+   padding-top: 1.325em;
+}
 .res-sec > h4 {
   scroll-margin-top: 3em;
   -webkit-scroll-snap-margin-top: 3em;

@@ -1,15 +1,18 @@
 .site-footer{
     font-size: 80%;
     background-color:  rgba(59, 91, 120, 1);
+    border-top: 1px solid #ccc;
+    font-family: Rajdhani;
 }
+
 .site-footer .row > div{ margin-bottom: .675em;}
 
 .social-footer a{
     display:inline-block;
     font-size: 150%;
     margin: 0 .5em;
-
 }
+
 .social-footer {
     line-height: .01;
  }
