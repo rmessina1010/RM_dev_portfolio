@@ -7,6 +7,7 @@ import Footer from './footerComponent';
 import Resume from './resumePageComponent';
 import ContactPage from './contactForm';
 import ProjectsPage from './projectsComponent';
+import HomePage from './homeComponent';
 
 class Main extends Component {
 
@@ -15,9 +16,8 @@ class Main extends Component {
             <Container fluid className="p-0">
                 <MainNav url="/home/" children={SiteData.pages} siteName={SiteData.info.siteName} />
                 <Switch>
-                    {/* <Route exact path="/about" component={ContactForm} /> */}
+                    <Route exact path="/about" component={HomePage} />
                     <Route exact path="/projects" component={ProjectsPage} />
-                    {/* <Route exact path="/rants" component={ContactForm} /> */}
                     <Route exact path="/resume" component={Resume} />
                     <Route exact path="/contact" component={ContactPage} />
                 </Switch>
