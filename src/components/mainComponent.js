@@ -16,10 +16,11 @@ class Main extends Component {
             <Container fluid className="p-0">
                 <MainNav url="/home/" children={SiteData.pages} siteName={SiteData.info.siteName} />
                 <Switch>
-                    <Route exact path="/about" component={HomePage} />
+                    <Route exact path="/home" component={HomePage} />
                     <Route exact path="/projects" component={ProjectsPage} />
                     <Route exact path="/resume" component={Resume} />
                     <Route exact path="/contact" component={ContactPage} />
+                    <HomePage />
                 </Switch>
                 <Footer social={SiteData.social} info={SiteData.info} links={SiteData.pages} />
             </Container>
