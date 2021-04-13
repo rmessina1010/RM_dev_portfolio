@@ -1,3 +1,41 @@
 .home-page{
   font-family: Rajdhani;
 }
+
+.paralax{
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #ccc;
+}
+
+.paralax-content{
+  font-weight: 600;
+  color:#fff;
+  min-height: 50vh;
+  min-height: max(50vh, 300px);
+  padding-top:3em;
+  padding-bottom:3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn{
+  padding: .25em 1em;
+  margin:0 ;
+  border-radius: .5em;
+  border:  1px solid ;
+  color:#fff;
+  background: rgba(0,0,0,.25);
+  font-family: sans-serif;
+  }
+.inbetween{
+  padding: 3em 2em;
+  margin: 0;
+}
+
+.btn:hover{
+  background: orange;
+}
