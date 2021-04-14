@@ -1,15 +1,24 @@
+:root{
+  scroll-behavior: smooth;
+
+}
+
+
 .res-sec h4,
 .res-sec h5,
 .res-sec h6 {
   margin-bottom: 0;
 }
 .res-cont{
-   padding-top: 1.325em;
+  padding-top: 1.325em;
+
+
 }
 .res-sec > h4 {
-  scroll-margin-top: 3em;
-  -webkit-scroll-snap-margin-top: 3em;
   letter-spacing: -1px;
+   scroll-margin-top: 3.25em;
+  -webkit-scroll-snap-margin-top: 3.25em;
+
 }
 .res-sec h4,
 .res-sec h5,
