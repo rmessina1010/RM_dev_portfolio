@@ -20,7 +20,7 @@ class Main extends Component {
                     <Route exact path="/projects" component={ProjectsPage} />
                     <Route exact path="/resume" component={Resume} />
                     <Route exact path="/contact" component={ContactPage} />
-                    <HomePage />
+                    <Redirect to="/home" />
                 </Switch>
                 <Footer social={SiteData.social} info={SiteData.info} links={SiteData.pages} />
             </Container>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col, Button } from 'reactstrap';
 import { Icon } from './navigational';
 import '../css/homePageStyles.css';
-import { homeData } from '../shared/homeData';
+import homeData from '../shared/homeData';
 
 const testDeck = [
     {
@@ -138,28 +138,25 @@ function ParalaxSec(props) {
     )
 }
 export default function HomePage(props) {
-    const homeSections = [];
+    let homeSections = homeData.map(section => {
+        let clname = [];
+        if (section.clname) { clname.push(section.clname); }
+        switch (section.type) {
+            case 'deck':
+                clname.push('cardRow');
+                return <HeadDeck cards={section.cont} clname={clname} />;
+            case 'side':
+                return <SideHead head={section.head} text={section.text} clname={clname} />;
+            case 'top':
+                return <TopHead head={section.head} text={section.text} clname={clname} />;
+            case 'plax':
+                return <ParalaxSec img={section.img} imgPos={section.imgPos ? true : false} cont={section.cont} />;
+            default:
+                return null;
+        }
+    });
     return (
         <div className='home-page'>
-            <HeadDeck cards={testDeck} clname={['py-sm-5', 'cardRow']} />
-            <ParalaxSec
-                img='images/img-4.jpg'
-                imgPos={true}
-                cont={[
-                    {
-                        btnClass: 'text-center text-md-left',
-                        hed: "Test Paralax healine",
-                        cont: " Some basic lorem ipsum description. more words etc etc. Woking text and stuff more more more more etc. Something consisitng of natural looking text and spanning more than one line (by choice) and stuf. ect",
-                        btns: [
-                            {
-                                text: "fff",
-                                url: "#"
-                            }
-                        ]
-                    },
-
-                ]}
-            />
             <TopHead
                 clname={['py-5']}
                 head="Hello. Am Ray Messina and this is filler text of a longish style vervose header. things will wrk out"
