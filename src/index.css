@@ -1,5 +1,5 @@
 html{
-  background:  rgba(59, 91, 120, 1);
+  background:var(--brand-blue);
 }
 body {
   margin: 0;
@@ -13,6 +13,27 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+:root{
+--brand-blue: rgba(59, 91, 120, 1);
+--brand-blue-shade: rgba(45, 68, 90,1);
+--brand-blue-tint: rgba(59, 91, 120, .6);
+--brand-blue-tint-lite: rgba(59, 91, 120, .1);
+--brand-gray-lite :  #ccc;
+--background : #fafafa;
+--foreground : #fff;
+--shade-slight: rgba(0,0,0,.15);
+--shade: rgba(0,0,0,.25);
+--shade-med : rgba(0,0,0,.35);
+--shade-dark : rgba(0,0,0,.6);
+--tint: rgba(255,255,255,.25);
+--tint-med : rgba(255,255,255,.35);
+--tint-lite : rgba(255,255,255,.66);
+--accent: 'orange';
+--alt-brand-blue: rgba(27, 70, 125, 1);
+--alt-brand-blue-tint: rgba(27, 70, 125, 0.6);
+--badge-blue:rgba(55, 98, 105, 0.15);
 }
 
 

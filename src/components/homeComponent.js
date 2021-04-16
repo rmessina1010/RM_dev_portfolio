@@ -4,34 +4,9 @@ import { Icon } from './navigational';
 import '../css/homePageStyles.css';
 import homeData from '../shared/homeData';
 
-const testDeck = [
-    {
-        head: "A deck item",
-        text: "Projects..blah blah",
-        icon: "fa fa-house",
-    },
-    {
-        head: "Another deck item",
-        text: "Projects..blah blah",
-        icon: "fa fa-house",
-    },
-    {
-        head: "A different headline",
-        text: "Projects..blah blah",
-        icon: "fa fa-house",
-    },
-    {
-        head: "Yet another deck item",
-        text: "Projects..blah blah",
-        icon: "fa fa-house",
-    }
-
-]
-
-
-function HeadCard({ card, count }) {
-    let sm = count ? "12" : "6";
-    let md = count ? "4" : "3";
+function HeadCard({ card, odd }) {
+    let sm = odd ? "12" : "6";
+    let md = odd ? "4" : "3";
     let icon = card.icon ? (card.ilink ? <a href={card.ilink}><Icon icon={card.icon} /></a> : <Icon icon={card.icon} />) : null;
 
     let headline = card.head ? <h4>{card.link ? (<a href={card.link}>{card.head}</a>) : card.head}</h4> : null;
@@ -45,8 +20,12 @@ function HeadCard({ card, count }) {
     );
 }
 
-function HeadDeck(props) {
-    let cards = Array.isArray(props.cards) ? props.cards.map(card => <HeadCard card={card} />) : null;
+export function HeadDeck(props) {
+    let cards = [];
+    if (Array.isArray(props.cards)) {
+        let isOdd = !(props.cards.length % 2 === 0)
+        cards = props.cards.map(card => <HeadCard card={card} odd={isOdd} />);
+    }
     return cards.length > 1 ? (
         <div className="head-deck-wrap">
             <Container fluid='xl'>
@@ -60,7 +39,7 @@ function HeadDeck(props) {
 }
 
 
-function SideHead(props) {
+export function SideHead(props) {
     return (
         <div className="head-deck-wrap">
             <Container fluid='xl'>
@@ -75,7 +54,7 @@ function SideHead(props) {
     )
 }
 
-function TopHead(props) {
+export function TopHead(props) {
     return (
         <div className="head-deck-wrap">
             <Container fluid='xl'>
@@ -91,7 +70,7 @@ function TopHead(props) {
     )
 }
 
-function ParalaxSec(props) {
+export function ParalaxSec(props) {
     let style = {};
     let wrapStyle = {};
     let pclass = props.pclass || '';

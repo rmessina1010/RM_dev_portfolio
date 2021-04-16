@@ -1,6 +1,6 @@
 .site-footer{
     font-size: 80%;
-    background-color:  rgba(59, 91, 120, 1);
+    background-color:  var(--brand-blue);
     border-top: 1px solid #ccc;
     font-family: Rajdhani;
 }

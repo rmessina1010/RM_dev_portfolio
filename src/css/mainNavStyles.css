@@ -1,12 +1,12 @@
 .navbar-wrap{
   font-family: Rajdhani;
-  background-color:  rgba(59, 91, 120, 1);
-  border-bottom: 1px solid #000;
+  background-color:  var(--brand-blue);
+  border-bottom: 1px solid var(--shade-dark);
 }
 .navbar-wrap .nav-link{
    font-weight: 600;
 }
 
 .navbar-wrap .nav-link:hover{
-   background-color: rgba(0,0,0,.15);
+   background-color: var(--shade-slight);
 }

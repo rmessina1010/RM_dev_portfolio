@@ -32,22 +32,22 @@ const homeData = [
             {
                 head: "An external item",
                 text: "Projects..blah blah",
-                icon: "fa fa-house",
+                icon: "fa fa-home",
             },
             {
                 head: "Another external item",
                 text: "Projects..blah blah",
-                icon: "fa fa-house",
+                icon: "fa fa-home",
             },
             {
                 head: "A different headline",
                 text: "Projects..external...blah blah",
-                icon: "fa fa-house",
+                icon: "fa fa-home",
             },
             {
                 head: "Yet another external item",
                 text: "Projects..blah blah",
-                icon: "fa fa-house",
+                icon: "fa fa-home",
             }
         ]
     },

@@ -28,7 +28,7 @@ export function ResNav(props) {
 
     return (
         <div className="resnav position-sticky clearfix">
-            {props.title ? <h3 className="float-left float-md-none mt-3">{props.title}</h3> : null}
+            {props.title ? <h2 className="float-left float-md-none mt-3">{props.title}</h2> : null}
             <Nav className="navList  d-none d-md-block position-sticky mr-lg-1 mr-xl-3 mb-3" vertical tag="ul">
                 {props.children}
             </Nav>

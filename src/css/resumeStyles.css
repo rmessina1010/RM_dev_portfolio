@@ -1,8 +1,11 @@
 :root{
   scroll-behavior: smooth;
-
 }
 
+.resnav h2{
+  font-size: 175%;
+  text-shadow: 1px 1px 0 #fff;
+}
 
 .res-sec h4,
 .res-sec h5,
@@ -11,15 +14,14 @@
 }
 .res-cont{
   padding-top: 1.325em;
-
-
 }
+
 .res-sec > h4 {
   letter-spacing: -1px;
-   scroll-margin-top: 3.25em;
+  scroll-margin-top: 3.25em;
   -webkit-scroll-snap-margin-top: 3.25em;
-
 }
+
 .res-sec h4,
 .res-sec h5,
 .res-sec .employer {
@@ -39,16 +41,16 @@
 .res-sec .award-list > li:before,
 .res-sec .statement > strong,
 .badges > span {
-  color: rgba(27, 70, 125, 1);
+  color: var(--brand-blue);
 }
 .res-sec .dates {
-  color: rgba(0, 0, 0, 0.6);
+  color:var(--shade-dark);
 }
 .res-sec .stack {
-  color: rgba(27, 70, 125, 0.6);
+  color: var(--brand-blue-tint);
 }
 .res-sec .employer {
-  color: rgba(0, 0, 0, 0.35);
+  color: var(--shade-med);
 }
 
 /*--type colors--*/
@@ -131,10 +133,10 @@ li.badges.col-6 {
 .badges > span {
   font-weight: 700;
   border-radius: 3px;
-  background: rgba(55, 98, 105, 0.15);
+  background: var(--badge-blue);
   padding: 0.125em 0.67em;
   margin: 0.5em 0;
-  text-shadow: 0 1px rgba(255, 255, 255, 0.65);
+  text-shadow: 0 1px var(--tint-lite);
   display: block;
 }
 .job-des-list {
@@ -157,8 +159,8 @@ li.badges.col-6 {
 
 /*Resume navigation*/
 .res-sidenav {
-  background: rgba(55, 98, 105, 0.15);
-  border-left: 1px solid  rgba(55, 98, 105, 0.15);
+  background: var(--badge-blue);
+  border-left: 1px solid  var(--badge-blue);
 }
 .resnav{
   font-size: 90%;
@@ -174,13 +176,18 @@ li.badges.col-6 {
  }
 
 .navList a {
-  color:rgba(27, 70, 125, 1);
+  color:var(--brand-blue);
   background-color:#fff;
   padding-top:.375em;
   padding-bottom:.375em;
 }
 
-.navList a:hover{ color:#fff; background:  rgba(27, 70, 125, 1); font-weight: bold;}
+.navList a:hover{
+  color:#fff;
+  background:  var(--brand-blue);
+  font-weight: bold;
+}
+
 .navList li + li{
 	border-top:1px solid #ccc;
 }
