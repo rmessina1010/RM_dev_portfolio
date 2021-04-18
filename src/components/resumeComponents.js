@@ -81,7 +81,7 @@ export function JobHighlightsList(props) {
 
 export function ProjectList(props) {
     let items = Array.isArray(props.items) ? props.items.map(item => (
-        <li >
+        <li key={item.id}>
             <h5>{item.link ?
                 <a href={item.link} target="_blank" rel="noreferrer">{item.name}</a>
                 : item.name

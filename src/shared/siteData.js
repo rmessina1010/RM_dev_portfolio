@@ -26,7 +26,7 @@ const SiteData = {
 		},
 		{
 			id: 3,
-			text: "Resume",
+			text: "Résumé",
 			icon: "fa fa-house",
 			url: "/resume",
 			include: [],

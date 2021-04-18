@@ -14,7 +14,7 @@ class validator {
 
     isValidEmail = email => { return /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(email); }
 
-    isValidAddress = str => { return /^#?[\d-]+\s[\w\d\s-_#\.]+$/.test(str); }
+    isValidAddress = str => { return /^#?[\d-]+\s[\w\d\s-_#.]+$/.test(str); }
 
     isValidZip = str => { return /^\d{5}(?:-\d{4})?$/.test(str); }
 

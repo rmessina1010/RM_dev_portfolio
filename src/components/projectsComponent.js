@@ -16,8 +16,8 @@ export function ProjectCard(props) {
         </Col>)
         : null;
     let viewButtons = Array.isArray(proj.links) ? proj.links.map(link => (<Button href={link.url} disabled={link.disabled || null} className="mr-2 mb-2">{link.text}</Button>)) : null;
-    return props.proj ? (
-        <Card tag={cardTag} className="proj-card" >
+    return proj ? (
+        <Card tag={cardTag} className="proj-card" key={proj.id}>
             <CardHeader className="proj-card-hed">
                 <CardTitle tag="h3" >{proj.name}</CardTitle>
             </CardHeader>

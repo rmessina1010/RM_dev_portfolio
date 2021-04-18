@@ -1,3 +1,5 @@
+import projects from './projectList';
+
 export const CURRENT_DATE = new Date();
 const resData = {
     dlfile: {
@@ -60,8 +62,8 @@ const resData = {
     ],
 
     summary: {
-        em: 'ohai.',
-        text: 'a sumary string lorem ipsum'
+        em: 'Full Stack Web developer, with extensive experience in Marketing and Communications.  A coder who designs and a designer who codes.',
+        text: 'Demonstrated ability to translate client ideas into functioning reality. Has passion for learning and well-honed trouble shooting and problem solving skills. A strategic and conceptual thinker with a balanced of mix of creative talent and technical know how. Leads by example with an easy-going manner and builds trust by sharing knowledge, vision and experience with colleagues.'
     },
     skills: {
         codes: [
@@ -90,6 +92,7 @@ const resData = {
             { name: 'Lightroom' },
             { name: 'Illustrator' },
             { name: 'Xd' },
+            { name: 'REST APIs' },
             { name: 'DreamWeaver' },
             { name: 'Word' },
             { name: 'Powerpoint' },
@@ -142,58 +145,44 @@ const resData = {
             location: 'Madison, WI',
             highlighs: [
                 'Oversaw the design and development of corporate(HyCite.com) and customer (RoyalPrestige.com) websites; provided art direction, wire framing and information architecture',
-                'Oversaw the design and development of corporate(HyCite.com) and customer (RoyalPrestige.com) websites; provided art direction, wire framing and information architecture',
-                'Oversaw the design and development of corporate(HyCite.com) and customer (RoyalPrestige.com) websites; provided art direction, wire framing and information architecture'
+                'Oversaw the design and development of recruiting website (OportunidadRoyal.com); provided art direction, wire framing, WordPress.org child theme, lead generation forms, and API',
+                'Set up and customized a customer-facing blog using Wordpress.com'
             ]
         },
         {
-            employer: 'Rockford Register' + String.fromCharCode(160) + 'Star',
-            title: 'Marketing Graphic' + String.fromCharCode(160) + 'Designer',
-            showDesc: false,
-            desc: null,
-            startDate: new Date(1998, 8, 28, 0, 0, 0, 0),
-            endDate: new Date(2008, 7, 20, 0, 0, 0, 0),
-            location: 'Rockford, IL',
-            highlighs: []
-        },
-        {
-            employer: 'Fat Wallet',
-            title: 'Web Designer',
-            showDesc: false,
-            desc: null,
-            startDate: new Date(2008, 9, 13, 0, 0, 0, 0),
-            endDate: new Date(2012, 4, 25, 0, 0, 0, 0),
-            location: 'Rockford, IL',
-            highlighs: []
-        },
-        {
-            employer: 'DazzleFish',
+            employer: 'DAZZLEFISH' + String.fromCharCode(160) + '/ MUNDANE' + String.fromCharCode(160) + 'EGG',
             title: 'Art Director',
             showDesc: false,
             desc: null,
-            startDate: new Date(2002, 2, 5, 0, 0, 0, 0),
-            endDate: new Date(2013, 10, 10, 0, 0, 0, 0),
+            startDate: new Date(2001, 1, 28, 0, 0, 0, 0),
+            endDate: new Date(2013, 10, 11, 0, 0, 0, 0),
             location: 'Rockford, IL',
-            highlighs: []
-        }
-
-
-    ],
-    projs: [
-        {
-            link: null,
-            name: ' Kupboard / Kupboard Server',
-            desc: 'Full stack web app that provides small individual food pantries a platform to communicate their inventory, requested items, schedules, and announcements.Implements JWT to manage accounts and authentication.',
-            stack: 'React, BootStrap, MongoDB, Express, Passport(JWT Auth)'
+            highlighs: [
+                'Designed website for NobiumGeneralContractors,Escondido,CA',
+                'Designed website for Nemrac Translation Services, Rochester, NY'
+            ]
         },
         {
-            link: null,
-            name: ' Kupboard / Kupboard Server',
-            desc: 'Full stack web app that provides small individual food pantries a platform to communicate their inventory, requested items, schedules, and announcements.Implements JWT to manage accounts and authentication.',
-            stack: 'React, BootStrap, MongoDB, Express, Passport(JWT Auth)'
+            employer: 'ROCKFORD REGISTER' + String.fromCharCode(160) + 'STAR (GANNETT)',
+            title: 'Marketing Graphic Designer',
+            showDesc: false,
+            desc: null,
+            startDate: new Date(2008, 7, 20, 0, 0, 0, 0),
+            endDate: new Date(1998, 8, 28, 0, 0, 0, 0),
+            location: 'Rockford, IL',
+            highlighs: [
+                'Project managed recruitment and promotional campaigns,including the re-branding of the Register Star’s classifieds section—The Source',
+                'Eliminated billing redundancies, reducing lineage expenses by 34%'
+            ]
         }
-
     ]
 };
+let resProjs = projects.filter(proj => proj.inRes);
 
+resData.projs = resProjs.map(proj => {
+    let link = null;
+    return { id: proj.id, link: link, name: proj.name, desc: (proj.resDesc || proj.desc), stack: proj.stack.join(', ') }
+}
+);
+console.log(resData.projs);
 export default resData;
