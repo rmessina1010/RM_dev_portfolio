@@ -6,8 +6,8 @@ import '../css/projectStyles.css';
 export function ProjectCard(props) {
     let cardTag = props.cardTag || 'div';
     let proj = props.proj;
-    let stackItems = Array.isArray(proj.stack) ? proj.stack.map(item => (<li>{item}</li>)) : null;
-    let roleList = Array.isArray(proj.roles) ?
+    let stackItems = Array.isArray(proj.stack) && proj.stack.length ? proj.stack.map(item => (<li>{item}</li>)) : null;
+    let roleList = Array.isArray(proj.roles) && proj.roles.length ?
         (<Col xs="12" lg="6">
             <h5>Role</h5>
             <ul className="proj-stack">
@@ -15,7 +15,7 @@ export function ProjectCard(props) {
             </ul>
         </Col>)
         : null;
-    let viewButtons = Array.isArray(proj.links) ? proj.links.map(link => (<Button href={link.url} disabled={link.disabled || null} className="mr-2 mb-2">{link.text}</Button>)) : null;
+    let viewButtons = Array.isArray(proj.links) ? proj.links.map(link => (<Button href={link.url} disabled={link.disabled || null} target='_new' className="mr-2 mb-2">{link.text}</Button>)) : null;
     return proj ? (
         <Card tag={cardTag} className="proj-card" key={proj.id}>
             <CardHeader className="proj-card-hed">
@@ -26,7 +26,7 @@ export function ProjectCard(props) {
                     <Col xs="12" md="5" lg="4">
                         <CardImg src={proj.thumb} />
                         <div className="d-none d-md-block text-center">
-                            <h5>View</h5>
+                            <h5 className="ml-0">View</h5>
                             <nav className="proj-view">
                                 {viewButtons}
                             </nav>
