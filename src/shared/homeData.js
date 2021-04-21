@@ -30,24 +30,24 @@ const homeData = [
         type: "deck",
         cont: [
             {
-                head: "An external item",
+                head: "UI/UX",
                 text: "Projects..blah blah",
                 icon: "fa fa-home",
             },
             {
-                head: "Another external item",
+                head: "Web Development",
                 text: "Projects..blah blah",
-                icon: "fa fa-home",
+                icon: "fas fa-code",
             },
             {
-                head: "A different headline",
+                head: "Graphic Design",
                 text: "Projects..external...blah blah",
-                icon: "fa fa-home",
+                icon: "fas fa-pencil-ruler",
             },
             {
                 head: "Yet another external item",
                 text: "Projects..blah blah",
-                icon: "fa fa-home",
+                icon: "fa fa-database",
             }
         ]
     },

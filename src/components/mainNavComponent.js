@@ -24,9 +24,16 @@ class MainNav extends Component {
         if (this.props.children && this.props.children.forEach) {
             this.props.children.forEach((child) => {
                 if ((child.include.indexOf("main") < 0 && child.include.length) || child.exclude.indexOf("main") > -1) { return; }
+                let mailFoo = null;
+                if (child.url.substr(0, 7) === 'mailto:') {
+                    mailFoo = e => {
+                        window.location = child.url;
+                        e.preventDefault();
+                    }
+                }
                 items.push(
                     <NavItem key={'mainNavItem' + child.id}  >
-                        <NavLink to={child.url} active={child.url === this.props.url} className="nav-link px-3 px-sm-2 rounded-sm" >{child.text}</NavLink>
+                        <NavLink to={child.url} onClick={mailFoo} active={child.url === this.props.url} className="nav-link px-3 px-sm-2 rounded-sm" >{child.text}</NavLink>
                     </NavItem>
                 );
             });

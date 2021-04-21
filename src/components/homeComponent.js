@@ -12,7 +12,7 @@ function HeadCard({ card, odd }) {
     let headline = card.head ? <h4>{card.link ? (<a href={card.link}>{card.head}</a>) : card.head}</h4> : null;
     let blurb = card.text ? <p dangerouslySetInnerHTML={{ __html: card.text }} /> : null;
     return (
-        <Col xs="12" sm={sm} md={md} key={card.id} className="text-center">
+        <Col xs="12" sm={sm} md={md} key={card.id} className="text-center pb-4">
             {icon}
             {headline}
             {blurb}

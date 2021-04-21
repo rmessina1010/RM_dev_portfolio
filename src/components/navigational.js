@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 class IconLink extends Component {
     render() {
-        return (this.props.href.substr(0, 4) === 'http') ?
+        return (this.props.href.substr(0, 4) === 'http' || this.props.href.substr(0, 7) === 'mailto:') ?
             (<a key={this.props.key} href={this.props.href}  {...this.props.attrs}>{this.props.childBef}<i className={this.props.icon.icon} {...this.props.icon.attrs} />{this.props.childAft}</a>)
             : (<NavLink key={this.props.key} to={this.props.href} {...this.props.attrs}>{this.props.childBef}<i className={this.props.icon.icon} {...this.props.icon.attrs} />{this.props.childAft}</NavLink>);
     }
@@ -12,7 +12,7 @@ class IconLink extends Component {
 
 class AnchorLink extends Component {
     render() {
-        return (this.props.href.substr(0, 4) === 'http') ?
+        return (this.props.href.substr(0, 4) === 'http' || this.props.href.substr(0, 7) === 'mailto:') ?
             (<a key={this.props.key} href={this.props.href} {...this.props.attrs}>
                 {this.props.children}
             </a>)

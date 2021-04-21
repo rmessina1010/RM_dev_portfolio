@@ -1,11 +1,13 @@
+const myEmail = 'ray@maymessinadesign.com';
+const mySite = 'dev.raymessinadesign.com';
 const SiteData = {
 	url: 'webdev.raymessinadesign.com',
 	info: {
 		copyright: 2020,
 		siteName: 'Ray Messina Web Dev',
 		author: 'Ray Messina Design',
-		authorURL: 'webdev.raymessinadesign.com',
-		email: 'ray@maymessinadesign.com'
+		authorURL: mySite,
+		email: myEmail
 	},
 	pages: [
 		{
@@ -38,13 +40,13 @@ const SiteData = {
 			icon: "fa fa-house",
 			url: "/rants",
 			include: [],
-			exclude: ['main']
+			exclude: ['main', 'footer']
 		},
 		{
 			id: 5,
 			text: "Contact",
 			icon: "fa fa-house",
-			url: "/contact",
+			url: "mailto:" + myEmail,
 			include: [],
 			exclude: []
 		},
@@ -53,7 +55,7 @@ const SiteData = {
 		{
 			id: 1,
 			title: 'contact',
-			url: '/contact',
+			url: "mailto:" + myEmail,
 			icon: 'fa fa-envelope'
 		},
 
