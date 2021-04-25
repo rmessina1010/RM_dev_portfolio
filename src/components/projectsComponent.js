@@ -23,16 +23,16 @@ export function ProjectCard(props) {
             </CardHeader>
             <CardBody>
                 <Row>
-                    <Col xs="12" md="5" lg="4">
+                    <Col xs="12" sm="5" lg="4">
                         <CardImg src={proj.thumb} />
-                        <div className="d-none d-md-block text-center">
+                        <div className="d-none d-sm-block text-center">
                             <h5 className="ml-0">View</h5>
                             <nav className="proj-view">
                                 {viewButtons}
                             </nav>
                         </div>
                     </Col>
-                    <Col xs="12" md="7" lg="8">
+                    <Col xs="12" sm="7" lg="8">
                         <div className="proj-desc" dangerouslySetInnerHTML={{ __html: proj.desc }} />
                         <Row>
                             <Col xs="12" lg={roleList ? "6" : null}>
@@ -44,7 +44,7 @@ export function ProjectCard(props) {
                             {roleList}
                         </Row>
                     </Col>
-                    <Col xs="12" className="d-block d-md-none">
+                    <Col xs="12" className="d-block d-sm-none">
                         <h5>View</h5>
                         <nav className="proj-view">
                             {viewButtons}
@@ -71,7 +71,7 @@ function ProjectsPage(props) {
     return (
         <div className="proj-page" >
             <div className="page-title">
-                <Container fluid='xl'><h2>Projects</h2></Container>
+                <Container fluid='xl' className="px-2  px-xl-3 "><h2>Projects</h2></Container>
             </div>
             <ProjectDeck tag={props.tag} projs={projectData} />
         </div>

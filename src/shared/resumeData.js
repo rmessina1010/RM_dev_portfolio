@@ -3,8 +3,8 @@ import projects from './projectList';
 export const CURRENT_DATE = new Date();
 const resData = {
     dlfile: {
-        url: '../filepath/file.pdf',
-        name: 'RM_resume.pdf',
+        url: 'downloads/Ray_Messina_FULL_STACK_DEVELOPER.pdf',
+        name: 'Ray_Messina_FULL_STACK_DEVELOPER.pdf',
         text: 'PDF'
     },
     sections: [

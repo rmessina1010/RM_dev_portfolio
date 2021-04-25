@@ -48,9 +48,8 @@ const projectData =
             roles: [],
             links: [
                 {
-                    url: '#',
-                    text: SOON,
-                    disabled: true
+                    url: 'https://kupboard.netlify.app',
+                    text: DEMO,
                 },
                 {
                     url: 'https://github.com/rmessina1010/Kupboard_react',
@@ -60,7 +59,6 @@ const projectData =
                 {
                     url: 'https://github.com/rmessina1010/kupboardServer',
                     text: GH + ': Server',
-
                 }
 
             ]
