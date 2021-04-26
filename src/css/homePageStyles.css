@@ -12,7 +12,6 @@
 
 .paralax-content{
   font-weight: 600;
-  color:#fff;
   min-height: 50vh;
   min-height: max(50vh, 300px);
   padding-top:3em;
@@ -20,16 +19,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color:#fff;
 }
 
-.paralax .btn{
+.paralax .hero-btn{
   padding: .25em 1em;
-  margin:0 ;
+  margin:.5em ;
   border-radius: .5em;
   border:  1px solid ;
-  color:#fff;
+  color:inherit;
   background: var(--tint);
   font-family: sans-serif;
+
   }
 
 .inbetween{
@@ -45,4 +46,37 @@
   font-size: 2.3em;
   margin-bottom: .3em;
   color:  var(--shade);
+}
+
+.paralax.tint-sec, .paralax.shade-sec{
+  position: relative;
+}
+.paralax.tint-sec{
+  color:#000;
+}
+
+.paralax.shade-sec{
+  color:#fff;
+}
+.paralax.tint-sec:before, .paralax.shade-sec:before{
+  content:'';
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left:0;
+  right: 0;
+}
+
+.paralax.tint-sec:before {
+  background-color:var(--tint-med);
+ }
+.paralax.shade-sec:before {
+  background-color:var(--shade-med);
+}
+
+.paralax.tint-sec .paralax-content {
+  color:#000;
+}
+.paralax.shade-sec .paralax-content {
+  color:#fff;
 }

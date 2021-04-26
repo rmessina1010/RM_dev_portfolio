@@ -77,22 +77,23 @@ export function ParalaxSec(props) {
     let wrapParalax = '';
     let rowParalax = '';
     let colSet;
+    let tinter = (props.tint === 'tint' || props.tint === 'shade') ? props.tint + '-sec' : '';
 
     if (props.img) {
         if (props.imgPos) {
             wrapStyle.backgroundImage = 'url("' + props.img + '")';
-            wrapParalax = ' praralax '
+            wrapParalax = ' paralax ' + tinter;
         }
         else {
             style.backgroundImage = 'url("' + props.img + '")';
-            rowParalax = ' praralax '
+            rowParalax = ' paralax ' + tinter;
 
         }
     }
     if (Array.isArray(props.cont)) {
         let lg = props.cont.length === 1 && props.lg ? props.lg : ''
         colSet = props.cont.map(part => (
-            <Col xs='12' md='' lg={lg} >
+            <Col xs='12' md='' lg={lg} className={part.colClass}>
                 {part.hed ? <h2 className={"hero-hed " + (part.hedClass || '')}>{part.hed}</h2> : null}
                 {part.sub ? <h3 className={"hero-sub " + (part.subClass || '')}>{part.sub}</h3> : null}
                 {part.cont ? <p className={"hero-desc " + (part.contClass || '')} dangerouslySetInnerHTML={{ __html: part.cont }} /> : null}
@@ -107,7 +108,7 @@ export function ParalaxSec(props) {
     }
 
     return (
-        <div className={"head-deck-wrap paralax" + wrapParalax} style={wrapStyle}>
+        <div className={"head-deck-wrap" + wrapParalax} style={wrapStyle}>
             <Container fluid='xl'>
                 <Row className={'paralax-content' + rowParalax + pclass} style={style} >
                     <Col xs="12" sm="10" md="10" className="row  px-sm-0 justify-content-center" >{colSet}</Col>
@@ -129,7 +130,7 @@ export default function HomePage(props) {
             case 'top':
                 return <TopHead head={section.head} text={section.text} clname={clname} />;
             case 'plax':
-                return <ParalaxSec img={section.img} imgPos={section.imgPos ? true : false} cont={section.cont} />;
+                return <ParalaxSec img={section.img} imgPos={section.imgPos ? true : false} cont={section.cont} tint={section.tint} />;
             default:
                 return null;
         }
