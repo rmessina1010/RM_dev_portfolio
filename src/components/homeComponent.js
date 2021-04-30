@@ -4,15 +4,18 @@ import { Icon } from './navigational';
 import '../css/homePageStyles.css';
 import homeData from '../shared/homeData';
 
-function HeadCard({ card, odd }) {
-    let sm = odd ? "12" : "6";
-    let md = odd ? "4" : "3";
+function HeadCard({ card, odd, grid }) {
+    if (!grid) {
+        let sm = odd ? "12" : "6";
+        let md = odd ? "4" : "3";
+        grid = { xs: "12", sm, md }
+    }
     let icon = card.icon ? (card.ilink ? <a href={card.ilink}><Icon icon={card.icon} /></a> : <Icon icon={card.icon} />) : null;
 
     let headline = card.head ? <h4>{card.link ? (<a href={card.link}>{card.head}</a>) : card.head}</h4> : null;
     let blurb = card.text ? <p dangerouslySetInnerHTML={{ __html: card.text }} /> : null;
     return (
-        <Col xs="12" sm={sm} md={md} key={card.id} className="text-center pb-4">
+        <Col   {...grid} key={card.id} className="text-center pb-4">
             {icon}
             {headline}
             {blurb}
@@ -24,13 +27,15 @@ export function HeadDeck(props) {
     let cards = [];
     if (Array.isArray(props.cards)) {
         let isOdd = !(props.cards.length % 2 === 0)
-        cards = props.cards.map(card => <HeadCard card={card} odd={isOdd} />);
+        cards = props.cards.map(card => <HeadCard card={card} odd={isOdd} grid={props.grid} />);
     }
+    let clssName = (props.clname || '') + (!props.ogrid ? ' justify-content-center' : '');
+    let outerGrid = props.ogrid || { xs: '12', sm: '8', md: '10' };
     return cards.length > 1 ? (
         <div className="head-deck-wrap">
             <Container fluid='xl'>
-                <Row className={props.clname}>
-                    <Col xs="12" sm="8" md="10" className="row offset-sm-2 offset-md-1 px-sm-0" >{cards}</Col>
+                <Row className={clssName}>
+                    <Col {...outerGrid} className="row px-sm-0" >{cards}</Col>
                 </Row>
             </Container>
         </div>
@@ -119,12 +124,12 @@ export function ParalaxSec(props) {
 }
 export default function HomePage(props) {
     let homeSections = homeData.map(section => {
-        let clname = [];
-        if (section.clname) { clname.push(section.clname); }
+        let clname = '';
+        if (section.clname) { clname = section.clname; }
         switch (section.type) {
             case 'deck':
-                clname.push('cardRow');
-                return <HeadDeck cards={section.cont} clname={clname} />;
+                clname += ' cardRow';
+                return <HeadDeck cards={section.cont} clname={clname} ogrid={section.ogrid} grid={section.grid} />;
             case 'side':
                 return <SideHead head={section.head} text={section.text} clname={clname} />;
             case 'top':
@@ -137,11 +142,6 @@ export default function HomePage(props) {
     });
     return (
         <div className='home-page'>
-            <TopHead
-                clname={['py-5']}
-                head="Hello. Am Ray Messina and this is filler text of a longish style vervose header. things will wrk out"
-                text="lorem ipsum...I am passionate about building excellent software that improves the lives of those around me. I specialize in creating software for clients ranging from individuals and small-businesses all the way to large enterprise corporations. What would you do if you had a software expert available at your fingertips?"
-            />
             {homeSections}
         </div>
     )

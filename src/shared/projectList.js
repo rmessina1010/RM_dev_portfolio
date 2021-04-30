@@ -98,11 +98,11 @@ const projectData =
             roles: [],
             links: [
                 {
-                    url: 'sharhttp://sharelist.raymessinadesign.com',
+                    url: 'http://sharelist.raymessinadesign.com',
                     text: DEMO,
                 },
                 {
-                    url: 'https://github.com/rmessina1010/sharelist',
+                    url: 'https://github.com/rmessina1010/shareList',
                     text: GH,
 
                 }

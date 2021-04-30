@@ -8,29 +8,30 @@
   background-attachment: fixed;
   background-size: cover;
   background-color: var(--brand-gray-lite);
+  min-height: max(60vh, 300px);
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
 }
 
 .paralax-content{
   font-weight: 600;
-  min-height: 50vh;
-  min-height: max(50vh, 300px);
   padding-top:3em;
   padding-bottom:3em;
   display: flex;
   align-items: center;
   justify-content: center;
-  color:#fff;
-}
+ }
 
 .paralax .hero-btn{
   padding: .25em 1em;
   margin:.5em ;
   border-radius: .5em;
-  border:  1px solid ;
-  color:inherit;
-  background: var(--tint);
-  font-family: sans-serif;
-
+  color:var(--btn-color);
+  border:  2px solid var(--btn-bg);
+  background: var(--btn-bg);
+  text-shadow: none;
+  font-weight: 600;
   }
 
 .inbetween{
@@ -39,25 +40,44 @@
 }
 
 .paralax .btn:hover{
-  background: var(--accent);
+  background: var(--btn-hover);
+  color: var(--btn-hov-color);
 }
 
-.head-deck-wrap .fa, .head-deck-wrap .fas{
+.head-deck-wrap .fa, .head-deck-wrap .fas, .head-deck-wrap .fab{
   font-size: 2.3em;
   margin-bottom: .3em;
   color:  var(--shade);
 }
 
+.head-deck-wrap .fab{
+  font-weight: 700;
+}
+.paralax .hero-sub{
+  color:var(--hilite)
+}
+
+.paralax { font-size: 120%;
+  --btn-bg:var(--hilite);
+  --btn-color:var(--brand-blue-shade);
+  --btn-hover: var(--shade-dark);
+  --btn-hov-color:#fff;
+  --hilite:rgb(255, 153, 0);
+
+}
 .paralax.tint-sec, .paralax.shade-sec{
   position: relative;
 }
-.paralax.tint-sec{
-  color:#000;
+.paralax, .paralax.tint-sec{
+  color:var(--brand-blue-shade);
+  text-shadow:0 0 3px #fff;
 }
 
 .paralax.shade-sec{
   color:#fff;
+  text-shadow:0 0 3px #000;
 }
+
 .paralax.tint-sec:before, .paralax.shade-sec:before{
   content:'';
   position: absolute;
@@ -67,16 +87,19 @@
   right: 0;
 }
 
-.paralax.tint-sec:before {
-  background-color:var(--tint-med);
- }
-.paralax.shade-sec:before {
-  background-color:var(--shade-med);
+.paralax .hero-hed{
+   font-weight: bold;
+   font-size: 200%;
 }
 
-.paralax.tint-sec .paralax-content {
-  color:#000;
+.paralax .hero-hed,.paralax .hero-sub, .paralax .hero-desc{
+   text-shadow: 0 0px 4px var(--text-shad);
 }
-.paralax.shade-sec .paralax-content {
-  color:#fff;
+
+.paralax.tint-sec:before {
+  background-color:var(--tint-lite);
+ }
+.paralax.shade-sec:before {
+  background-color:var(--shade-dark);
 }
+

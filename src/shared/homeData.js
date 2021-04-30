@@ -1,19 +1,26 @@
 const homeData = [
+
     {
         type: 'plax',
         tint: 'shade',
-        img: 'images/img-4.jpg',
+        img: 'images/img-6.jpg',
         imgPos: true,
         cont:
             [
                 {
+                    hed: "Hello, am" + String.fromCharCode(160) + "Ray" + String.fromCharCode(160) + "Messina,",
+                    sub: "Full Stack Web Developper and" + String.fromCharCode(160) + "Designer.",
+                    hedClass: 'text-center ',
+                    subClass: 'text-center ',
+                },
+                {
                     colClass: 'text-center text-md-left',
                     btnClass: 'text-center text-md-left',
-                    hed: "Test Paralax headline",
-                    cont: " Some basic lorem ipsum description. more words etc etc. Woking text and stuff more more more more etc. Something consisitng of natural looking text and spanning more than one line (by choice) and stuf. ect",
+
+                    cont: "Some basic lorem ipsum description. more words etc etc. Woking text and stuff more more more more etc. Something consisitng of natural looking text and spanning more than one line (by choice) and stuf. ect",
                     btns: [
                         {
-                            text: "Check Out My Projects!",
+                            text: "My Projects",
                             url: "/projects"
                         },
                         {
@@ -22,7 +29,7 @@ const homeData = [
                         }
 
                     ]
-                }, {}
+                }
 
             ]
 
@@ -33,29 +40,105 @@ const homeData = [
         text: "lorem ipsum with link from external data file. <a href='#'>test link.</a>",
         clname: "py-4"
     },
+
+    {
+        type: 'plax',
+        tint: 'shade',
+        img: 'images/img-9.jpg',
+        imgPos: true,
+        cont:
+            [
+                {
+                    hed: "Hello, am Ray. Full Stack Web Developer and Designer",
+                    hedClass: 'text-center pt-4',
+                    colClass: 'text-center  ',
+                    btnClass: 'text-center ',
+
+                    cont: " Some basic lorem ipsum description. more words etc etc. Woking text and stuff more more more more etc. Something consisitng of natural looking text and spanning more than one line (by choice) and stuf. ect",
+                    btns: [
+                        {
+                            text: "Let's Build Something",
+                            url: "mailto:ray@raymessinadesign.com"
+                        }
+
+                    ]
+                }
+
+            ]
+
+    },
+
+    {
+        type: "top",
+        head: "Headline from External data file lorem ipsum longeer text",
+        text: "lorem ipsum with link from external data file. <a href='#'>test link.</a>",
+        clname: "py-4"
+    },
     {
         type: "deck",
+        grid: { xs: '6', sm: '4', md: '3', lg: '2' },
+        ogrid: { lg: '10' },
+        clname: " justify-content-center",
         cont: [
             {
-                head: "Front End & UI/UX",
-                text: "Projects..blah blah",
-                icon: "fa fa-home",
+                head: "React",
+                text: null,
+                icon: "fab fa-react",
             },
             {
-                head: "Web Development",
-                text: "Projects..blah blah",
-                icon: "fas fa-code",
+                head: "NodeJS",
+                text: null,
+                icon: "fab fa-node",
             },
             {
-                head: "Art Direction & Design",
-                text: "Projects..external...blah blah",
-                icon: "fas fa-pencil-ruler",
+                head: "Javascript",
+                text: null,
+                icon: "fab fa-js",
             },
             {
-                head: "Yet another external item",
-                text: "Projects..blah blah",
-                icon: "fa fa-database",
-            }
+                head: "SQL",
+                text: null,
+                icon: "fas fa-database",
+            },
+            {
+                head: "MongoDB",
+                text: null,
+                icon: "fas fa-leaf",
+            },
+            {
+                head: "PHP",
+                text: null,
+                icon: "fab fa-php",
+            },
+
+            {
+                head: "Sass",
+                text: null,
+                icon: "fab fa-sass",
+            },
+            {
+                head: "Bootstrap",
+                text: null,
+                icon: "fab fa-bootstrap",
+            },
+            {
+                head: "WordPress",
+                text: null,
+                icon: "fab fa-wordpress",
+            },
+            {
+                head: "HTML",
+                text: null,
+                icon: "fab fa-html5",
+            },
+            {
+                head: "CSS",
+                text: null,
+                icon: "fab fa-css3-alt",
+            },
+
+
+
         ]
     },
 

@@ -2,6 +2,7 @@
   font-family: Rajdhani;
   background-color:  var(--brand-blue);
   border-bottom: 1px solid var(--shade-dark);
+  box-shadow: 0 1px 0 var(--tint-med);
 }
 .navbar-wrap .nav-link{
    font-weight: 600;
@@ -10,3 +11,4 @@
 .navbar-wrap .nav-link:hover{
    background-color: var(--shade-slight);
 }
+
