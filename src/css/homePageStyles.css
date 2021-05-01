@@ -44,13 +44,13 @@
   color: var(--btn-hov-color);
 }
 
-.head-deck-wrap .fa, .head-deck-wrap .fas, .head-deck-wrap .fab{
+.head-deck-wrap .fa, .head-deck-wrap .fas, .head-deck-wrap .fab, .head-deck-wrap .iconify{
   font-size: 2.3em;
   margin-bottom: .3em;
   color:  var(--shade);
 }
 
-.head-deck-wrap .fab{
+.head-deck-wrap .fab, .head-deck-wrap .iconify{
   font-weight: 700;
 }
 .paralax .hero-sub{
@@ -65,20 +65,21 @@
   --hilite:rgb(255, 153, 0);
 
 }
-.paralax.tint-sec, .paralax.shade-sec{
+.paralax.tint-sec, .paralax.tint-m-sec,.paralax.shade-sec,  .paralax.shade-m-sec{
   position: relative;
 }
-.paralax, .paralax.tint-sec{
+.paralax, .paralax.tint-sec, .paralax.tint-m-sec{
   color:var(--brand-blue-shade);
-  text-shadow:0 0 3px #fff;
+  text-shadow:0 0 6px #fff;
 }
 
-.paralax.shade-sec{
+.paralax.shade-sec, .paralax.shade-m-sec{
   color:#fff;
-  text-shadow:0 0 3px #000;
+  text-shadow:0 0 6px #000;
 }
 
-.paralax.tint-sec:before, .paralax.shade-sec:before{
+.paralax.tint-sec:before, .paralax.shade-sec:before,
+.paralax.tint-m-sec:before, .paralax.shade-m-sec:before{
   content:'';
   position: absolute;
   top:0;
@@ -102,4 +103,9 @@
 .paralax.shade-sec:before {
   background-color:var(--shade-dark);
 }
-
+.paralax.tint-m-sec:before {
+  background-color:var(--tint-med);
+ }
+.paralax.shade-m-sec:before {
+  background-color:var(--shade-med);
+}

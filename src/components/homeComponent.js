@@ -10,7 +10,7 @@ function HeadCard({ card, odd, grid }) {
         let md = odd ? "4" : "3";
         grid = { xs: "12", sm, md }
     }
-    let icon = card.icon ? (card.ilink ? <a href={card.ilink}><Icon icon={card.icon} /></a> : <Icon icon={card.icon} />) : null;
+    let icon = card.icon ? (card.ilink ? <a href={card.ilink}><Icon icon={card.icon} attrs={card.attrs} /></a> : <Icon icon={card.icon} attrs={card.attrs} />) : null;
 
     let headline = card.head ? <h4>{card.link ? (<a href={card.link}>{card.head}</a>) : card.head}</h4> : null;
     let blurb = card.text ? <p dangerouslySetInnerHTML={{ __html: card.text }} /> : null;
@@ -82,7 +82,7 @@ export function ParalaxSec(props) {
     let wrapParalax = '';
     let rowParalax = '';
     let colSet;
-    let tinter = (props.tint === 'tint' || props.tint === 'shade') ? props.tint + '-sec' : '';
+    let tinter = (props.tint === 'tint' || props.tint === 'shade' || props.tint === 'tint-m' || props.tint === 'shade-m') ? props.tint + '-sec' : '';
 
     if (props.img) {
         if (props.imgPos) {

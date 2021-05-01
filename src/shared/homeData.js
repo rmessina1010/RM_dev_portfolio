@@ -2,7 +2,7 @@ const homeData = [
 
     {
         type: 'plax',
-        tint: 'shade',
+        tint: 'shade-m',
         img: 'images/img-6.jpg',
         imgPos: true,
         cont:
@@ -71,8 +71,8 @@ const homeData = [
     {
         type: "top",
         head: "Headline from External data file lorem ipsum longeer text",
-        text: "lorem ipsum with link from external data file. <a href='#'>test link.</a>",
-        clname: "py-4"
+        text: "MERN, LAMP, and WordPress.",
+        clname: "py-5"
     },
     {
         type: "deck",
@@ -86,9 +86,27 @@ const homeData = [
                 icon: "fab fa-react",
             },
             {
+                head: "Redux",
+                text: null,
+                icon: "iconify",
+                attrs: {
+                    ['data-icon']: "cib:redux",
+                    ['data-inline']: "false"
+                }
+            },
+            {
                 head: "NodeJS",
                 text: null,
-                icon: "fab fa-node",
+                icon: "fab fa-node-js",
+            },
+            {
+                head: "ExpressJS",
+                text: null,
+                icon: "iconify",
+                attrs: {
+                    ['data-icon']: "simple-icons:express",
+                    ['data-inline']: "false"
+                }
             },
             {
                 head: "Javascript",
@@ -96,25 +114,27 @@ const homeData = [
                 icon: "fab fa-js",
             },
             {
-                head: "SQL",
-                text: null,
-                icon: "fas fa-database",
-            },
-            {
-                head: "MongoDB",
-                text: null,
-                icon: "fas fa-leaf",
-            },
-            {
                 head: "PHP",
                 text: null,
                 icon: "fab fa-php",
             },
-
             {
-                head: "Sass",
+                head: "MySQL",
                 text: null,
-                icon: "fab fa-sass",
+                icon: "iconify",
+                attrs: {
+                    ['data-icon']: "whh:mysqltwo",
+                    ['data-inline']: "false"
+                }
+            },
+            {
+                head: "MongoDB",
+                text: null,
+                icon: "iconify",
+                attrs: {
+                    ['data-icon']: "simple-icons:mongodb",
+                    ['data-inline']: "false"
+                }
             },
             {
                 head: "Bootstrap",
@@ -127,15 +147,16 @@ const homeData = [
                 icon: "fab fa-wordpress",
             },
             {
-                head: "HTML",
-                text: null,
-                icon: "fab fa-html5",
-            },
-            {
-                head: "CSS",
+                head: "CSS3",
                 text: null,
                 icon: "fab fa-css3-alt",
             },
+            {
+                head: "HTML5",
+                text: null,
+                icon: "fab fa-html5",
+            },
+
 
 
 
