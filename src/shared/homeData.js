@@ -1,3 +1,4 @@
+import { myEmail } from './siteData';
 const homeData = [
 
     {
@@ -9,23 +10,24 @@ const homeData = [
             [
                 {
                     hed: "Hello, am" + String.fromCharCode(160) + "Ray" + String.fromCharCode(160) + "Messina,",
-                    sub: "Full Stack Web Developper and" + String.fromCharCode(160) + "Designer.",
+                    sub: "Full Stack Web Developer and" + String.fromCharCode(160) + "Designer.",
                     hedClass: 'text-center ',
-                    subClass: 'text-center ',
+                    subClass: 'text-center sub-large',
                 },
                 {
                     colClass: 'text-center text-md-left',
                     btnClass: 'text-center text-md-left',
 
-                    cont: "Some basic lorem ipsum description. more words etc etc. Woking text and stuff more more more more etc. Something consisitng of natural looking text and spanning more than one line (by choice) and stuf. ect",
+                    cont: "I am passionate about building dynamic, scalable,  responsive, and elegant websites and applications. Having recently earned my Full Stack Web and Mobile Developemnt Certification from NuCamp, I am ready to tackle new challenges.",
+
                     btns: [
                         {
-                            text: "My Projects",
+                            text: "View My Projects",
                             url: "/projects"
                         },
                         {
                             text: "Contact Me",
-                            url: "mailto:ray@raymessinadesign.com"
+                            url: "mailto:" + myEmail
                         }
 
                     ]
@@ -35,10 +37,12 @@ const homeData = [
 
     },
     {
-        type: "top",
-        head: "Headline from External data file lorem ipsum longeer text",
-        text: "lorem ipsum with link from external data file. <a href='#'>test link.</a>",
-        clname: "py-4"
+
+        type: "side",
+        head: "I am a designer who codes and a coder who" + String.fromCharCode(160) + "designs.",
+        text: "<p class='pt-1'>I have always applied both sides of my brain to any endevour. After working as an in the Marketing sector as Art Director, I decided to transition into coding.  I have recently earned my Full Stack Web and Mobile Development Certification from <a href='http://nucamp.co' target='_blank'>NuCamp</a> and ready to tackle new challenges.</p>",
+        clname: "py-5",
+
     },
 
     {
@@ -49,16 +53,16 @@ const homeData = [
         cont:
             [
                 {
-                    hed: "Hello, am Ray. Full Stack Web Developer and Designer",
+                    hed: "Let's Build Something Together.",
                     hedClass: 'text-center pt-4',
                     colClass: 'text-center  ',
                     btnClass: 'text-center ',
 
-                    cont: " Some basic lorem ipsum description. more words etc etc. Woking text and stuff more more more more etc. Something consisitng of natural looking text and spanning more than one line (by choice) and stuf. ect",
+                    cont: "sss",
                     btns: [
                         {
                             text: "Let's Build Something",
-                            url: "mailto:ray@raymessinadesign.com"
+                            url: "mailto:" + myEmail
                         }
 
                     ]
@@ -70,8 +74,8 @@ const homeData = [
 
     {
         type: "top",
-        head: "Headline from External data file lorem ipsum longeer text",
-        text: "MERN, LAMP, and WordPress.",
+        head: "MERN and LAMP stacks, and WordPress, served with lots of syrup and a dab" + String.fromCharCode(160) + "of" + String.fromCharCode(160) + "butter.",
+        text: "Just in case you had been wondering what's under the hood. Am a life-learner, who is always eager to broaden his technical horizons, but most of my experice is in the LAMP and MERN stack, with a casual bit of Worpress development. I consider myself rather sharp at CSS, Javascript, and PHP.",
         clname: "py-5"
     },
     {

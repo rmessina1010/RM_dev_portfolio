@@ -1,5 +1,7 @@
 .home-page{
   font-family: Rajdhani;
+  font-weight:500;
+  font-size: 105%;
 }
 
 .paralax{
@@ -12,6 +14,12 @@
   display: flex;
   flex-direction:column;
   justify-content: center;
+}
+
+.home-page h3{
+  color:var(--brand-blue-shade);
+  font-size: 200%;
+
 }
 
 .paralax-content{
@@ -32,6 +40,7 @@
   background: var(--btn-bg);
   text-shadow: none;
   font-weight: 600;
+  box-shadow: 0 3px 7px #000;
   }
 
 .inbetween{
@@ -39,10 +48,10 @@
   margin: 0;
 }
 
-.paralax .btn:hover{
-  background: var(--btn-hover);
-  color: var(--btn-hov-color);
-}
+.paralax .btn:active, .paralax .btn:hover{
+  background: var(--btn-hover) !important;
+  color: var(--btn-hov-color) !important;
+ }
 
 .head-deck-wrap .fa, .head-deck-wrap .fas, .head-deck-wrap .fab, .head-deck-wrap .iconify{
   font-size: 2.3em;
@@ -57,6 +66,10 @@
   color:var(--hilite)
 }
 
+.paralax-content .hero-sub.sub-large{
+  font-size:180%;
+  line-height: 1.2;
+ }
 .paralax { font-size: 120%;
   --btn-bg:var(--hilite);
   --btn-color:var(--brand-blue-shade);
@@ -69,13 +82,13 @@
   position: relative;
 }
 .paralax, .paralax.tint-sec, .paralax.tint-m-sec{
+  --text-shad:#fff;
   color:var(--brand-blue-shade);
-  text-shadow:0 0 6px #fff;
-}
+ }
 
 .paralax.shade-sec, .paralax.shade-m-sec{
   color:#fff;
-  text-shadow:0 0 6px #000;
+  --text-shad:#000;
 }
 
 .paralax.tint-sec:before, .paralax.shade-sec:before,
@@ -94,7 +107,7 @@
 }
 
 .paralax .hero-hed,.paralax .hero-sub, .paralax .hero-desc{
-   text-shadow: 0 0px 4px var(--text-shad);
+   text-shadow: 0 0px 6px var(--text-shad);
 }
 
 .paralax.tint-sec:before {

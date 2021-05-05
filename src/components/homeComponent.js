@@ -49,10 +49,10 @@ export function SideHead(props) {
         <div className="head-deck-wrap">
             <Container fluid='xl'>
                 <Row className={props.clname}>
-                    <Col tag="h3" md="5" sm="8" xs="12" className="text-center text-md-right offset-sm-2 offset-md-1">
-                        {props.head}
+                    <Col md="5" sm="10" xs="12" className="text-center text-md-right offset-sm-1  ">
+                        <h3 className={props.hedClass}>{props.head}</h3>
                     </Col>
-                    <Col md="5" sm="8" xs="12" className="offset-sm-2 offset-md-0" dangerouslySetInnerHTML={{ __html: props.text }} />
+                    <Col md="5" sm="10" xs="12" className="offset-sm-1 offset-md-0 text-center text-md-left " dangerouslySetInnerHTML={{ __html: props.text }} />
                 </Row>
             </Container>
         </div>
@@ -64,8 +64,8 @@ export function TopHead(props) {
         <div className="head-deck-wrap">
             <Container fluid='xl'>
                 <Row className={props.clname}>
-                    <Col tag="h3" sm="10" xs="12" className="text-center offset-sm-1">
-                        {props.head}
+                    <Col sm="10" xs="12" className="text-center offset-sm-1">
+                        <h3 className={props.hedClass}>{props.head}</h3>
                     </Col>
                     <Col xs="12" sm="10" className="text-center offset-sm-1" dangerouslySetInnerHTML={{ __html: props.text }} />
                 </Row>

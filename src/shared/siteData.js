@@ -1,7 +1,8 @@
-const myEmail = 'ray@maymessinadesign.com';
-const mySite = 'dev.raymessinadesign.com';
+export const myEmail = 'ray@maymessinadesign.com';
+export const mySite = 'dev.raymessinadesign.com';
+
 const SiteData = {
-	url: 'webdev.raymessinadesign.com',
+	url: mySite,
 	info: {
 		copyright: 2020,
 		siteName: 'Ray Messina Web Dev',
