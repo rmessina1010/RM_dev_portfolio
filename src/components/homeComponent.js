@@ -104,7 +104,7 @@ export function ParalaxSec(props) {
                 {part.cont ? <p className={"hero-desc " + (part.contClass || '')} dangerouslySetInnerHTML={{ __html: part.cont }} /> : null}
                 { Array.isArray(part.btns) ? (
                     <div className={"hero-links " + (part.btnClass || '')} >{
-                        part.btns.map(link => <Button className="hero-btn" outline={link.outline || null} href={link.url}>{link.text}</Button>)
+                        part.btns.map(link => <Button color="none hero-btn" outline={link.outline || null} href={link.url}>{link.text}</Button>)
                     }</div>) : null}
             </Col>
         ))

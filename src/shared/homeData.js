@@ -1,4 +1,5 @@
 import { myEmail } from './siteData';
+const NBSP = String.fromCharCode(160);
 const homeData = [
 
     {
@@ -9,8 +10,8 @@ const homeData = [
         cont:
             [
                 {
-                    hed: "Hello, am" + String.fromCharCode(160) + "Ray" + String.fromCharCode(160) + "Messina,",
-                    sub: "Full Stack Web Developer and" + String.fromCharCode(160) + "Designer.",
+                    hed: "Hello. I'm" + NBSP + "Ray" + NBSP + "Messina,",
+                    sub: "Full Stack Web Developer and" + NBSP + "Designer.",
                     hedClass: 'text-center ',
                     subClass: 'text-center sub-large',
                 },
@@ -18,7 +19,7 @@ const homeData = [
                     colClass: 'text-center text-md-left',
                     btnClass: 'text-center text-md-left',
 
-                    cont: "I am passionate about building dynamic, scalable,  responsive, and elegant websites and applications. Having recently earned my Full Stack Web and Mobile Developemnt Certification from NuCamp, I am ready to tackle new challenges.",
+                    cont: "I am passionate about building engaging, dynamic, and scalable, websites and applications. I invite you to take a look at my projects, review my résumé and contact me about how I can help you achieve your business" + NBSP + "goals.",
 
                     btns: [
                         {
@@ -39,8 +40,8 @@ const homeData = [
     {
 
         type: "side",
-        head: "I am a designer who codes and a coder who" + String.fromCharCode(160) + "designs.",
-        text: "<p class='pt-1'>I have always applied both sides of my brain to any endevour. After working as an in the Marketing sector as Art Director, I decided to transition into coding.  I have recently earned my Full Stack Web and Mobile Development Certification from <a href='http://nucamp.co' target='_blank'>NuCamp</a> and ready to tackle new challenges.</p>",
+        head: "I am a designer who codes and a coder who" + NBSP + "designs.",
+        text: "<p class='pt-1'>Having a balanced mix of technical and creative abilities, I apply both sides of my brain when deriving solutions. After working as an in the Marketing sector as Art Director, I decided to transition into coding. I have recently earned my Full Stack Web and Mobile Development Certification from <a href='http://nucamp.co' target='_blank' rel='noreferrer' >NuCamp</a> and am ready to tackle new" + NBSP + "challenges.</p>",
         clname: "py-5",
 
     },
@@ -53,15 +54,13 @@ const homeData = [
         cont:
             [
                 {
-                    hed: "Let's Build Something Together.",
-                    hedClass: 'text-center pt-4',
+                    sub: "Solving problems and turning ideas to reality.",
                     colClass: 'text-center  ',
                     btnClass: 'text-center ',
-
-                    cont: "sss",
+                    cont: "I love creating beautiful websites and apps that have a positive impact. I am always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Get in touch and let me know how I" + NBSP + "can" + NBSP + "help.",
                     btns: [
                         {
-                            text: "Let's Build Something",
+                            text: "Let's Build Something Together",
                             url: "mailto:" + myEmail
                         }
 
@@ -74,8 +73,8 @@ const homeData = [
 
     {
         type: "top",
-        head: "MERN and LAMP stacks, and WordPress, served with lots of syrup and a dab" + String.fromCharCode(160) + "of" + String.fromCharCode(160) + "butter.",
-        text: "Just in case you had been wondering what's under the hood. Am a life-learner, who is always eager to broaden his technical horizons, but most of my experice is in the LAMP and MERN stack, with a casual bit of Worpress development. I consider myself rather sharp at CSS, Javascript, and PHP.",
+        head: "MERN and LAMP stacks, and WordPress, served with lots of syrup and a" + NBSP + "dab" + NBSP + "of" + NBSP + "butter",
+        text: "Just in case you had been wondering what's under the hood. I am a CSS guru, Javascript ninja, and  PHP connoisseur. Am a lifelong-learner, who is always eager to broaden his technical horizons, but my go to took kits are the LAMP and MERN stacks, with a casual bit of Wordpress" + NBSP + "development.",
         clname: "py-5"
     },
     {
@@ -94,8 +93,8 @@ const homeData = [
                 text: null,
                 icon: "iconify",
                 attrs: {
-                    ['data-icon']: "cib:redux",
-                    ['data-inline']: "false"
+                    'data-icon': "cib:redux",
+                    'data-inline': "false"
                 }
             },
             {
@@ -108,8 +107,8 @@ const homeData = [
                 text: null,
                 icon: "iconify",
                 attrs: {
-                    ['data-icon']: "simple-icons:express",
-                    ['data-inline']: "false"
+                    'data-icon': "simple-icons:express",
+                    'data-inline': "false"
                 }
             },
             {
@@ -127,8 +126,8 @@ const homeData = [
                 text: null,
                 icon: "iconify",
                 attrs: {
-                    ['data-icon']: "whh:mysqltwo",
-                    ['data-inline']: "false"
+                    'data-icon': "whh:mysqltwo",
+                    'data-inline': "false"
                 }
             },
             {
@@ -136,8 +135,8 @@ const homeData = [
                 text: null,
                 icon: "iconify",
                 attrs: {
-                    ['data-icon']: "simple-icons:mongodb",
-                    ['data-inline']: "false"
+                    'data-icon': "simple-icons:mongodb",
+                    'data-inline': "false"
                 }
             },
             {
