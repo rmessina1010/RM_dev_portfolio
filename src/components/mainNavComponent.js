@@ -46,7 +46,7 @@ class MainNav extends Component {
                     <Navbar dark expand="sm" className="pb-0">
                         <NavbarBrand href="/" className="text-hide main-logo pb-3">
                             {this.props.siteName}
-                            <img src={"/RM LOGO 2020 REFINED_DEV white hz 2.svg"} alt="rm logo" style={{ opacity: .94, width: 170 }} />
+                            <img src={"/images/design/rm_logo_2020_refined_dev_white_hz_2.svg"} alt="rm logo" style={{ opacity: .94, width: 170 }} />
                         </NavbarBrand>
                         <NavbarToggler onClick={toggle} style={{ fontSize: 13, padding: 4 }} />
                         <Collapse isOpen={this.state.isOpen} navbar className="flex-grow-0 ml-auto mt-1 mt-md-0" id="mainNavLinks" >
