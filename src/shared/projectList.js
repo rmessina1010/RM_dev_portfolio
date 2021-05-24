@@ -32,7 +32,8 @@ const STUP = 'SetUp';
 const GH = 'Source';
 const CP = 'CodePen';
 const SOON = 'Demo: Coming Soon';
-const DEMO = 'Demo'
+const DEMO = 'Demo';
+const SCAN_QR = 'Expo.io QR';
 
 const projectData =
     [
@@ -75,9 +76,10 @@ const projectData =
             roles: [],
             links: [
                 {
-                    url: '#',
-                    text: SOON,
-                    disabled: true
+                    qr: true,
+                    qrtxt: SCAN_QR,
+                    url: 'images/rm_to_do_QR.png',
+                    text: DEMO
                 },
                 {
                     url: 'https://github.com/rmessina1010/rm_simple_todo',

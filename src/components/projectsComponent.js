@@ -3,6 +3,15 @@ import { Row, Col, Card, CardBody, CardImg, Button, CardHeader, CardTitle, Conta
 import projectData from '../shared/projectList';
 import '../css/projectStyles.css';
 
+
+export function QR(props) {
+    return (
+        <span className="qr-wrap ml-n3 ml-sm-n5">
+            <img src={props.src} alt="qr-code" />
+            {props.txt ? <span>{props.txt} </span> : null}
+        </span>
+    )
+}
 export function ProjectCard(props) {
     let cardTag = props.cardTag || 'div';
     let proj = props.proj;
@@ -15,7 +24,18 @@ export function ProjectCard(props) {
             </ul>
         </Col>)
         : null;
-    let viewButtons = Array.isArray(proj.links) ? proj.links.map(link => (<Button href={link.url} disabled={link.disabled || null} target='_new' className="mr-2 mb-2">{link.text}</Button>)) : null;
+    let viewButtons = Array.isArray(proj.links) ? proj.links.map(link => (
+        <Button
+            href={!link.qr ? link.url : null}
+            onClick={link.qr ? e => e.target.classList.toggle('show-qr') : null}
+            disabled={link.disabled || null}
+            target='_new'
+            className="mr-2 mb-2 relative"
+        >
+            {link.text}
+            {link.qr ? <QR src={link.url} txt={link.qrtxt} /> : null}
+        </Button>
+    )) : null;
     return proj ? (
         <Card tag={cardTag} className="proj-card" key={proj.id}>
             <CardHeader className="proj-card-hed">

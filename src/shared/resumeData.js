@@ -108,7 +108,7 @@ const resData = {
     },
     edu: [
         {
-            name: 'Full Stack Web and Mobile Develoment Certification',
+            name: 'Full Stack Web and Mobile Development Certification',
             the: null,
             inst: 'Nucamp Coding Bootcamp',
             detail: 'with honors'

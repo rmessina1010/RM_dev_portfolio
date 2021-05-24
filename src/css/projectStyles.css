@@ -24,6 +24,23 @@
 
 }
 
+.qr-wrap {
+	position: absolute;
+	bottom:200%;
+	left: 0;
+	z-index: 1000;
+	background: #fff;
+	color:var(--shade-dark);
+	box-shadow: 0 0 4px #555;
+	display: none;
+}
+.show-qr .qr-wrap{
+	display: block;
+}
+.relative{
+	position: relative;
+}
+
 .proj-page .card-header, .proj-page .card .btn{
 	background-color:  var(--brand-blue);
 	border: 1px solid transparent;
