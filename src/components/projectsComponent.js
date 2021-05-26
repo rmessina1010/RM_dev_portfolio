@@ -6,9 +6,14 @@ import '../css/projectStyles.css';
 
 export function QR(props) {
     return (
-        <span className="qr-wrap ml-n3 ml-sm-n5">
-            <img src={props.src} alt="qr-code" />
-            {props.txt ? <span>{props.txt} </span> : null}
+        <span
+            className="qr-wrap ml-n3 ml-sm-n5"
+            onClick={e => e.target.closest('.qr-btn').classList.remove('show-qr')}
+        >
+            <span className="qr-wrap-inner">
+                <img src={props.src} alt="qr-code" />
+                {props.txt ? <span>{props.txt} </span> : null}
+            </span>
         </span>
     )
 }
@@ -30,7 +35,7 @@ export function ProjectCard(props) {
             onClick={link.qr ? e => e.target.classList.toggle('show-qr') : null}
             disabled={link.disabled || null}
             target='_new'
-            className="mr-2 mb-2 relative"
+            className="mr-2 mb-2 qr-btn"
         >
             {link.text}
             {link.qr ? <QR src={link.url} txt={link.qrtxt} /> : null}

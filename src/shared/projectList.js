@@ -33,7 +33,7 @@ const GH = 'Source';
 const CP = 'CodePen';
 const SOON = 'Demo: Coming Soon';
 const DEMO = 'Demo';
-const SCAN_QR = 'Expo.io QR';
+const SCAN_QR = 'Scan Expo.io QR';
 
 const projectData =
     [
@@ -77,7 +77,7 @@ const projectData =
             links: [
                 {
                     qr: true,
-                    qrtxt: SCAN_QR,
+                    qrtxt: SCAN_QR + ' to  launch TO_DO! demo',
                     url: 'images/rm_to_do_QR.png',
                     text: DEMO
                 },
