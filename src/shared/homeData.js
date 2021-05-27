@@ -81,7 +81,7 @@ const homeData = [
         type: "deck",
         grid: { xs: '6', sm: '4', md: '3', lg: '2' },
         ogrid: { lg: '10' },
-        clname: " justify-content-center",
+        clname: "skill-grid justify-content-center",
         cont: [
             {
                 head: "React",

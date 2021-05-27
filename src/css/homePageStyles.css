@@ -61,9 +61,6 @@
   color:  var(--shade);
 }
 
-.head-deck-wrap .fab, .head-deck-wrap .iconify{
-  font-weight: 700;
-}
 .paralax .hero-sub{
   color:var(--hilite)
 }
@@ -123,4 +120,24 @@
  }
 .paralax.shade-m-sec:before {
   background-color:var(--shade-med);
+}
+
+.skill-grid .col-6 i{
+  transition: transform .15s linear;
+}
+.skill-grid .col-6:hover i{
+  transform-origin: center;
+  transform: scale(1.3);
+  color: var(--brand-blue);
+}
+
+.skill-grid .col-6 svg{
+  transition: all .15s linear;
+}
+.skill-grid .col-6:hover svg{
+  height: 1.3em;
+  width: 1.3em;
+  margin-bottom: .2em ;
+  margin-top: -.2em ;
+  color: var(--brand-blue);
 }
