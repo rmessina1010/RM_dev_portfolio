@@ -3,13 +3,17 @@ import validator from '../shared/validation';
 import { Form, FormFeedback, FormGroup, Label, Row, Input, Button, Container, Col } from 'reactstrap';
 
 const subjectOptions = [
+    'Web Development Project',
+    'App Development Project',
+    'Front End Development Project',
+    'Back End Development Project',
+    'UX Project',
+    'UI Project',
+    'Full Stack Project',
     'Print Project',
     'Branding Project',
     'CopyWriting Project',
-    'Web Design Project',
-    'Front End Development Project',
-    'Back End Development Project',
-    'Full Stack Project'
+    'Web Design Project'
 ];
 
 const formOptions = subjectOptions.map(opt => <option value={opt}>{opt}</option>)
@@ -60,7 +64,7 @@ class ContactForm extends Component {
             return;
         }
         /* Send State to email API*/
-        this.props.checkSub(false);
+        this.props.checkSub(false, this.state.name);
     }
 
     render() {
@@ -104,11 +108,11 @@ class ContactForm extends Component {
 }
 
 function ResetForm(props) {
-
+    let name = props.person.split(' ');
     return (
         <Col className="pb-4 offset-md-2 text-center" xs="12" md="8">
-            <p>Thank you. Your Mesage has been sent and I will respond soon.</p>
-            <Button onClick={() => props.resetForm(true)}>Reset Form</Button>
+            <p>Thank you for reaching out, {name[0]}. Your mesage has been sent and I will respond soon.</p>
+            <Button onClick={() => props.resetForm(true, '')}>Reset Form</Button>
         </Col>
 
     )
@@ -119,11 +123,12 @@ class ContactPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            fresh: true
+            fresh: true,
+            name: ''
         }
     }
 
-    used = (fresh) => { this.setState({ fresh: fresh }) }
+    used = (fresh, name) => { this.setState({ fresh, name }) }
 
     render() {
 
@@ -134,7 +139,7 @@ class ContactPage extends Component {
                 </div>
                 <Container fluid='xl' >
                     <Row>
-                        {this.state.fresh ? <ContactForm checkSub={this.used} /> : <ResetForm resetForm={this.used} />}
+                        {this.state.fresh ? <ContactForm checkSub={this.used} /> : <ResetForm resetForm={this.used} person={this.state.name} />}
                     </Row>
                 </Container>
             </div>

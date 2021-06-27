@@ -68,8 +68,9 @@ const resData = {
     skills: {
         codes: [
             { name: 'Javascript / ES7' },
-            { name: 'HTML5 / CSS3' },
+            { name: 'TypeScript' },
             { name: 'PHP' },
+            { name: 'HTML5 / CSS3' },
             { name: 'SASS' },
             { name: 'SQL' }
         ],
@@ -141,7 +142,7 @@ const resData = {
             showDesc: false,
             desc: null,
             startDate: new Date(2013, 10, 11, 0, 0, 0, 0),
-            endDate: CURRENT_DATE,
+            endDate: new Date(2020, 6, 17, 0, 0, 0, 0),
             location: 'Madison, WI',
             highlighs: [
                 'Oversaw the design and development of corporate(HyCite.com) and customer (RoyalPrestige.com) websites; provided art direction, wire framing and information architecture',
@@ -151,12 +152,12 @@ const resData = {
         },
         {
             employer: 'DAZZLEFISH' + String.fromCharCode(160) + '/ MUNDANE' + String.fromCharCode(160) + 'EGG',
-            title: 'Art Director',
+            title: 'Web Developer / Art Director',
             showDesc: false,
             desc: null,
             startDate: new Date(2001, 1, 28, 0, 0, 0, 0),
-            endDate: new Date(2013, 10, 11, 0, 0, 0, 0),
-            location: 'Rockford, IL',
+            endDate: CURRENT_DATE,
+            location: 'Madison, WI',
             highlighs: [
                 'Designed website for NobiumGeneralContractors,Escondido,CA',
                 'Designed website for Nemrac Translation Services, Rochester, NY'
