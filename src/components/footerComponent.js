@@ -55,7 +55,7 @@ class Footer extends Component {
                     <Row>
                         <Col xs="12" md="6" lg="4" className="text-center text-md-left "><FooterLinks children={this.props.links} /></Col>
                         <Col xs="12" lg="4" className="text-center order-md-3 text-lg-right"><SocialFooterLinks children={this.props.social} /></Col>
-                        <Col xs="12" md="6" lg="4" className="text-center text-md-right copyright">&copy; {copyrightDate} {siteInfo.author}</Col>
+                        <Col xs="12" md="6" lg="4" className="text-center text-md-right text-lg-center copyright">&copy; {copyrightDate} {siteInfo.author}</Col>
                     </Row>
                 </Container>
             </div>

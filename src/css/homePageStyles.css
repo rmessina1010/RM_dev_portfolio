@@ -141,3 +141,7 @@
   margin-top: -.2em ;
   color: var(--brand-blue);
 }
+.skill-grid .col-6:hover {
+  color:var(--brand-blue);
+  text-shadow:  1px 1px 0 #ccc;
+}
