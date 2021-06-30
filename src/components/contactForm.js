@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import validator from '../shared/validation';
 import { Form, FormFeedback, FormGroup, Label, Row, Input, Button, Container, Col } from 'reactstrap';
+import { myEmail } from '../shared/siteData';
 
 const subjectOptions = [
     'Web Development Project',
@@ -27,7 +28,8 @@ class ContactForm extends Component {
             message: null,
             subject: null,
             refresh: false,
-            auth: '1r0m1v0c_105'
+            confirm: "",
+            auth: "1r0m1v0c_105"
         }
 
         this.fieldTests = {
@@ -46,6 +48,7 @@ class ContactForm extends Component {
             case "email":
             case "subject":
             case "message":
+            case "confirm":
                 newStateProp = { [element.name]: element.value };
                 break;
             default:
@@ -57,6 +60,27 @@ class ContactForm extends Component {
         }
     }
 
+    sendData = () => {
+        const XHR = new XMLHttpRequest();
+        const FD = new FormData();
+        let foo = this.props.checkSub;
+        let name = this.state.name;
+
+        FD.append("name", this.state.name);
+        FD.append("_subject", this.state.subject);
+        FD.append("message", this.state.message);
+        FD.append("email", this.state.email);
+        FD.append("_captcha", "false");
+        FD.append("_replyto", this.state.email);
+        XHR.addEventListener("load", function (e) { foo(false, name); });
+
+        XHR.addEventListener("error", function (e) {
+            alert("Oops! We were unable to send your message. Please try again later.");
+        });
+        XHR.open("POST", "https://formsubmit.co/" + process.env.REACT_APP_MAIN_EMAIL);
+        XHR.send(FD);
+    }
+
     handleSub = (event) => {
         event.preventDefault();
         if (!this.validator.isValid(this.state, this.fieldTests)) {
@@ -64,13 +88,15 @@ class ContactForm extends Component {
             return;
         }
         /* Send State to email API*/
-        this.props.checkSub(false, this.state.name);
+        if (this.state.confirm) { return; } // prevents spam
+        this.sendData();
+        /*--*/
     }
 
     render() {
         const errors = this.validator.errors;
         return (
-            <Form className="col-12 col-md-8 pb-4 offset-md-2" onSubmit={this.handleSub} onBlur={this.handleOnBlur} method="POST">
+            <Form className="col-12 col-md-8 pb-4 offset-md-2" onSubmit={this.handleSub} onBlur={this.handleOnBlur} method="POST"  >
                 <Row className="p-0">
                     <FormGroup className="col-sm-12 col-md">
                         <Label>Name</Label>
@@ -101,7 +127,10 @@ class ContactForm extends Component {
                         <FormFeedback>{errors.message}</FormFeedback>
                     </FormGroup>
                 </Row>
-                <Row><Button className="col-6 offset-3">Send</Button></Row>
+                <Row>
+                    <Button className="col-6 offset-3">Send</Button>
+                    <input type="text" name="confirm" style={{ display: 'none' }} />
+                </Row>
             </Form >
         );
     }
