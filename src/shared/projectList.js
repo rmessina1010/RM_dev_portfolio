@@ -112,6 +112,30 @@ const projectData =
             ]
         },
         {
+            id: 7,
+            inRes: true,
+            inactive: false,
+            thumb: 'images/datatable.jpg',
+            name: 'DataTable Component',
+            desc: 'A reusable, scalabe, feature and style customizable React component that creates tables with sortable columns. Fetaures images, user styles, and live row and cell links.',
+            stack: [REACT, CSS],
+            skills: [],
+            roles: [],
+            links: [
+
+                {
+                    url: 'https://raymessinadesign.com/projects/datatable',
+                    text: DEMO,
+                },
+                {
+                    url: 'https://github.com/rmessina1010/DataTable',
+                    text: GH,
+
+                }
+
+            ]
+        },
+        {
             id: 4,
             inRes: true,
             inactive: false,
