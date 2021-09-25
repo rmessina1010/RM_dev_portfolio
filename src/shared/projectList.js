@@ -1,7 +1,7 @@
 
 const JQ = 'jQuery';
 const JS = 'Javascript';
-const ND = 'Node';
+const ND = 'NodeJS';
 const PHP = 'PHP';
 const WP = 'WordPress';
 const CSS = 'CSS';
@@ -44,7 +44,7 @@ const projectData =
             thumb: 'images/kupboard.jpg',
             name: 'Kupboard / Kupboard Server',
             desc: 'Full stack web app that provides small individual food pantries a platform to communicate their inventory, requested items, schedules, and announcements. Implements JWT to manage accounts and authentication.',
-            stack: [REACT, BOOT, MONGDB, EXPR, PASSP + '(JWT Auth)'],
+            stack: [REACT, BOOT, CSS, ND, EXPR, MONGDB, PASSP + '(JWT Auth)'],
             skills: [],
             roles: [],
             links: [
