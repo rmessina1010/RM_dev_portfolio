@@ -1,4 +1,4 @@
-export const myEmail = 'ray@maymessinadesign.com';
+export const myEmail = 'ray@raymessinadesign.com';
 export const mySite = 'dev.raymessinadesign.com';
 
 const SiteData = {
