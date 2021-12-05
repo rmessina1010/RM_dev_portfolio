@@ -37,11 +37,11 @@ const SiteData = {
 		},
 		{
 			id: 4,
-			text: "Rants",
+			text: "Musings",
 			icon: "fa fa-house",
-			url: "/rants",
+			url: "/musings",
 			include: [],
-			exclude: ['main', 'footer']
+			exclude: []
 		},
 		{
 			id: 5,

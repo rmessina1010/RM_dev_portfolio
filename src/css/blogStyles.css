@@ -1,0 +1,29 @@
+.placehold{
+    position: relative;
+    display: inline-block;
+
+}
+.placehold>*:first-child{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top:  50% ;
+    margin: -.5em 0 0 -.03125em;
+}
+.placehold:before{
+    display: block;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 12px   solid silver;
+    border-top-color: red;
+    animation-name: rotate;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    }
+    @keyframes rotate{
+        0%{ transform: rotate(0)}
+        100%{ transform: rotate(360deg)}
+    }
