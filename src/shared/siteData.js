@@ -1,5 +1,7 @@
 export const myEmail = 'ray@raymessinadesign.com';
 export const mySite = 'dev.raymessinadesign.com';
+export const ME = "Ray Messina";
+export const miniME = "Ray";
 
 const SiteData = {
 	url: mySite,
