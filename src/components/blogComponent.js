@@ -26,7 +26,7 @@ class BlogPage extends Component {
 }
 
 export function BlogList(props) {
-    return (<Row tag="ul" className="py-3 pl-0"> {props.items.map(item => <BlogCard key={item.id} details={item} relroot={props.relroot} />)}</Row>);
+    return (<Row tag="ul" className="py-3 pl-0"> {props.items.filter(item => !item.hide).map(item => <BlogCard key={item.id} details={item} relroot={props.relroot} />)}</Row>);
 }
 
 export class CurrentArticle extends Component {
