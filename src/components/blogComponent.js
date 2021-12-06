@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
-import { Row, Col, Container, Card, CardDeck, CardHeader } from 'reactstrap';
+import { Row, Col, Container, Card, CardHeader } from 'reactstrap';
 import blogIndex from '../shared/blogRegistry';
 import { AnchorLink } from './navigational';
 import '../css/blogStyles.css';
@@ -50,7 +49,7 @@ export function LoadPlacehold(props) {
 function BlogIntro(props) {
     return (<div className="pt-4">
         <h2>Musings</h2>
-        <p>Just a place to keep my toughts and opinions on varied topics, ranging from art, totravel, to developement and other stops in between.</p>
+        <p>Just a place to keep my toughts and opinions on varied topics, ranging from art, to travel, to developement and other stops in between.</p>
     </div>);
 }
 

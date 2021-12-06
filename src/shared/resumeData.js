@@ -159,7 +159,7 @@ const resData = {
             endDate: CURRENT_DATE,
             location: 'Madison, WI',
             highlighs: [
-                'Designed website for NobiumGeneralContractors,Escondido,CA',
+                'Designed website for Nobium General Contractors, Escondido, CA',
                 'Designed website for Nemrac Translation Services, Rochester, NY'
             ]
         },
