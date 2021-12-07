@@ -9,8 +9,8 @@ const blogIndex = [
         email: myEmail,
         home: mySite,
         date: new Date(2021, 11, 5, 16, 30, 0, 0),
-        tags: [],
-        excerpt: 'Hello world. My first blog'
+        tags: ['tag', 'hello', 'dev'],
+        excerpt: 'Hello world. My first blog. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
     },
     {
         id: 1,
@@ -20,7 +20,7 @@ const blogIndex = [
         email: myEmail,
         home: mySite,
         date: new Date(2021, 11, 5, 16, 30, 0, 0),
-        tags: []
+        tags: ['tag', 'hello', 'dev']
     },
     {
         id: 1,
