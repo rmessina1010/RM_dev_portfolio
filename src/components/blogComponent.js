@@ -22,7 +22,7 @@ class BlogPage extends Component {
                 <Container fluid='xl' className="px-2  px-xl-3 "> <BlogIntro /></Container>
             </div>
             <Container fluid="xl"  >
-                <BlogList items={this.state.indexList} currBlog={this.state.curr} relroot='musings/' />
+                <BlogList items={this.state.indexList} currBlog={this.state.curr} relroot='musings/articles/' />
             </Container>
         </div>)
     }
@@ -32,16 +32,36 @@ export function BlogList(props) {
     return (<Row tag="ul" className="pl-0 d-flex"> {props.items.filter(item => !item.hide).map(item => <BlogCard key={item.id} details={item} relroot={props.relroot} />)}</Row>);
 }
 
-export class CurrentArticle extends Component {
+export class BlogArticle extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            article: null
+            article: <LoadPlacehold />,
+            url: ''
+        }
+    }
+    async obtainArticle() {
+        const text = blogIndex.filter(item => item.path === this.props.match.params.article);
+        if (text.length) {
+            this.setState({ article: <LoadPlacehold /> });
+            await fetch("https://raymessinadesign.com/blog/blog_service.php?s=" + text[0].url)
+                .then(resp => resp.status === 200 ? resp.text() : null)
+                .then(resp => {
+                    this.setState({ article: resp ? <div dangerouslySetInnerHTML={{ __html: resp }} /> : <NotFound /> });
+                })
+                .catch((a) => {
+                    console.log("Fetch error!!", a);
+                    this.setState({ article: <NotFound /> });
+                });
+        } else {
+            this.setState({ article: <NotFound /> });
         }
     }
 
+    componentDidMount() { this.obtainArticle(); }
+
     render() {
-        return <div>pending writing...</div>;
+        return <div>{this.state.article}</div>;
     }
 }
 

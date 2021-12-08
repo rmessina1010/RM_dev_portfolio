@@ -8,7 +8,7 @@ import Resume from './resumePageComponent';
 import ContactPage from './contactForm';
 import ProjectsPage from './projectsComponent';
 import HomePage from './homeComponent';
-import BlogPage from './blogComponent';
+import BlogPage, { BlogArticle } from './blogComponent';
 
 class Main extends Component {
 
@@ -21,7 +21,8 @@ class Main extends Component {
                     <Route exact path="/projects" component={ProjectsPage} />
                     <Route exact path="/resume" component={Resume} />
                     <Route exact path="/contact" component={ContactPage} />
-                    <Route path="/musings/" component={BlogPage} />
+                    <Route exact path={["/musings", "/musings/articles", "/musings/tags"]} component={BlogPage} />
+                    <Route exact path="/musings/articles/:article" component={BlogArticle} />
                     <Redirect to="/home" />
                 </Switch>
                 <Footer social={SiteData.social} info={SiteData.info} links={SiteData.pages} />

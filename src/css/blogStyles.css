@@ -1,22 +1,25 @@
 .placehold{
-position: relative;
-display: inline-block;
-
+    position: relative;
+    display: block;
+    padding: 1em;
+    text-align: center;
 }
 .placehold>*:first-child{
-position: absolute;
-width: 100%;
-text-align: center;
-top:  50% ;
-margin: -.5em 0 0 -.03125em;
+    position: absolute;
+    left:0;
+    width: 100%;
+    top:  50% ;
+    margin: -.9em 0 0 0;
 }
 .placehold:before{
-display: block;
-height: 100px;
-width: 100px;
+content:'';
+
+display: inline-block;
+height: 8em;
+width: 8em;
 border-radius: 50%;
 border: 12px   solid silver;
-border-top-color: red;
+border-top-color: orange;
 animation-name: rotate;
 animation-duration: 1s;
 animation-timing-function: linear;

@@ -1,0 +1,128 @@
+
+        		<div class="main_content">
+               <h1>Using CSS3 selectors to label items with submenus in a navigation bar.</h1>
+               <cite class='met'>By Ray Messina.</cite>
+				<p>Recently, I was working on a horizontal navigation bar with several drop down levels and wanted to differentiate the menu items which had sub menus from those that didn't.</p>
+				
+				 <p><em>Drop down menus</em> are a common component of modern (and not so modern) web design. By now you probably know that a navigation menus are a list of links, and as such it is standard practice to mark them up as ULs. By extension, drop down menus are merely nested ULs. Using pure CSS, one can style the top level of a navigation menu any which way, and hide the sub levels so that they are revealed only when the visitor hovers on the appropriate area.</p>
+
+<h2>The old way</h2>
+
+ <p>Many designers are satisfied with leaving as that. However, from a UX/UI point of view, this is lacking, as it leaves the user having to explore the entire menu to find which sections contain additional navigation links. This means visitors will either waste their time looking and get frustrated for doing so, or miss areas of your site all together! That's not good, not good at all.</p>
+
+<p>The common way to address this issue, is to simply add a class to the LIs that contain ULs (sub menus) so that we can style those items differently from those that do not contain sub navigation. Pretty simple, but also pretty tedious and not particularly graceful.</p>
+
+<p>Another, equally labor intensive way one can use, assuming that top level items are NOT coded as links, is to use that <em>that difference</em> in tags as leverage. That is, create a <em>faux link</em>: style the SPAN thats a direct child of the LI to indicate that there are more links that follow and, by contrast anchor tags will be styled as not having additional sub items. This is handy IF your drop-down is simple and you can structure it that way. It's also cleaner as you don't have to add 'submenu' classes to your mark up. But, just as before, it still requires that you structure the content of your list manually or that your CMS can foretell which list items will contain other ULs as sub menus.</p>
+
+<h2>The new way: Doing it automatically!</h2>
+
+<p>I have come across other methods that <strong>automatically style</strong> list items which contain other lists, but they employed absolute positioning and a pseudo element <em>off the child UL</em>. While clever, the CSS calculations can be tricky at times or the method may be entirely impossible to implement depending on what other techniques you have used to lay out your menu and/or position your submenus, so I started to experiment with alternative ways of marking menu items that had sub menus.</p>
+
+<p>Ideally, it would be great if there was a CSS selector that would let us query that, or at least let us query the number direct children an element have, as we could assume a a sub menued item would have two children and the non sub menued item just one.</p>
+
+<p>Note: CSS3 does have the :EMPTY selector, which targets elements <em>without any content</em>, but I see no use in this selector for purposes of styling drop downs.</p>
+
+<p><strong>The key is having an expected child count</strong> (most likely it will be two, tho one can tweak this technique to work for any number or child elements, as long as you have a regular pattern) then use CSS3 pseudo class combinations ( :only-child,  :first-child:last-child,   :nth-child():nth-last-child(), or the like) to target the anchor element.</p> 
+
+<p>Here are CSS a few examples of variations on the technique. We can do almost anything (background images, pseudo elements, etc), but for the sake of brevity , let's assume that our goal is to mark items that have sub menus by simply giving them a background color of orange. In this example, we will target the anchor tags of each list item as style it as appropriate. Again you can use background graphics or pseudo elements in your implementation am just doing it this way to make it obvious and brief.</p>
+
+<p>Here is our markup and general styling, notice I have <strong>only used ONE class in the HTML</strong>, at the root level.</p>
+ 
+ <pre class='cblock  html'><code>&lt;ul class="nav"&gt;
+		&lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+	 	&lt;li&gt;&lt;a href="#"&gt;Portfolio&lt;/a&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&lt;a href="#"&gt;item&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="#"&gt;item&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="#"&gt;item&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="#"&gt;item&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;Resume&lt;/a&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&lt;a href="#"&gt;item&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="#"&gt;But wait there's more&lt;/a&gt;
+						&lt;ul&gt;
+							&lt;li&gt;&lt;a href="#"&gt;item&lt;/a&gt;&lt;/li&gt;
+							&lt;li&gt;&lt;a href="#"&gt;item&lt;/a&gt;&lt;/li&gt;
+							&lt;li&gt;&lt;a href="#"&gt;item&lt;/a&gt;&lt;/li&gt;
+							&lt;li&gt;&lt;a href="#"&gt;item&lt;/a&gt;&lt;/li&gt;
+						&lt;/ul&gt;
+ 				&lt;/li&gt;
+				&lt;li&gt;&lt;a href="#"&gt;item&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="#"&gt;item&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;Download&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;Rants&lt;/a&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&lt;a href="#"&gt;item&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="#"&gt;item&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="#"&gt;item&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="#"&gt;item&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;</code></pre> 
+<pre class='cblock css'><code> .nav,  .nav ul {
+	 margin: 0 auto;
+	 padding:0; 
+	 list-style: none; 
+	 display: inline-block;
+}
+ .nav a {
+	display:block;
+	text-decoration: none;
+	padding: .5em;
+	color:#000;
+}
+ .nav li { 
+	background: #aaa;  
+	position: relative;
+} 
+
+ .nav>li {float: left;}
+
+ .nav li:hover  { background:  yellow;}
+ .nav ul {
+	position: absolute;
+	width: 11em; 
+	left:-9999em; 
+	background: #aaa;
+}
+ .nav ul li + li{border-top:1px dotted;}
+ .nav>li:hover>ul { left:0;   }		
+ .nav>li:hover>ul li:hover>ul { left:100%; top:0;  }		
+
+
+ .nav li > a:hover {   background:none;  }
+</code></pre>
+
+<p><strong>And now the magic</strong>, using <strong>:only child</strong> :</p>
+
+ <pre class='cblock css'><code> .nav li a { display:block; background:orange;  }
+ .nav li a:only-child { background: #555; color:#fff } 
+
+</code></pre> 
+
+<p><strong>:first-child:last-child</strong> does exactly the same and gives you higher specificity. Which may or may not be advantageous, depending on what you want to happen.</p>
+
+ <pre class='cblock css'><code> .nav li a { display:block; background:orange;  }
+ .nav li a:first-child:last-child { background: #555; color:#fff } 
+</code></pre> 
+        	
+<p>If you have more than two child elements in the LI, you could still employ this technique using <strong>:nth-child(x):nth-last-child(x)</strong>. Here is an example:</p>
+
+ <pre class='cblock html'><code>&lt;li&gt; &lt;span&gt;blurb&lt;/span&gt; &lt;a href="#"&gt;link&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt; &lt;span&gt;blurb&lt;/span&gt; &lt;a href="#"&gt;link&lt;/a&gt;
+&lt;ul&gt;...&lt;/ul&gt;
+&lt;/li&gt;</code></pre>
+<pre  class='cblock css'><code>.nav li span:nth-last-child(3),
+.nav li span:nth-last-child(3)+a{ background: orange; }</code></pre>
+
+<p>Doing it this way, even if you only have two child elements in the LI, also serves as a built-in fall back! Notice that this variation DIRECTLY targets the anchors thar are NOT  the only child, whereas without using <em>:nth-last-child</em>   we had to change all anchor elements to our 'target' color and THEN override that rule with the pseudo class. Puting it all together, here is <a href="post1-demo.php">a quick and dirty demo</a>!</p>
+
+<p>That's it. Simple, graceful and totally automatic; the way it ought to be.  Support for this is almost universal, except for IE, which eats glue and only offers support in IE9+. At the time of writing,  estimated  global  support for these selectors, as used, was roughly 87% which is not too bad.</p>
+
+<p>I hope this article will help you design beautiful, elegantly coded web sites. Feel free to <a href="mailto:RayM31@comcast.net">contact me</a> if you feel I can be of assistance enhancing your web projects.</p>
+</div><!--end main content--> 
