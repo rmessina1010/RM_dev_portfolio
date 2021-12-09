@@ -19,7 +19,7 @@ class BlogPage extends Component {
     render() {
         return (<div className="proj-page" >
             <div className="page-title">
-                <Container fluid='xl' className="px-2  px-xl-3 "> <BlogIntro /></Container>
+                <Container fluid='xl' className="px-2  px-xl-3"> <BlogIntro /></Container>
             </div>
             <Container fluid="xl"  >
                 <BlogList items={this.state.indexList} currBlog={this.state.curr} relroot='musings/articles/' />
@@ -44,10 +44,17 @@ export class BlogArticle extends Component {
         const text = blogIndex.filter(item => item.path === this.props.match.params.article);
         if (text.length) {
             this.setState({ article: <LoadPlacehold /> });
-            await fetch("https://raymessinadesign.com/blog/blog_service.php?s=" + text[0].url)
+            await fetch("https://raymessinadesign.com/blog/blog_service.php", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: "s=" + text[0].url + "&date=" + text[0].date + "&title=" + text[0].title +
+                    "&author=" + text[0].author + "&tags=" + text[0].tags
+            })
                 .then(resp => resp.status === 200 ? resp.text() : null)
                 .then(resp => {
-                    this.setState({ article: resp ? <div dangerouslySetInnerHTML={{ __html: resp }} /> : <NotFound /> });
+                    this.setState({ article: resp ? <Container dangerouslySetInnerHTML={{ __html: resp }} fluid="xl" className="py-2 home-page" /> : <NotFound /> });
                 })
                 .catch((a) => {
                     console.log("Fetch error!!", a);
@@ -77,10 +84,10 @@ function BlogIntro(props) {
 }
 
 function NotFound(props) {
-    return (<div>
+    return (<Container>
         <h1>OOPS!!!</h1>
         <p>There doesnt apear to be any musings on that topic.</p>
-    </div>);
+    </Container>);
 }
 
 function BlogCard({ details, relroot }) {

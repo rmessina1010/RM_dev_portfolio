@@ -48,3 +48,11 @@ animation-iteration-count: infinite;
     font-size: 85%;
     color: #777;
  }
+
+code { margin:0; padding: .5em}
+pre code { max-height: 15em; overflow: auto; display: block; }
+.cblock {  margin:   1em 16px ; border: 1px solid; }
+.cblock.css:before, .cblock.html:before{  display: block;background: #555; color:#fff; padding:.5em;  font-weight:  bold }
+.cblock.css:before{ content: 'CSS';}
+.cblock.html:before{ content: 'HTML';}
+
