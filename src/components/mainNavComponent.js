@@ -33,7 +33,7 @@ class MainNav extends Component {
                 }
                 items.push(
                     <NavItem key={'mainNavItem' + child.id}  >
-                        <NavLink to={child.url} onClick={mailFoo} active={child.url === this.props.url} className="nav-link px-3 px-sm-2 rounded-sm" >{child.text}</NavLink>
+                        <NavLink to={child.url} onClick={mailFoo} active={child.url === this.props.url || undefined} className="nav-link px-3 px-sm-2 rounded-sm" >{child.text}</NavLink>
                     </NavItem>
                 );
             });
