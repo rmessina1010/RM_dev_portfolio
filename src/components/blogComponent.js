@@ -95,12 +95,12 @@ function BlogCard({ details, relroot }) {
         <Col tag="li" sm="6" lg="4" className=" blog-card-li mb-4" >
             <Card className="proj-card">
                 <CardHeader className="proj-card-hed ">
-                    <CardTitle tag="h3" className="blog-card-title"><AnchorLink key={details.id} href={relroot + details.path} children={details.title} /></CardTitle>
+                    <CardTitle tag="h3" className="blog-card-title"><AnchorLink href={relroot + details.path} children={details.title} /></CardTitle>
                 </CardHeader>
                 <CardBody>
-                    <div className="blog-date pb-2"><i class="far fa-calendar"></i> <time>{details.date.toLocaleString('en-US')}</time></div>
+                    <div className="blog-date pb-2"><i className="far fa-calendar"></i> <time>{details.date.toLocaleString('en-US')}</time></div>
                     {details.excerpt ? <p className=" pb-1" dangerouslySetInnerHTML={{ __html: details.excerpt }} /> : null}
-                    {details.tags.length ? <div className="blog-tags"><i class="fa fa-tags"></i> {details.tags.join(', ')}</div> : null}
+                    {details.tags.length ? <div className="blog-tags"><i className="fa fa-tags"></i> {details.tags.join(', ')}</div> : null}
                 </CardBody>
             </Card>
         </Col>

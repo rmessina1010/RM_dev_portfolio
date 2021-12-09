@@ -40,7 +40,7 @@ export function ResNav(props) {
 }
 
 export function BadgeList(props) {
-    let items = Array.isArray(props.items) ? props.items.map(item => (<Col tag="li" xs="6" sm="4" md="3" className="badges"> <span>{item.name}{item.extra ? <small>{item.extra}</small> : null}</span></Col>)) : null;
+    let items = Array.isArray(props.items) ? props.items.map((item, indx) => (<Col tag="li" xs="6" sm="4" md="3" className="badges" key={indx}> <span>{item.name}{item.extra ? <small>{item.extra}</small> : null}</span></Col>)) : null;
     return (
         <Row tag="ul" className="badge-list no-gutters">
             {items}
@@ -49,8 +49,8 @@ export function BadgeList(props) {
 }
 
 export function EduList(props) {
-    let items = Array.isArray(props.items) ? props.items.map(item => (
-        <li><strong className="edu-deg">{item.name}</strong>{' from ' + (item.the || '') + ' ' + item.inst}{item.detail ? (<em className="edu-detail" dangerouslySetInnerHTML={{ __html: '—' + item.detail }} />) : null}</li>
+    let items = Array.isArray(props.items) ? props.items.map((item, indx) => (
+        <li key={indx}><strong className="edu-deg">{item.name}</strong>{' from ' + (item.the || '') + ' ' + item.inst}{item.detail ? (<em className="edu-detail" dangerouslySetInnerHTML={{ __html: '—' + item.detail }} />) : null}</li>
     )) : null;
     return (
         <ul className="edu-list">
@@ -60,8 +60,8 @@ export function EduList(props) {
 }
 
 export function AwardList(props) {
-    let items = Array.isArray(props.items) ? props.items.map(item => (
-        <li><strong className="award-name" dangerouslySetInnerHTML={{ __html: item.name }} />{item.detail ? (<span dangerouslySetInnerHTML={{ __html: ' ' + item.detail }} />) : null}</li>
+    let items = Array.isArray(props.items) ? props.items.map((item, indx) => (
+        <li key={indx}><strong className="award-name" dangerouslySetInnerHTML={{ __html: item.name }} />{item.detail ? (<span dangerouslySetInnerHTML={{ __html: ' ' + item.detail }} />) : null}</li>
     )) : null;
     return (
         <ul className="edu-list">
@@ -71,7 +71,7 @@ export function AwardList(props) {
 }
 
 export function JobHighlightsList(props) {
-    let items = Array.isArray(props.items) ? props.items.map(item => (<li dangerouslySetInnerHTML={{ __html: item }} />)) : null;
+    let items = Array.isArray(props.items) ? props.items.map((item, indx) => (<li dangerouslySetInnerHTML={{ __html: item }} key={indx} />)) : null;
     return (
         <ul className="job-des-list">
             {items}
@@ -99,7 +99,7 @@ export function ProjectList(props) {
 
 export function EmployerList(props) {
     let items = Array.isArray(props.items) ? props.items.map(item => (
-        <Row className="history-item">
+        <Row className="history-item" key={dateToMoYear(item.startDate)}>
             <Col xs="12" lg="3" >
                 <h6 className="dates float-sm-left">{dateToMoYear(item.startDate)}{' — '}{dateToMoYear(item.endDate)}</h6>
                 <h6 className="employer float-sm-right float-lg-left">

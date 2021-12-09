@@ -27,7 +27,7 @@ export function HeadDeck(props) {
     let cards = [];
     if (Array.isArray(props.cards)) {
         let isOdd = !(props.cards.length % 2 === 0)
-        cards = props.cards.map(card => <HeadCard card={card} odd={isOdd} grid={props.grid} />);
+        cards = props.cards.map((card, indx) => <HeadCard card={card} odd={isOdd} grid={props.grid} key={indx} />);
     }
     let clssName = (props.clname || '') + (!props.ogrid ? ' justify-content-center' : '');
     let outerGrid = props.ogrid || { xs: '12', sm: '8', md: '10' };
@@ -97,14 +97,14 @@ export function ParalaxSec(props) {
     }
     if (Array.isArray(props.cont)) {
         let lg = props.cont.length === 1 && props.lg ? props.lg : ''
-        colSet = props.cont.map(part => (
-            <Col xs='12' md='' lg={lg} className={part.colClass}>
+        colSet = props.cont.map((part, indx) => (
+            <Col xs='12' md='' lg={lg} className={part.colClass} key={indx}>
                 {part.hed ? <h2 className={"hero-hed " + (part.hedClass || '')}>{part.hed}</h2> : null}
                 {part.sub ? <h3 className={"hero-sub " + (part.subClass || '')}>{part.sub}</h3> : null}
                 {part.cont ? <p className={"hero-desc " + (part.contClass || '')} dangerouslySetInnerHTML={{ __html: part.cont }} /> : null}
-                { Array.isArray(part.btns) ? (
+                {Array.isArray(part.btns) ? (
                     <div className={"hero-links " + (part.btnClass || '')} >{
-                        part.btns.map(link => <Button color="none hero-btn" outline={link.outline || null} href={link.url}>{link.text}</Button>)
+                        part.btns.map((link, indx) => <Button color="none hero-btn" outline={link.outline || null} href={link.url} key={indx}>{link.text}</Button>)
                     }</div>) : null}
             </Col>
         ))
@@ -123,19 +123,19 @@ export function ParalaxSec(props) {
     )
 }
 export default function HomePage(props) {
-    let homeSections = homeData.map(section => {
+    let homeSections = homeData.map((section, indx) => {
         let clname = '';
         if (section.clname) { clname = section.clname; }
         switch (section.type) {
             case 'deck':
                 clname += ' cardRow';
-                return <HeadDeck cards={section.cont} clname={clname} ogrid={section.ogrid} grid={section.grid} />;
+                return <HeadDeck cards={section.cont} clname={clname} ogrid={section.ogrid} grid={section.grid} key={indx} />;
             case 'side':
-                return <SideHead head={section.head} text={section.text} clname={clname} />;
+                return <SideHead head={section.head} text={section.text} clname={clname} key={indx} />;
             case 'top':
-                return <TopHead head={section.head} text={section.text} clname={clname} />;
+                return <TopHead head={section.head} text={section.text} clname={clname} key={indx} />;
             case 'plax':
-                return <ParalaxSec img={section.img} imgPos={section.imgPos ? true : false} cont={section.cont} tint={section.tint} />;
+                return <ParalaxSec img={section.img} imgPos={section.imgPos ? true : false} cont={section.cont} tint={section.tint} key={indx} />;
             default:
                 return null;
         }

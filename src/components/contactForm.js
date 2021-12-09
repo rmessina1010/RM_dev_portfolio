@@ -17,7 +17,7 @@ const subjectOptions = [
     'Web Design Project'
 ];
 
-const formOptions = subjectOptions.map(opt => <option value={opt}>{opt}</option>)
+const formOptions = subjectOptions.map(opt => <option value={opt} key={opt}>{opt}</option>)
 
 class ContactForm extends Component {
     constructor(props) {

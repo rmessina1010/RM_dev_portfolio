@@ -16,7 +16,7 @@ function Resume() {
                 case 'summ':
                     if (resData.summary) {
                         resumeSections.push(
-                            <Summary secTitle={section.title} id={section.id} em={resData.summary.em}>{resData.summary.text}</Summary>
+                            <Summary secTitle={section.title} id={section.id} em={resData.summary.em} key={section.id}>{resData.summary.text}</Summary>
                         )
                     }
                     break;
@@ -26,41 +26,41 @@ function Resume() {
                 case 'libs':
                     if (resData.skills && resData.skills[section.type]) {
                         resumeSections.push(
-                            <Skills secTitle={section.title} id={section.id} items={resData.skills[section.type]} />
+                            <Skills secTitle={section.title} id={section.id} items={resData.skills[section.type]} key={section.id} />
                         )
                     }
                     break;
                 case 'hist':
                     if (resData.experience) {
                         resumeSections.push(
-                            <WorkHist secTitle={section.title} id={section.id} items={resData.experience} />
+                            <WorkHist secTitle={section.title} id={section.id} items={resData.experience} key={section.id} />
                         )
                     }
                     break;
                 case 'awards':
                     if (resData.awards) {
                         resumeSections.push(
-                            <Awards secTitle={section.title} id={section.id} items={resData.awards} />
+                            <Awards secTitle={section.title} id={section.id} items={resData.awards} key={section.id} />
                         )
                     }
                     break;
                 case 'edu':
                     if (resData.edu) {
                         resumeSections.push(
-                            <Education secTitle={section.title} id={section.id} items={resData.edu} />
+                            <Education secTitle={section.title} id={section.id} items={resData.edu} key={section.id} />
                         )
                     }
                     break;
                 case 'projs':
                     if (resData.projs) {
                         resumeSections.push(
-                            <Projects secTitle={section.title} id={section.id} items={resData.projs} />
+                            <Projects secTitle={section.title} id={section.id} items={resData.projs} key={section.id} />
                         )
                     }
                     break;
             }
 
-            return resumeSections.length > oldLen ? (<NavItem tag="li"><NavLink href={'#' + section.id}>{section.name || section.title}</NavLink></NavItem>) : null;
+            return resumeSections.length > oldLen ? (<NavItem tag="li" key={section.id}><NavLink href={'#' + section.id}>{section.name || section.title}</NavLink></NavItem>) : null;
         }) : [];
 
     return (
