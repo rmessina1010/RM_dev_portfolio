@@ -4,7 +4,7 @@ import { ResNav, Summary, Skills, WorkHist, Projects, Awards, Education } from '
 import resData from '../shared/resumeData';
 import '../css/resumeStyles.css';
 
-resData.experience.sort((a, b) => a.endDate < b.endDate);
+resData.experience.sort((a, b) => b.endDate - a.endDate);
 
 function Resume() {
     let resumeSections = [];
