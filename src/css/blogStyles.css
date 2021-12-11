@@ -55,4 +55,45 @@ pre code { max-height: 15em; overflow: auto; display: block; }
 .cblock.css:before, .cblock.html:before{  display: block;background: #555; color:#fff; padding:.5em;  font-weight:  bold }
 .cblock.css:before{ content: 'CSS';}
 .cblock.html:before{ content: 'HTML';}
+.blog-title{
+    font-weight: bold;
+    color: var(--brand-blue);
+    text-shadow: -1px 1px 0 #fff;
+    letter-spacing: -1px;
+    margin: .5em 0  .1em  0;
+    text-align: center;
+    line-height: .9;
+    font-size: 300%;
+  }
+
+.blog-title.long-title{
+    font-size: 270%;
+}
+.met cite{
+    font-style: normal;
+}
+.met + *, .tags + *{
+    margin-top:2em;
+}
+.met, .tags{
+    text-align: center;
+    color: #777;
+    font-size: 90%;
+}
+.met + .tags{
+    margin-top: 0;
+}
+
+
+.blog-page{
+    font-family: Rajdhani;
+	background-color: var(--background);
+	padding-bottom: 1px;
+}
+
+ .blog-page .blog-article h2, .blog-page .blog-article h3, .blog-page .blog-article h4{
+    margin-bottom: .067em;
+    margin-top: .8em;
+    color: var(--brand-blue);
+}
 

@@ -50,25 +50,25 @@ export class BlogArticle extends Component {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
                 body: "s=" + text[0].url + "&date=" + text[0].date + "&title=" + text[0].title +
-                    "&author=" + text[0].author + "&tags=" + text[0].tags
+                    "&author=" + text[0].author + "&tags=" + text[0].tags.join(', ')
             })
                 .then(resp => resp.status === 200 ? resp.text() : null)
                 .then(resp => {
-                    this.setState({ article: resp ? <Container dangerouslySetInnerHTML={{ __html: resp }} fluid="xl" className="py-2 home-page" /> : <NotFound /> });
+                    this.setState({ article: resp ? <Container fluid="xl" className="blog-article px-0 py-3" ><Col className="m-auto" sm="12" md="10" lg="8" dangerouslySetInnerHTML={{ __html: resp }} /></Container> : <NotFound /> });
                 })
                 .catch((a) => {
                     console.log("Fetch error!!", a);
-                    this.setState({ article: <NotFound /> });
+                    this.setState({ article: <NotFound className="blog-article px-0 py-3" /> });
                 });
         } else {
-            this.setState({ article: <NotFound /> });
+            this.setState({ article: <NotFound className="blog-article px-0 py-3" /> });
         }
     }
 
     componentDidMount() { this.obtainArticle(); }
 
     render() {
-        return <div>{this.state.article}</div>;
+        return <div className="blog-page"> {this.state.article} </div>
     }
 }
 
@@ -92,7 +92,7 @@ function NotFound(props) {
 
 function BlogCard({ details, relroot }) {
     return (
-        <Col tag="li" sm="6" lg="4" className=" blog-card-li mb-4" >
+        <Col tag="li" md="6" className=" blog-card-li mb-4" >
             <Card className="proj-card">
                 <CardHeader className="proj-card-hed ">
                     <CardTitle tag="h3" className="blog-card-title"><AnchorLink href={relroot + details.path} children={details.title} /></CardTitle>
