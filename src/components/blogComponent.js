@@ -54,28 +54,22 @@ export class BlogArticle extends Component {
         }
     }
     async obtainArticle() {
-        const text = blogIndex.filter(item => item.slug === this.props.match.params.article);
-        if (text.length) {
-            this.setState({ article: <LoadPlacehold /> });
-            await fetch("https://raymessinadesign.com/blog/blog_service.php", {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: "s=" + text[0].file + "&date=" + text[0].date + "&title=" + text[0].title +
-                    "&author=" + text[0].author + "&tags=" + text[0].tags.join(', ')
+        this.setState({ article: <LoadPlacehold /> });
+        await fetch("https://raymessinadesign.com/blog/new_blog_service.php", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: "s=" + this.props.match.params.article
+        })
+            .then(resp => resp.status === 200 ? resp.text() : null)
+            .then(resp => {
+                this.setState({ article: resp ? <Container fluid="xl" className="blog-article px-0 py-3" ><Col className="m-auto" sm="12" md="10" lg="8" dangerouslySetInnerHTML={{ __html: resp }} /></Container> : <NotFound className="blog-article px-0 py-3" /> });
             })
-                .then(resp => resp.status === 200 ? resp.text() : null)
-                .then(resp => {
-                    this.setState({ article: resp ? <Container fluid="xl" className="blog-article px-0 py-3" ><Col className="m-auto" sm="12" md="10" lg="8" dangerouslySetInnerHTML={{ __html: resp }} /></Container> : <NotFound className="blog-article px-0 py-3" /> });
-                })
-                .catch((a) => {
-                    console.log("Fetch error!!", a);
-                    this.setState({ article: <NotFound className="blog-article px-0 py-3" /> });
-                });
-        } else {
-            this.setState({ article: <NotFound className="blog-article px-0 py-3" /> });
-        }
+            .catch((a) => {
+                console.log("Fetch error!!", a);
+                this.setState({ article: <NotFound className="blog-article px-0 py-3" /> });
+            });
     }
 
     componentDidMount() { this.obtainArticle(); }
