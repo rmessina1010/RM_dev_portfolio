@@ -4,8 +4,8 @@ const blogIndex = [
     {
         id: 4,
         title: "Using CSS3 selectors to label items with submenus in a navigation bar.",
-        path: "Label_items_with_submenus",
-        url: '12_6_21_11_06',
+        slug: "Label_items_with_submenus",
+        file: '12_6_21_11_06',
         author: miniME,
         email: myEmail,
         home: mySite,
@@ -16,8 +16,8 @@ const blogIndex = [
     {
         id: 3,
         title: "First Blog",
-        path: "First_Blog",
-        url: '12_6_21_11_06',
+        slug: "First_Blog",
+        file: '12_6_21_11_06',
         author: miniME,
         email: myEmail,
         home: mySite,
@@ -27,8 +27,8 @@ const blogIndex = [
     {
         id: 2,
         title: "First Blog",
-        path: "First_Blog",
-        url: '12_6_21_11_06',
+        slug: "First_Blog",
+        file: '12_6_21_11_06',
         author: miniME,
         email: myEmail,
         home: mySite,
@@ -38,8 +38,8 @@ const blogIndex = [
     {
         id: 1,
         title: "First Blog",
-        path: "First_Blog",
-        url: '12_6_21_11_06',
+        slug: "First_Blog",
+        file: '12_6_21_11_06',
         author: miniME,
         email: myEmail,
         home: mySite,

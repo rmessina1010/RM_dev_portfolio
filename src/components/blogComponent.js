@@ -11,19 +11,33 @@ class BlogPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            indexList: blogIndex,
-            curr: blogIndex[blogIndex.length - 1]
+            indexList: <LoadPlacehold />,
         }
     }
+
+    async obtainList() {
+        this.setState({ indexList: <LoadPlacehold /> });
+        await fetch("https://raymessinadesign.com/blog/blog_registry.php")
+            .then(resp => resp.status === 200 ? resp.json() : null)
+            .then(resp => {
+                this.setState({
+                    indexList: resp ? <BlogList items={resp} relroot='musings/articles/' />
+                        : <NotFound className="blog-article px-0 py-3" />
+                });
+            })
+            .catch((a) => {
+                console.log("Fetch error!!", a);
+                this.setState({ indexList: <NotFound className="blog-article px-0 py-3" /> });
+            });
+    }
+    componentDidMount() { this.obtainList(); }
 
     render() {
         return (<div className="proj-page" >
             <div className="page-title">
                 <Container fluid='xl' className="px-2  px-xl-3"> <BlogIntro /></Container>
             </div>
-            <Container fluid="xl"  >
-                <BlogList items={this.state.indexList} currBlog={this.state.curr} relroot='musings/articles/' />
-            </Container>
+            <Container fluid="xl"  >{this.state.indexList}</Container>
         </div>)
     }
 }
@@ -37,11 +51,10 @@ export class BlogArticle extends Component {
         super(props);
         this.state = {
             article: <LoadPlacehold />,
-            url: ''
         }
     }
     async obtainArticle() {
-        const text = blogIndex.filter(item => item.path === this.props.match.params.article);
+        const text = blogIndex.filter(item => item.slug === this.props.match.params.article);
         if (text.length) {
             this.setState({ article: <LoadPlacehold /> });
             await fetch("https://raymessinadesign.com/blog/blog_service.php", {
@@ -49,12 +62,12 @@ export class BlogArticle extends Component {
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
-                body: "s=" + text[0].url + "&date=" + text[0].date + "&title=" + text[0].title +
+                body: "s=" + text[0].file + "&date=" + text[0].date + "&title=" + text[0].title +
                     "&author=" + text[0].author + "&tags=" + text[0].tags.join(', ')
             })
                 .then(resp => resp.status === 200 ? resp.text() : null)
                 .then(resp => {
-                    this.setState({ article: resp ? <Container fluid="xl" className="blog-article px-0 py-3" ><Col className="m-auto" sm="12" md="10" lg="8" dangerouslySetInnerHTML={{ __html: resp }} /></Container> : <NotFound /> });
+                    this.setState({ article: resp ? <Container fluid="xl" className="blog-article px-0 py-3" ><Col className="m-auto" sm="12" md="10" lg="8" dangerouslySetInnerHTML={{ __html: resp }} /></Container> : <NotFound className="blog-article px-0 py-3" /> });
                 })
                 .catch((a) => {
                     console.log("Fetch error!!", a);
@@ -95,10 +108,10 @@ function BlogCard({ details, relroot }) {
         <Col tag="li" md="6" className=" blog-card-li mb-4" >
             <Card className="proj-card">
                 <CardHeader className="proj-card-hed ">
-                    <CardTitle tag="h3" className="blog-card-title"><AnchorLink href={relroot + details.path} children={details.title} /></CardTitle>
+                    <CardTitle tag="h3" className="blog-card-title"><AnchorLink href={relroot + details.slug} children={details.title} /></CardTitle>
                 </CardHeader>
                 <CardBody>
-                    <div className="blog-date pb-2"><i className="far fa-calendar"></i> <time>{details.date.toLocaleString('en-US')}</time></div>
+                    <div className="blog-date pb-2"><i className="far fa-calendar"></i> <time>{(new Date(details.date || 0)).toLocaleString('en-US')}</time></div>
                     {details.excerpt ? <p className=" pb-1" dangerouslySetInnerHTML={{ __html: details.excerpt }} /> : null}
                     {details.tags.length ? <div className="blog-tags"><i className="fa fa-tags"></i> {details.tags.join(', ')}</div> : null}
                 </CardBody>
