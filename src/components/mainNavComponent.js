@@ -21,24 +21,32 @@ class MainNav extends Component {
     }
     render() {
         let items = [];
+
+        const toggle = () => this.setState({ isOpen: !this.state.isOpen });
+
+        const closeOnClick = () => {
+            if (this.state.isOpen) { this.setState({ isOpen: false }) }
+        }
+
         if (this.props.children && this.props.children.forEach) {
             this.props.children.forEach((child) => {
                 if ((child.include.indexOf("main") < 0 && child.include.length) || child.exclude.indexOf("main") > -1) { return; }
-                let mailFoo = null;
+                let clickFoo = closeOnClick;
                 if (child.url.substr(0, 7) === 'mailto:') {
-                    mailFoo = e => {
+                    clickFoo = e => {
                         window.location = child.url;
                         e.preventDefault();
+                        closeOnClick();
                     }
                 }
                 items.push(
                     <NavItem key={'mainNavItem' + child.id}  >
-                        <NavLink to={child.url} onClick={mailFoo} active={child.url === this.props.url || undefined} className="nav-link px-3 px-sm-2 rounded-sm" >{child.text}</NavLink>
+                        <NavLink to={child.url} onClick={clickFoo} active={child.url === this.props.url || undefined} className="nav-link px-3 px-sm-2 rounded-sm" >{child.text}</NavLink>
                     </NavItem>
                 );
             });
         }
-        const toggle = () => this.setState({ isOpen: !this.state.isOpen });
+
 
         return (
             <div className="navbar-wrap sticky-top">
