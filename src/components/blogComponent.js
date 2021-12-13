@@ -22,12 +22,11 @@ class BlogPage extends Component {
             .then(resp => {
                 this.setState({
                     indexList: resp ? <BlogList items={resp} relroot='musings/articles/' />
-                        : <NotFound className="blog-article px-0 py-3" />
+                        : <NotFound className="blog-article px-0" p="There doesn't apear to be any musings available." />
                 });
             })
-            .catch((a) => {
-                console.log("Fetch error!!", a);
-                this.setState({ indexList: <NotFound className="blog-article px-0 py-3" /> });
+            .catch((err) => {
+                this.setState({ indexList: <NotFound className="blog-article px-0" p={"Error: " + err.message} /> });
             });
     }
     componentDidMount() { this.obtainList(); }
@@ -64,11 +63,15 @@ export class BlogArticle extends Component {
         })
             .then(resp => resp.status === 200 ? resp.text() : null)
             .then(resp => {
-                this.setState({ article: resp ? <Container fluid="xl" className="blog-article px-0 py-3" ><Col className="m-auto" sm="12" md="10" lg="8" dangerouslySetInnerHTML={{ __html: resp }} /></Container> : <NotFound className="blog-article px-0 py-3" /> });
+                this.setState({
+                    article: resp !== "404" ? <Container fluid="xl" className="blog-article px-0 py-3" ><Col className="m-auto" sm="12" md="10" lg="8" dangerouslySetInnerHTML={{ __html: resp }} /></Container> :
+                        <Container fluid="xl" className="py-3 blog-article" ><NotFound className="col  m-auto" /></Container>
+                });
             })
-            .catch((a) => {
-                console.log("Fetch error!!", a);
-                this.setState({ article: <NotFound className="blog-article px-0 py-3" /> });
+            .catch((err) => {
+                this.setState({
+                    article: <Container fluid="xl" className="py-3 blog-article" ><NotFound className="col m-auto" p={"Error: " + err.message} /></Container>
+                });
             });
     }
 
@@ -91,10 +94,10 @@ function BlogIntro(props) {
 }
 
 function NotFound(props) {
-    return (<Container>
-        <h1>OOPS!!!</h1>
-        <p>There doesnt apear to be any musings on that topic.</p>
-    </Container>);
+    return (<>
+        <h1>{props.h1 || "OOPS!!!"}</h1>
+        <p>{props.p || "There doesn't apear to be any musings on that topic."}</p>
+    </>);
 }
 
 function BlogCard({ details, relroot }) {
