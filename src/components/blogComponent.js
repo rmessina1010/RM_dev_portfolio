@@ -89,7 +89,7 @@ export function LoadPlacehold(props) {
 function BlogIntro(props) {
     return (<>
         <h2>Musings</h2>
-        <p>Just a place to keep my toughts and opinions on varous topics, ranging from art, to travel, to developement and other stops in between.</p>
+        <p>Just a place to keep my thoughts and opinions on various topics, ranging from art, to travel, to development and other stops in between.</p>
     </>);
 }
 
