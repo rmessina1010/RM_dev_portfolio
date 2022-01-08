@@ -107,6 +107,7 @@ function BlogCard({ details, relroot }) {
                 <CardHeader className="proj-card-hed ">
                     <CardTitle tag="h3" className="blog-card-title"><AnchorLink href={relroot + details.slug} children={details.title} /></CardTitle>
                 </CardHeader>
+                    { (details.thumb && typeof details.thumb === 'string') ? <div className="blog-thumb"><img  src={details.thumb} alt ={ details.alt || "image for "+details.title}/></div> : null}
                 <CardBody>
                     <div className="blog-date pb-2"><i className="far fa-calendar"></i> <time>{(new Date(details.date || 0)).toLocaleString('en-US')}</time></div>
                     {details.excerpt ? <p className=" pb-1" dangerouslySetInnerHTML={{ __html: details.excerpt }} /> : null}

@@ -1,99 +1,142 @@
-.placehold{
-    position: relative;
-    display: block;
-    padding: 1em;
-    text-align: center;
+.placehold {
+  position: relative;
+  display: block;
+  padding: 1em;
+  text-align: center;
 }
-.placehold>*:first-child{
-    position: absolute;
-    left:0;
-    width: 100%;
-    top:  50% ;
-    margin: -.9em 0 0 0;
+.placehold > *:first-child {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 50%;
+  margin: -0.9em 0 0 0;
 }
-.placehold:before{
-content:'';
+.placehold:before {
+  content: "";
 
-display: inline-block;
-height: 8em;
-width: 8em;
-border-radius: 50%;
-border: 12px   solid silver;
-border-top-color: orange;
-animation-name: rotate;
-animation-duration: 1s;
-animation-timing-function: linear;
-animation-iteration-count: infinite;
-
+  display: inline-block;
+  height: 8em;
+  width: 8em;
+  border-radius: 50%;
+  border: 12px solid silver;
+  border-top-color: orange;
+  animation-name: rotate;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
-@keyframes rotate{
-    0%{ transform: rotate(0)}
-    100%{ transform: rotate(360deg)}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-.blog-card-li{
-    list-style: none;
+.blog-card-li {
+  list-style: none;
 }
 
-.blog-card-li > .card{
-    height: 100%;
-    margin-bottom: 0;
+.blog-card-li > .card {
+  height: 100%;
+  margin-bottom: 0;
 }
 .blog-card-li .card-title.blog-card-title a {
-    color:#fff;
-    display: block;
+  color: #fff;
+  display: block;
 }
 
-.blog-date, .blog-tags{
-    font-size: 85%;
-    color: #777;
- }
-
-code { margin:0; padding: .5em}
-pre code { max-height: 15em; overflow: auto; display: block; }
-.cblock {  margin:   1em 16px ; border: 1px solid; }
-.cblock.css:before, .cblock.html:before{  display: block;background: #555; color:#fff; padding:.5em;  font-weight:  bold }
-.cblock.css:before{ content: 'CSS';}
-.cblock.html:before{ content: 'HTML';}
-.blog-title{
-    font-weight: bold;
-    color: var(--brand-blue);
-    text-shadow: -1px 1px 0 #fff;
-    letter-spacing: -1px;
-    margin: .5em 0  .1em  0;
-    text-align: center;
-    line-height: .9;
-    font-size: 300%;
-  }
-
-.blog-title.long-title{
-    font-size: 270%;
-}
-.met cite{
-    font-style: normal;
-}
-.met + *, .tags + *{
-    margin-top:2em;
-}
-.met, .tags{
-    text-align: center;
-    color: #777;
-    font-size: 90%;
-}
-.met + .tags{
-    margin-top: 0;
+.blog-date,
+.blog-tags {
+  font-size: 85%;
+  color: #777;
 }
 
-
-.blog-page{
-    font-family: Rajdhani;
-	background-color: var(--background);
-	padding-bottom: 1px;
+code {
+  margin: 0;
+  padding: 0.5em;
+}
+pre code {
+  max-height: 15em;
+  overflow: auto;
+  display: block;
+}
+.cblock {
+  margin: 1em 16px;
+  border: 1px solid;
+}
+.cblock.css:before,
+.cblock.html:before {
+  display: block;
+  background: #555;
+  color: #fff;
+  padding: 0.5em;
+  font-weight: bold;
+}
+.cblock.css:before {
+  content: "CSS";
+}
+.cblock.html:before {
+  content: "HTML";
+}
+.blog-title {
+  font-weight: bold;
+  color: var(--brand-blue);
+  text-shadow: -1px 1px 0 #fff;
+  letter-spacing: -1px;
+  margin: 0.5em 0 0.1em 0;
+  text-align: center;
+  line-height: 0.9;
+  font-size: 300%;
 }
 
- .blog-page .blog-article h2, .blog-page .blog-article h3, .blog-page .blog-article h4{
-    margin-bottom: .067em;
-    margin-top: .8em;
-    color: var(--brand-blue);
+.blog-title.long-title {
+  font-size: 270%;
+}
+.met cite {
+  font-style: normal;
+}
+.met + *,
+.tags + * {
+  margin-top: 2em;
+}
+.met,
+.tags {
+  text-align: center;
+  color: #777;
+  font-size: 90%;
+}
+.met + .tags {
+  margin-top: 0;
 }
 
+.blog-page {
+  font-family: Rajdhani;
+  background-color: var(--background);
+  padding-bottom: 1px;
+}
+
+.blog-page .blog-article h2,
+.blog-page .blog-article h3,
+.blog-page .blog-article h4 {
+  margin-bottom: 0.067em;
+  margin-top: 0.8em;
+  color: var(--brand-blue);
+}
+
+.blog-thumb img,
+.blog-mast img {
+  display: block;
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  object-position: top;
+}
+.met + .blog-mast,
+.met + .tags + .blog-mast {
+  margin: 0.5em 0 2em 0;
+}
+.blog-thumb img {
+  max-height: 150px;
+}
