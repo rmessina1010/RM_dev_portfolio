@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Row, Col, Container, Card, CardHeader, CardTitle } from 'reactstrap';
-import blogIndex from '../shared/blogRegistry';
-import { AnchorLink } from './navigational';
+//import blogIndex from '../shared/blogRegistry';
+import {obtainListService, obtainArticleService}  from '../services'
+import { AnchorLink  } from './navigational';
 import '../css/blogStyles.css';
 import '../css/projectStyles.css';
 import CardBody from 'reactstrap/lib/CardBody';
@@ -15,20 +16,16 @@ class BlogPage extends Component {
         }
     }
 
-    async obtainList() {
+    obtainList() {
         this.setState({ indexList: <LoadPlacehold /> });
-        await fetch("https://raymessinadesign.com/blog/blog_registry.php")
-            .then(resp => resp.status === 200 ? resp.json() : null)
-            .then(resp => {
-                this.setState({
-                    indexList: resp ? <BlogList items={resp} relroot='musings/articles/' />
-                        : <NotFound className="blog-article px-0" p="There doesn't apear to be any musings available." />
-                });
+        obtainListService()
+        .then(resp =>  this.setState({ indexList: resp.success ?
+            <BlogList items={resp.list} relroot='musings/articles/' />
+            :<NotFound className="blog-article px-0" p= { resp.err ? "Error: " + resp.err : "There doesn't apear to be any musings available."   }  />
             })
-            .catch((err) => {
-                this.setState({ indexList: <NotFound className="blog-article px-0" p={"Error: " + err.message} /> });
-            });
+        );
     }
+
     componentDidMount() { this.obtainList(); }
 
     render() {
@@ -52,27 +49,15 @@ export class BlogArticle extends Component {
             article: <LoadPlacehold />,
         }
     }
-    async obtainArticle() {
+
+    obtainArticle() {
         this.setState({ article: <LoadPlacehold /> });
-        await fetch("https://raymessinadesign.com/blog/new_blog_service.php", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: "s=" + this.props.match.params.article
-        })
-            .then(resp => resp.status === 200 ? resp.text() : null)
-            .then(resp => {
-                this.setState({
-                    article: resp !== "404" ? <Container fluid="xl" className="blog-article px-0 py-3" ><Col className="m-auto" sm="12" md="10" lg="8" dangerouslySetInnerHTML={{ __html: resp }} /></Container> :
-                        <Container fluid="xl" className="py-3 blog-article" ><NotFound className="col  m-auto" /></Container>
-                });
+        obtainArticleService(this.props.match.params.article)
+        .then(resp =>  this.setState({ article: resp.success ?
+            <Container fluid="xl" className="blog-article px-0 py-3" ><Col className="m-auto" sm="12" md="10" lg="8" dangerouslySetInnerHTML={{ __html: resp.post }} /></Container>
+            :<Container fluid="xl" className="py-3 blog-article" ><NotFound className="col m-auto" p={resp.err} /></Container>
             })
-            .catch((err) => {
-                this.setState({
-                    article: <Container fluid="xl" className="py-3 blog-article" ><NotFound className="col m-auto" p={"Error: " + err.message} /></Container>
-                });
-            });
+        );
     }
 
     componentDidMount() { this.obtainArticle(); }
