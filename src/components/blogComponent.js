@@ -3,6 +3,7 @@ import { Row, Col, Container, Card, CardHeader, CardTitle } from 'reactstrap';
 //import blogIndex from '../shared/blogRegistry';
 import {obtainListService, obtainArticleService}  from '../services'
 import { AnchorLink  } from './navigational';
+import { preventWidows  } from '../shared/helpers';
 import '../css/blogStyles.css';
 import '../css/projectStyles.css';
 import CardBody from 'reactstrap/lib/CardBody';
@@ -90,7 +91,7 @@ function BlogCard({ details, relroot }) {
         <Col tag="li" md="6" className=" blog-card-li mb-4" >
             <Card className="proj-card">
                 <CardHeader className="proj-card-hed ">
-                    <CardTitle tag="h3" className="blog-card-title"><AnchorLink href={relroot + details.slug} children={details.title} /></CardTitle>
+                    <CardTitle tag="h3" className="blog-card-title"><AnchorLink href={relroot + details.slug} children={preventWidows(details.title)} /></CardTitle>
                 </CardHeader>
                     { (details.thumb && typeof details.thumb === 'string') ? <div className="blog-thumb"><img  src={details.thumb} alt ={ details.alt || "image for "+details.title}/></div> : null}
                 <CardBody>
@@ -102,5 +103,7 @@ function BlogCard({ details, relroot }) {
         </Col>
     )
 }
+
+
 
 export default BlogPage;
