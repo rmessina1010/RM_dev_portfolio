@@ -129,9 +129,9 @@ pre code {
 .blog-mast img {
   display: block;
   width: 100%;
-  max-height: 300px;
+  aspect-ratio: 17/9;
   object-fit: cover;
-  object-position: top;
+  object-position: center;
 }
 .met + .blog-mast,
 .met + .tags + .blog-mast {
