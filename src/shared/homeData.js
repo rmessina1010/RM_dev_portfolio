@@ -1,5 +1,6 @@
 import { myEmail } from './siteData';
-const NBSP = String.fromCharCode(160);
+import {NBSP}  from './helpers';
+
 const homeData = [
 
     {

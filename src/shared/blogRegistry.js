@@ -1,4 +1,4 @@
-
+// This file is deprecated!!!
 import { myEmail, miniME, mySite } from './siteData';
 const blogIndex = [
     {

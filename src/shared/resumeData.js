@@ -1,4 +1,5 @@
 import projects from './projectList';
+import {NBSP}  from './helpers';
 
 export const CURRENT_DATE = new Date();
 const resData = {
@@ -20,7 +21,7 @@ const resData = {
         },
         {
             type: 'libs',
-            title: 'Frameworks &' + String.fromCharCode(160) + 'Libraries',
+            title: 'Frameworks &' + NBSP + 'Libraries',
             name: 'Libraries',
             id: 'libs'
         },
@@ -53,7 +54,7 @@ const resData = {
         },
         {
             type: 'awards',
-            title: 'Accolades &' + String.fromCharCode(160) + 'Publications',
+            title: 'Accolades &' + NBSP + 'Publications',
             name: 'Awards',
             id: 'awards'
         }
@@ -62,8 +63,8 @@ const resData = {
     ],
 
     summary: {
-        em: 'Full Stack Web developer, with extensive experience in Marketing and Communications.  A coder who designs and a designer who codes.',
-        text: 'Demonstrated ability to translate client ideas into functioning reality. Has passion for learning and well-honed trouble shooting and problem solving skills. A strategic and conceptual thinker with a balanced of mix of creative talent and technical know how. Leads by example with an easy-going manner and builds trust by sharing knowledge, vision and experience with colleagues.'
+        em: `Full Stack Web developer, with extensive experience in Marketing and Communications.  A coder who designs and a designer who codes.`,
+        text: `Demonstrated ability to translate client ideas into functioning reality. Has passion for learning and well-honed trouble shooting and problem solving skills. A strategic and conceptual thinker with a balanced of mix of creative talent and technical know how. Leads by example with an easy-going manner and builds trust by sharing knowledge, vision and experience with${NBSP}colleagues.`
     },
     skills: {
         codes: [
@@ -137,8 +138,8 @@ const resData = {
     ],
     experience: [
         {
-            employer: 'Hy Cite Enterprises,' + String.fromCharCode(160) + 'LLC',
-            title: 'Sr. Graphic' + String.fromCharCode(160) + 'Designer / Web' + String.fromCharCode(160) + 'Designer',
+            employer: 'Hy Cite Enterprises,' + NBSP + 'LLC',
+            title: 'Sr. Graphic' + NBSP + 'Designer / Web' + NBSP + 'Designer',
             showDesc: false,
             desc: null,
             startDate: new Date(2013, 10, 11, 0, 0, 0, 0),
@@ -151,7 +152,7 @@ const resData = {
             ]
         },
         {
-            employer: 'DAZZLEFISH' + String.fromCharCode(160) + '/ MUNDANE' + String.fromCharCode(160) + 'EGG',
+            employer: 'DAZZLEFISH' + NBSP + '/ MUNDANE' + NBSP + 'EGG',
             title: 'Web Developer / Art Director',
             showDesc: false,
             desc: null,
@@ -164,7 +165,7 @@ const resData = {
             ]
         },
         {
-            employer: 'ROCKFORD REGISTER' + String.fromCharCode(160) + 'STAR (GANNETT)',
+            employer: 'ROCKFORD REGISTER' + NBSP + 'STAR (GANNETT)',
             title: 'Marketing Graphic Designer',
             showDesc: false,
             desc: null,
