@@ -7,6 +7,7 @@ const homeData = [
         type: 'plax',
         tint: 'shade-m',
         img: 'images/img-6.jpg',
+        alt: 'grayscale image, close up of a developers hands at the typing on a laptop computer',
         imgPos: true,
         cont:
             [
@@ -51,6 +52,7 @@ const homeData = [
         type: 'plax',
         tint: 'shade',
         img: 'images/img-9.jpg',
+        alt: 'close up of UI design sketches strewn on desk; laptop, mobile phone, and pen off to the side',
         imgPos: true,
         cont:
             [

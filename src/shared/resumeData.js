@@ -186,5 +186,4 @@ resData.projs = resProjs.map(proj => {
     return { id: proj.id, link: link, name: proj.name, desc: (proj.resDesc || proj.desc), stack: proj.stack.join(', ') }
 }
 );
-console.log(resData.projs);
 export default resData;

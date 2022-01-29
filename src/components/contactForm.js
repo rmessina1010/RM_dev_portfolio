@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import validator from '../shared/validation';
 import { Form, FormFeedback, FormGroup, Label, Row, Input, Button, Container, Col } from 'reactstrap';
-import { myEmail } from '../shared/siteData';
 
 const subjectOptions = [
     'Web Development Project',

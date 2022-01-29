@@ -81,6 +81,7 @@ export function ParalaxSec(props) {
     let pclass = props.pclass || '';
     let wrapParalax = '';
     let rowParalax = '';
+    let ariaLabel = props.alt || 'hero image for branding'
     let colSet;
     let tinter = (props.tint === 'tint' || props.tint === 'shade' || props.tint === 'tint-m' || props.tint === 'shade-m') ? props.tint + '-sec' : '';
 
@@ -113,7 +114,7 @@ export function ParalaxSec(props) {
     }
 
     return (
-        <div className={"head-deck-wrap" + wrapParalax} style={wrapStyle}>
+        <div className={"head-deck-wrap" + wrapParalax} style={wrapStyle} role="img" aria-label={ariaLabel}>
             <Container fluid='xl'>
                 <Row className={'paralax-content' + rowParalax + pclass} style={style} >
                     <Col xs="12" sm="10" md="10" className="row  px-sm-0 justify-content-center" >{colSet}</Col>
@@ -135,7 +136,7 @@ export default function HomePage(props) {
             case 'top':
                 return <TopHead head={section.head} text={section.text} clname={clname} key={indx} />;
             case 'plax':
-                return <ParalaxSec img={section.img} imgPos={section.imgPos ? true : false} cont={section.cont} tint={section.tint} key={indx} />;
+                return <ParalaxSec img={section.img} imgPos={section.imgPos ? true : false} cont={section.cont} tint={section.tint} key={indx} alt={section.alt||null}/>;
             default:
                 return null;
         }

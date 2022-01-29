@@ -13,7 +13,7 @@ class FooterLinks extends Component {
                 if ((child.include.indexOf("footer") < 0 && child.include.length) || child.exclude.indexOf("footer") > -1) { return; }
                 if (!this.props.noPipes && children.length > 0) { children.push(" | "); }
                 children.push(
-                    <AnchorLink href={child.url} children={child.text} key={"footnavlink" + child.id} />
+                    <AnchorLink href={child.url} children={child.text} key={"footnavlink" + child.id}/>
                 );
             });
         }
@@ -32,7 +32,7 @@ class SocialFooterLinks extends Component {
         if (this.props.children && this.props.children.forEach) {
             this.props.children.forEach((child) => {
                 children.push(
-                    <IconLink href={child.url} key={"footsocial" + child.id} attrs={{ target: (child.url.indexOf('http') === 0 ? "_blank" : null) }} icon={{ icon: child.icon }} />
+                    <IconLink href={child.url} key={"footsocial" + child.id} attrs={{ target: (child.url.indexOf('http') === 0 ? "_blank" : null), ['aria-label']: child.title }} icon={{ icon: child.icon }} />
                 );
             });
         }
