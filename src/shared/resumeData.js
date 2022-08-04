@@ -146,7 +146,7 @@ const resData = {
             endDate: CURRENT_DATE,
             location: 'Remote/Madison, WI',
             highlighs: [
-                `Lead intiative to implement Yarn Workspaces in vets-website, in preparation for continous deploy`,
+                `Lead initiative to implement Yarn Workspaces in vets-website, in preparation for continuous deploy`,
                 `Helped develop a prototype Backstage Console UI plugin`,
                 `Ensured daily front-end deploy ran smoothly; troubleshooting CI/CD issues`,
                 `Reviewed PR's and ensured code quality`,
