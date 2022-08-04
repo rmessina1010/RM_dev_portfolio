@@ -138,6 +138,21 @@ const resData = {
     ],
     experience: [
         {
+            employer: 'Ad Hoc,' + NBSP + 'LLC',
+            title: 'Staff Software Engineer'+ NBSP + '[Front End]',
+            showDesc: false,
+            desc: null,
+            startDate: new Date(2021, 11, 27, 0, 0, 0, 0),
+            endDate: CURRENT_DATE,
+            location: 'Remote/Madison, WI',
+            highlighs: [
+                `Lead intiative to implement Yarn Workspaces in vets-website, in preparation for continous deploy`,
+                `Helped develop a prototype Backstage Console UI plugin`,
+                `Ensured daily front-end deploy ran smoothly; troubleshooting CI/CD issues`,
+                `Reviewed PR's and ensured code quality`,
+            ]
+        },
+        {
             employer: 'Hy Cite Enterprises,' + NBSP + 'LLC',
             title: 'Sr. Graphic' + NBSP + 'Designer / Web' + NBSP + 'Designer',
             showDesc: false,
