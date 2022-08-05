@@ -172,7 +172,7 @@ const resData = {
             showDesc: false,
             desc: null,
             startDate: new Date(2001, 1, 28, 0, 0, 0, 0),
-            endDate: CURRENT_DATE,
+            endDate: new Date(2021, 11, 27, 0, 0, 0, 0),
             location: 'Madison, WI',
             highlighs: [
                 'Designed website for Nobium General Contractors, Escondido, CA',
