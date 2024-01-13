@@ -146,7 +146,9 @@ const resData = {
             endDate: CURRENT_DATE,
             location: 'Remote/Madison, WI',
             highlighs: [
-                `Lead initiative to implement Yarn Workspaces in vets-website, in preparation for continuous deploy`,
+                `Served as Team Lead for Release Tools Team, charged with the build and deployment processes of over 70 independent React applications`,
+                `Mentored and coaching senior engineers`,
+                `Lead initiative to implement Yarn Workspaces in vets-website, in preparation for continuous deploy paradigm`,
                 `Helped develop a prototype Backstage Console UI plugin`,
                 `Ensured daily front-end deploy ran smoothly; troubleshooting CI/CD issues`,
                 `Reviewed PR's and ensured code quality`,

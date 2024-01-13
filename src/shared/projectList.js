@@ -167,7 +167,7 @@ const projectData =
             roles: [],
             links: [
                 {
-                    url: 'https://raymessinadesign.com/mastermind/?lvl=',
+                    url: 'https://raymessinadesign.com/mastermind',
                     text: DEMO,
                 },
                 {

@@ -108,9 +108,12 @@
   font-size: 80%;
 }
 
+/* using util class
 .res-sec .employer {
   line-height: 1;
 }
+*/
+
 .res-sec .employer .city {
   font-weight: 400;
   display: inline-block;
@@ -190,4 +193,11 @@ li.badges.col-6 {
 
 .navList li + li{
 	border-top:1px solid #ccc;
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+  .res-sec .employer, .res-sec .dates {
+    line-height: 1;
+  }
 }

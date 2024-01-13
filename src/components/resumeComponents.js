@@ -101,8 +101,8 @@ export function EmployerList(props) {
     let items = Array.isArray(props.items) ? props.items.map(item => (
         <Row className="history-item" key={dateToMoYear(item.startDate)}>
             <Col xs="12" lg="3" >
-                <h6 className="dates float-sm-left">{dateToMoYear(item.startDate)}{' — '}{dateToMoYear(item.endDate)}</h6>
-                <h6 className="employer float-sm-right float-lg-left">
+                <h6 className="dates float-sm-left mr-2">{dateToMoYear(item.startDate)}{' — '}{dateToMoYear(item.endDate)}</h6>
+                <h6 className="employer float-sm-left">
                     {item.employer}
                     <span className="d-lg-none">, </span>
                     <span className="city d-inline-block d-lg-block">{item.location}</span>

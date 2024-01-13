@@ -21,7 +21,7 @@ const homeData = [
                     colClass: 'text-center text-md-left',
                     btnClass: 'text-center text-md-left',
 
-                    cont: "I am passionate about building engaging, dynamic, and scalable, websites and applications. I invite you to take a look at my projects, review my résumé and contact me about how I can help you achieve your business" + NBSP + "goals.",
+                    cont: "I am passionate about building engaging, dynamic, and scalable websites and applications. I invite you to take a look at my projects, review my résumé and contact me about how I can help you achieve your business" + NBSP + "goals.",
 
                     btns: [
                         {
