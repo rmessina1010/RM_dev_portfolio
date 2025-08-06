@@ -28,4 +28,5 @@ yarn-error.log*
 public/downloads/*
 public/images/*
 
-.env
+.env    
+.eslintcache
