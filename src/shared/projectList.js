@@ -4,7 +4,7 @@ const JQ = 'jQuery';
 const JS = 'Javascript';
 const ND = 'NodeJS';
 const PHP = 'PHP';
-const WP = 'WordPress';
+const WP = 'WordPress'
 const CSS = 'CSS';
 const SASS = 'SASS';
 const HTML = 'HTML';
@@ -16,6 +16,18 @@ const MSQL = 'MySQL';
 const MONGDB = 'MongoDB';
 const EXPR = 'Express';
 const PASSP = 'Passport';
+const NODEJS = 'NodeJS';
+const GHA = 'Github Actions';
+const WPACK = 'Webpack';
+const CYPRESS = 'Cypress';
+const MOCHA = 'Mocha';
+const GIT = 'Git';
+const DOCKER = 'Docker';
+const BACKSTAGE = 'Backstage';
+const MATUI = 'Material UI'
+const KUB = 'Kubernetes';
+const TS = 'TypeScript';
+const PY = 'Python';
 
 const DEV = 'Development';
 const FRONT = 'Front End';
@@ -27,6 +39,7 @@ const CODE = 'Code';
 const BRND = 'Brand';
 const DBUG = 'Debug';
 const STUP = 'SetUp';
+const LEAD = 'Lead';
 
 
 
@@ -38,6 +51,28 @@ const SCAN_QR = 'Scan Expo.io QR';
 
 const projectData =
     [
+        {
+            id: 8,
+            inactive: false,
+            inRes: false,
+            thumb: 'images/VAdotGOV.png',
+            name: 'VA.gov',
+            desc: `The official website for the United States Department of Veterans Affairs. I have worked in several capacities within VA.gov including: Staff FE engineer for the component library team, Team Lead for the Release and Delivery team, Tech Lead for the code catalog team. Currently I am working with the digitization of Health and Benefits forms.`,
+            stack: [JS, TS, REACT, RDX, NODEJS, SASS, MATUI, WPACK, GHA, GIT, CYPRESS, MOCHA, BACKSTAGE, DOCKER ],
+            skills: [],
+            roles: [],
+            links: [
+                {
+                    url: 'https://va.gov',
+                    text: DEMO,
+                },
+                {
+                    url: 'https://github.com/department-of-veterans-affairs/vets-website',
+                    text: GH,
+
+                },
+            ]
+        },
         {
             id: 1,
             inactive: false,
