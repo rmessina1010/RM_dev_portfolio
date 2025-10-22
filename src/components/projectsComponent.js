@@ -50,7 +50,7 @@ export function ProjectCard(props) {
             <CardBody>
                 <Row>
                     <Col xs="12" sm="5" lg="4">
-                        <CardImg src={proj.thumb} alt={`screen sot of ${proj.name}`}/>
+                        <CardImg src={proj.thumb} alt={`screen sot of ${proj.name}`} loading="lazy"/>
                         <div className="d-none d-sm-block text-center">
                             <h5 className="ml-0">View</h5>
                             <nav className="proj-view">

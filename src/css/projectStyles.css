@@ -95,7 +95,7 @@
   color: #555;
 
 }
-.proj-stack li:nth-child(2n+1){
+.proj-stack li:nth-child(odd){
   color: var(--brand-blue-shade);
 }
 
