@@ -20,7 +20,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "mocha --require @babel/register --require jsdom-global/register 'src/tests/**/*.test.unit.js'",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
