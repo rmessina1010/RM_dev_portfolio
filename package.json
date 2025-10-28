@@ -20,7 +20,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "mocha --require @babel/register --require jsdom-global/register 'src/tests/**/*.test.unit.js'",
+    "test": "mocha --require @babel/register --require ignore-styles --require jsdom-global/register  'src/tests/**/*.test.unit.js'",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -42,11 +42,14 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.28.5",
-    "@babel/preset-env": "^7.28.5",
-    "@babel/preset-react": "^7.28.5",
-    "@babel/register": "^7.28.3",
-    "chai": "^6.2.0",
-    "mocha": "^11.7.4"
+    "@babel/core": "7.28.5",
+    "@babel/preset-env": "7.28.5",
+    "@babel/preset-react": "7.28.5",
+    "@babel/register": "7.28.3",
+    "chai": "4.3.7",
+    "mocha": "8.4.0",
+    "ignore-styles": "5.0.1",
+    "jsdom": "21.1.0",
+    "jsdom-global": "3.0.2"
   }
 }

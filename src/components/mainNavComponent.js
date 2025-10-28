@@ -6,7 +6,7 @@ import {
     NavbarBrand,
     Nav,
     NavItem,
-    Container
+    Container,
 } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import '../css/mainNavStyles.css';
@@ -41,7 +41,7 @@ class MainNav extends Component {
                 }
                 items.push(
                     <NavItem key={'mainNavItem' + child.id}  >
-                        <NavLink to={child.url} onClick={clickFoo} active={child.url === this.props.url || undefined} className="nav-link px-3 px-sm-2 rounded-sm" >{child.text}</NavLink>
+                        <NavLink to={child.url} onClick={clickFoo} className={`nav-link px-3 px-sm-2 rounded-sm ${child.url === this.props.url ? 'active' : ''}`} >{child.text}</NavLink>
                     </NavItem>
                 );
             });
