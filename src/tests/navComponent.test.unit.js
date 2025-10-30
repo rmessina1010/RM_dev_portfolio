@@ -15,7 +15,8 @@ describe('Main Navigation', () => {
     const lastNavItemIndex = testPages.length - 1;
     const contactLink = (lastNavItemIndex > -1) ? screen.getByText(testPages[lastNavItemIndex].text) : null;
     const links = container.querySelector('ul.navbar-nav');
-    const currentLink = screen.getByText('Test 1');
+    const currentLink = container.querySelector('ul a[href="'+currentURL+'"]');
+    const otherLink = container.querySelector('ul a:not([href="'+currentURL+'"])');
 
     it('has heading that links back to home page', () => {
         expect(heading).to.exist;
@@ -26,14 +27,20 @@ describe('Main Navigation', () => {
         expect(links.children.length).to.equal(testPages.length);
     });
     if (contactLink){
-        it(`has a ${testPages[lastNavItemIndex].text} link`, () => {
+        it(`has a "${testPages[lastNavItemIndex].text}" link`, () => {
             expect(contactLink).to.exist;
             expect(contactLink.tagName).to.equal('A');
             expect(contactLink.getAttribute('href')).to.equal(testPages[lastNavItemIndex].url);
         });
     }
-    it('highlights the matching url link', () => {
+    it('highlights the current url link', () => {
         expect(currentLink).to.exist;
         expect(currentLink.classList.contains('active')).to.be.true;
     });
+    if (otherLink){
+        it('other links are not highlighted', () => {
+            expect(otherLink).to.exist;
+            expect(otherLink.classList.contains('active')).to.be.false;
+        });
+    }
 });

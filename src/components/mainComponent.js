@@ -15,7 +15,7 @@ class Main extends Component {
     render() {
         return (
             <Container fluid className="p-0">
-                <MainNav url="/home" children={SiteData.pages} siteName={SiteData.info.siteName} />
+                <MainNav url="/home/" children={SiteData.pages} siteName={SiteData.info.siteName} />
                 <Switch>
                     <Route exact path="/home" component={HomePage} />
                     <Route exact path="/projects" component={ProjectsPage} />
