@@ -92,7 +92,7 @@
   display: inline;
   padding: 0;
   font-weight: bold;
-  color: #555;
+  color: #777;
 
 }
 .proj-stack li:nth-child(odd){
@@ -102,6 +102,15 @@
 .proj-stack li + li:before {
   content: ", ";
 }
+
+.proj-stack li:nth-child(odd) + li:before {
+  color: var(--brand-blue-shade);
+}
+
+.proj-stack li:nth-child(even) + li:before {
+  color: #777;
+}
+
 .proj-page .card h3 {
   font-weight: bold;
   color: #fff;

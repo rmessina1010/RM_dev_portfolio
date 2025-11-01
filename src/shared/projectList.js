@@ -107,7 +107,7 @@ const projectData =
             thumb: 'images/todo_add.jpg',
             name: 'TO-DO!',
             desc: `Simple, calendar driven, to do list application. Implements device storage and persist${NBSP}state.`,
-            stack: [REACT_NTV, RDX],
+            stack: [REACT_NTV, RDX, NODEJS],
             skills: [],
             roles: [],
             links: [
