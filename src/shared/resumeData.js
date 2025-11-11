@@ -63,8 +63,8 @@ const resData = {
     ],
 
     summary: {
-        em: `Full Stack Web developer, with extensive experience in Marketing and Communications.  A coder who designs and a designer who codes.`,
-        text: `Demonstrated ability to translate client ideas into functioning reality. Has passion for learning and well-honed trouble shooting and problem solving skills. A strategic and conceptual thinker with a balanced of mix of creative talent and technical know how. Leads by example with an easy-going manner and builds trust by sharing knowledge, vision and experience with${NBSP}colleagues.`
+        em: `Full Stack Software Engineer with 17 years cumulative technical experience. Web and Mobile Development certifications (MERN and MAMP stacks, plus React Native).`,
+        text: `Aditional experience in graphic design and marketing. Passion for learning and well-honed trouble shooting, problem solving, and leadership skills`
     },
     skills: {
         codes: [
@@ -72,6 +72,7 @@ const resData = {
             { name: 'TypeScript' },
             { name: 'PHP' },
             { name: 'HTML5 / CSS3' },
+            { name: 'Python' },
             { name: 'SASS' },
             { name: 'SQL' }
         ],
@@ -89,12 +90,13 @@ const resData = {
         tools: [
             { name: 'Git' },
             { name: 'Postman' },
+            { name: 'Docker' },
             { name: 'InDesign' },
             { name: 'Photoshop' },
             { name: 'Lightroom' },
             { name: 'Illustrator' },
             { name: 'Xd' },
-            { name: 'REST APIs' },
+            { name: 'Rest APIs' },
             { name: 'DreamWeaver' },
             { name: 'Word' },
             { name: 'Powerpoint' },
