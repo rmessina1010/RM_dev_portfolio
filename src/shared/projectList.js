@@ -48,6 +48,7 @@ const CP = 'CodePen';
 const SOON = 'Demo: Coming Soon';
 const DEMO = 'Demo';
 const SCAN_QR = 'Scan Expo.io QR';
+const LIVE = 'Live Site'
 
 const projectData =
     [
@@ -64,7 +65,7 @@ const projectData =
             links: [
                 {
                     url: 'https://va.gov',
-                    text: DEMO,
+                    text: LIVE,
                 },
                 {
                     url: 'https://github.com/department-of-veterans-affairs/vets-website',
