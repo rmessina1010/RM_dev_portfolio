@@ -1,0 +1,54 @@
+name: Deploy Test Payload
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout repository
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Setup Node
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'  
+          
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm run test
+        
+      # This step runs ONLY if tests pass
+      - name: Build project
+        run: npm run build
+  
+      # Upload to FTP (only runs if previous steps succeed)
+      - name: Deploy to FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ${{ secrets.URL }}
+          username: ${{ secrets.ACCOUNT }}
+          password: ${{ secrets.PASS }}
+          protocol: ftp
+          local-dir: ./
+          server-dir: ${{ secrets.PATH }}
+          # Upload only specific files/directories
+          include: |
+            build/static/**
+            build/images/**
+            build/index.html
+            build/asset-manifest.json
+            build/robots.txt
+            build/manifest.json
+          # log-level: verbose
+
+      # Message sucess   
+      - name: Signal Success
+        run: echo '---- DEPLOY SUCCESSFUL ---' 
