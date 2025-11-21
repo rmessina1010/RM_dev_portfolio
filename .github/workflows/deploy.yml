@@ -21,8 +21,10 @@ jobs:
           
       - name: Install dependencies
         run: npm install
-        run: npm install core-js 
 
+      - name: Install core-js
+        run: npm install core-js
+        
       - name: Run tests
         run: npm run test
         
