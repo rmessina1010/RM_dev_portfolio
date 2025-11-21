@@ -1,4 +1,4 @@
-name: Deploy Test Payload
+name: Deploy Site
 
 on:
   workflow_dispatch:
@@ -18,12 +18,10 @@ jobs:
         with:
           node-version: 18
           # cache: 'off'  
-
-      - name: Clear old lockfile
-        run: rm -rf node_modules package-lock.json
           
       - name: Install dependencies
         run: npm install
+        run: npm install core-js 
 
       - name: Run tests
         run: npm run test
