@@ -6,40 +6,32 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
 
     steps:
-      # Checkout repository
+      # 1️⃣ Checkout repository
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # Setup Node
+      # 2️⃣ Setup Node
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 14.21.3
-          # cache: 'off'  
-          
-      - name: Force-create /bin/sh symlink
-        run: |
-          echo "Fixing /bin/sh..."
-          ls -la /bin
-          ln -sf /bin/bash /bin/sh
-          ls -la /bin
-          
+          cache: 'npm'
+
+      # 3️⃣ Install dependencies
       - name: Install dependencies
-        run: npm install
-        
+        run: npm ci
+
+      # 4️⃣ Run tests
       - name: Run tests
-        run: npm run test
-        
-      # This step runs ONLY if tests pass
+        run: npm test
+
+      # 5️⃣ Build React project
       - name: Build project
         run: npm run build
-  
-      # Upload to FTP (only runs if previous steps succeed)
+
+      # 6️⃣ Deploy to FTP
       - name: Deploy to FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
@@ -47,9 +39,8 @@ jobs:
           username: ${{ secrets.ACCOUNT }}
           password: ${{ secrets.PASS }}
           protocol: ftp
-          local-dir: ./
+          local-dir: ./build       # Only upload production build
           server-dir: ${{ secrets.PATH }}
-          # Upload only specific files/directories
           include: |
             build/static/**
             build/images/**
@@ -57,8 +48,8 @@ jobs:
             build/asset-manifest.json
             build/robots.txt
             build/manifest.json
-          # log-level: verbose
+          # log-level: verbose    # optional
 
-      # Message sucess   
+      # 7️⃣ Success message
       - name: Signal Success
-        run: echo '---- DEPLOY SUCCESSFUL ---' 
+        run: echo '---- DEPLOY SUCCESSFUL ---'
