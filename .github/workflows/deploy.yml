@@ -5,20 +5,20 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04 
 
     steps:
-      - name: Debug Runner Environment
-        run: |
-          echo "=== SYSTEM INFO ==="
-          uname -a
-          cat /etc/*release || true
+      # - name: Debug Runner Environment
+      #   run: |
+      #     echo "=== SYSTEM INFO ==="
+      #     uname -a
+      #     cat /etc/*release || true
 
-          echo "=== SHELLS IN /bin ==="
-          ls -la /bin | grep sh || echo "NO SH FOUND"
+      #     echo "=== SHELLS IN /bin ==="
+      #     ls -la /bin | grep sh || echo "NO SH FOUND"
 
-          echo "=== WHO AM I ==="
-          whoami
+      #     echo "=== WHO AM I ==="
+      #     whoami
 
       # Checkout repository
       - name: Checkout Code
@@ -35,10 +35,22 @@ jobs:
       - name: Downgrade npm to 6
         run: npm install -g npm@6
 
-      # Install dependencies
-      - name: Install dependencies
-        run: npm ci
-        shell: bash
+      # Debugging Step: Check for /bin/sh and versions
+      - name: Debug npm install
+        run: |
+          echo "=== Checking Node version ==="
+          node -v
+
+          echo "=== Checking npm version ==="
+          npm -v
+
+          echo "=== Checking if /bin/sh exists ==="
+          ls -la /bin/sh || echo "/bin/sh not found"
+          ls -la /usr/bin/sh || echo "/usr/bin/sh not found"
+
+          echo "=== Installing dependencies ==="
+          npm ci --ignore-scripts  # Install dependencies using npm ci
+
 
       # Run tests
       - name: Run tests
