@@ -8,18 +8,6 @@ jobs:
     runs-on: ubuntu-24.04 
 
     steps:
-      # - name: Debug Runner Environment
-      #   run: |
-      #     echo "=== SYSTEM INFO ==="
-      #     uname -a
-      #     cat /etc/*release || true
-
-      #     echo "=== SHELLS IN /bin ==="
-      #     ls -la /bin | grep sh || echo "NO SH FOUND"
-
-      #     echo "=== WHO AM I ==="
-      #     whoami
-
       # Checkout repository
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -34,23 +22,12 @@ jobs:
       # Downgrade npm to 6 (compatible with Node 14 and core-js)
       - name: Downgrade npm to 6
         run: npm install -g npm@6
+        shell: bash
 
-      # Debugging Step: Check for /bin/sh and versions
-      - name: Debug npm install
-        run: |
-          echo "=== Checking Node version ==="
-          node -v
-
-          echo "=== Checking npm version ==="
-          npm -v
-
-          echo "=== Checking if /bin/sh exists ==="
-          ls -la /bin/sh || echo "/bin/sh not found"
-          ls -la /usr/bin/sh || echo "/usr/bin/sh not found"
-
-          echo "=== Installing dependencies ==="
-          npm ci --ignore-scripts  # Install dependencies using npm ci
-
+      # Install dependencies
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+        shell: bash
 
       # Run tests
       - name: Run tests
