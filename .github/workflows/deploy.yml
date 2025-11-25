@@ -8,30 +8,49 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout repository
+      - name: Debug Runner Environment
+        run: |
+          echo "=== SYSTEM INFO ==="
+          uname -a
+          cat /etc/*release || true
+
+          echo "=== SHELLS IN /bin ==="
+          ls -la /bin | grep sh || echo "NO SH FOUND"
+
+          echo "=== WHO AM I ==="
+          whoami
+
+      # Checkout repository
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # 2️⃣ Setup Node
+      # Setup Node
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 14.21.3
-          cache: 'npm'
+          # cache: 'npm'  #omit cache, for now
 
-      # 3️⃣ Install dependencies
+      # Downgrade npm to 6 (compatible with Node 14 and core-js)
+      - name: Downgrade npm to 6
+        run: npm install -g npm@6
+
+      # Install dependencies
       - name: Install dependencies
         run: npm ci
+        shell: bash
 
-      # 4️⃣ Run tests
+      # Run tests
       - name: Run tests
         run: npm test
+        shell: bash
 
-      # 5️⃣ Build React project
+      # Build React project
       - name: Build project
         run: npm run build
+        shell: bash
 
-      # 6️⃣ Deploy to FTP
+      # Deploy to FTP
       - name: Deploy to FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
@@ -42,14 +61,14 @@ jobs:
           local-dir: ./build       # Only upload production build
           server-dir: ${{ secrets.PATH }}
           include: |
-            build/static/**
-            build/images/**
-            build/index.html
-            build/asset-manifest.json
-            build/robots.txt
-            build/manifest.json
+            static/**
+            images/**
+            index.html
+            asset-manifest.json
+            robots.txt
+            manifest.json
           # log-level: verbose    # optional
 
-      # 7️⃣ Success message
+      # Success message
       - name: Signal Success
         run: echo '---- DEPLOY SUCCESSFUL ---'
