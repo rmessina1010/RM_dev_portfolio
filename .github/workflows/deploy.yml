@@ -24,15 +24,21 @@ jobs:
         run: npm install -g npm@6
         shell: bash
 
+      - name: Disable core-js postinstall
+        run: |
+          echo "Patching core-js postinstall..."
+          node -e "
+            const fs=require('fs');
+            const pkg=JSON.parse(fs.readFileSync('package.json','utf8'));
+            pkg.scripts = pkg.scripts || {};
+            pkg.scripts.postinstall = 'echo core-js postinstall skipped';
+            fs.writeFileSync('package.json', JSON.stringify(pkg,null,2));
+
       # Install dependencies
       - name: Install dependencies
         run:  npm ci
         env:
           NODE_ENV: development   # ensure devDependencies are installed
-        shell: bash
-
-      - name: Disable core-js postinstall
-        run: npm pkg set scripts.postinstall="echo skipped"
         shell: bash
 
       # Run tests
