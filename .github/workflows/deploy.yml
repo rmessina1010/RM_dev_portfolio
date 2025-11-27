@@ -26,12 +26,20 @@ jobs:
 
       # Install dependencies
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --ignore-scripts
 
       # Set compatible jsdom v
       - name: Downgrade jsdom for CI (Node 14 compatibility)
         run: npm install --save-dev jsdom@19
-        
+      
+      # Rebuild only the packages that need scripts to run mocha tests
+      - name: Rebuild required packages
+        run: |
+          npm rebuild @babel/core
+          npm rebuild @babel/register
+          npm rebuild jsdom
+          npm rebuild jsdom-global
+      
       # Run unit tests
       - name: Run tests
         run: npm run test
