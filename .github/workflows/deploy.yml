@@ -19,9 +19,9 @@ jobs:
           node-version: 14.21.3
           # cache: 'npm'  #omit cache, for now
 
-      # Downgrade npm to 6 (compatible with Node 14 and core-js)
-      - name: Downgrade npm to 6
-        run: npm install -g npm@6
+      # Downgrade npm to 8 (compatible with Node 14 and core-js)
+      - name: Upgrade npm to 8
+        run: npm install -g npm@8
         shell: bash
 
       # Install dependencies
@@ -31,7 +31,7 @@ jobs:
       # Set compatible jsdom v
       - name: Downgrade jsdom for CI (Node 14 compatibility)
         run: npm install --save-dev jsdom@19
-
+        
       # Run unit tests
       - name: Run tests
         run: npm run test
