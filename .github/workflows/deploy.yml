@@ -56,7 +56,7 @@ jobs:
           username: ${{ secrets.ACCOUNT }}
           password: ${{ secrets.PASS }}
           protocol: ftp
-          local-dir: ./deploy/
+          local-dir: ./build/
           exclude: |
             **                      
             !static/**              
