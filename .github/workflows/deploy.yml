@@ -28,41 +28,41 @@ jobs:
           name: site-build
           path: build
           
-deploy:
-  runs-on: ubuntu-latest
-  needs: build
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
 
-  steps:
-    - name: Download artifact
-      uses: actions/download-artifact@v4
-      with:
-        name: site-build
-        path: build
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: site-build
+          path: build
 
-    # - name: Prepare deploy folder
-    #   run: |
-    #     mkdir deploy
-    #     cp -r build/static deploy/
-    #     cp -r build/images deploy/
-    #     cp build/index.html deploy/
-    #     cp build/asset-manifest.json deploy/
-    #     cp build/robots.txt deploy/
-    #     cp build/manifest.json deploy/
+      # - name: Prepare deploy folder
+      #   run: |
+      #     mkdir deploy
+      #     cp -r build/static deploy/
+      #     cp -r build/images deploy/
+      #     cp build/index.html deploy/
+      #     cp build/asset-manifest.json deploy/
+      #     cp build/robots.txt deploy/
+      #     cp build/manifest.json deploy/
 
-    - name: Deploy to FTP
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.6
-      with:
-        server: ${{ secrets.URL }}
-        username: ${{ secrets.ACCOUNT }}
-        password: ${{ secrets.PASS }}
-        protocol: ftp
-        local-dir: ./deploy/
-        exclude: |
-          **                      
-          !static/**              
-          !images/**              
-          !index.html             
-          !asset-manifest.json    
-          !robots.txt
-          !manifest.json
-        server-dir: ${{ secrets.PATH }}
+      - name: Deploy to FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ${{ secrets.URL }}
+          username: ${{ secrets.ACCOUNT }}
+          password: ${{ secrets.PASS }}
+          protocol: ftp
+          local-dir: ./deploy/
+          exclude: |
+            **                      
+            !static/**              
+            !images/**              
+            !index.html             
+            !asset-manifest.json    
+            !robots.txt
+            !manifest.json
+          server-dir: ${{ secrets.PATH }}
