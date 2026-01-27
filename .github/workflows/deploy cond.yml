@@ -1,0 +1,78 @@
+name: Deploy Site
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: node:14-buster     # Full Node 14 ecosystem just like in 2021
+    steps:
+      - id: set_output
+        run: |
+          # Your logic to determine if the workflow should stop
+          CONDITION_MET=false 
+          if [ "$CONDITION_MET" = "true" ]; then
+            echo "continue=false" >> $GITHUB_OUTPUT
+            echo "Condition met, stopping the workflow."
+          else
+            echo "continue=true" >> $GITHUB_OUTPUT
+            echo "Condition not met, continuing."
+          fi
+  
+  main_job:
+    needs: check_condition
+    if: ${{ needs.check_condition.outputs.should_continue == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This job runs only if the condition was false."
+
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
+
+      - name: Build project
+        run: npm run build
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-build
+          path: build
+          
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: site-build
+          path: build
+
+      - name: Deploy to FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ${{ secrets.URL }}
+          username: ${{ secrets.ACCOUNT }}
+          password: ${{ secrets.PASS }}
+          protocol: ftp
+          local-dir: ./build/
+          exclude: |
+            **                      
+            !static/**              
+            !images/**              
+            !index.html             
+            !asset-manifest.json    
+            !robots.txt
+            !manifest.json
+          server-dir: ${{ secrets.PATH }}
