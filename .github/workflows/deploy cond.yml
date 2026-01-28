@@ -27,9 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "This job runs only if the condition was false."
-
-
-    steps:
+    
       - name: Checkout repo
         uses: actions/checkout@v4
 
