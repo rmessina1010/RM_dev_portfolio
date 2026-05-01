@@ -38,12 +38,14 @@ class validator {
             let value = data[field];
             let tests = fields[field];
             let error = '';
+            let failedReq = false;
             tests.forEach(test => {
-                if (this[test.test]) { /// checks this object to see if test is defined
+                if (this[test.test] && !failedReq ) { /// checks this object to see if test is defined
                     let arg = test.test === 'match' ? data[test.arg] : test.arg;
                     console.log(field, ':', value, 'about to test', test.test)
                     if (!this[test.test].call(this, value, arg)) {
                         error += test.err + ' ';
+                        if (test.test === 'required'){ failedReq = true;}
                     }
                     console.log(this[test.test])
 
