@@ -63,7 +63,7 @@ const resData = {
     ],
 
     summary: {
-        em: `Full Stack Software Engineer with 17 years cumulative technical experience. Web and Mobile Development certifications (MERN and MAMP stacks, plus React Native).`,
+        em: `Full Stack Software Engineer with 18 years cumulative technical experience. Web and Mobile Development certifications (MERN and MAMP stacks, plus React Native).`,
         text: `Aditional experience in graphic design and marketing. Passion for learning and well-honed trouble shooting, problem solving, and leadership skills`
     },
     skills: {
@@ -148,12 +148,15 @@ const resData = {
             endDate: CURRENT_DATE,
             location: 'Remote/Madison, WI',
             highlighs: [
-                `Served as Team Lead for Release Tools Team, charged with the build and deployment processes of over 70 independent React applications`,
-                `Mentored and coaching senior engineers`,
-                `Lead initiative to implement Yarn Workspaces in vets-website, in preparation for continuous deploy paradigm`,
-                `Helped develop a prototype Backstage Console UI plugin`,
-                `Ensured daily front-end deploy ran smoothly; troubleshooting CI/CD issues`,
-                `Reviewed PR's and ensured code quality`,
+                `Developed and maintained front-end applications for VFS Health Care Forms on VA.gov, improving usability and accessibility for veterans`,
+                `Engineering Lead for CODE VA Developer Portal team; managed the implementation of Microsoft EntraID, enabling secure external access; championed CI/CD pipeline best practices`,
+                `Architected, implemented, tested, and maintained platform front end applications and components. Served as a subject matter expert on Platform VA`,
+                `Mentored junior engineers to support team growth and code quality`,
+                `Led Release Tools team; managed up to 6 engineers to ensure consistency, scalability, and reliability`,
+                `Responsible for CI/CD build and deployment processes for 70+ independently deployed, front-end, React applications`,
+                `Drove a critical infrastructure improvement by integrating Yarn Workspaces in vets-website, reducing build complexity and paving the way for a continuous deploy process`,
+                `Contributed to the migration of VA's Component Library from React components to Custom HTML Elements, using Stencil, enabling broader framework compatibility`,
+                `Developed SASS-based conversion utilities to streamline the transition from the legacy Formation CSS framework, accelerating adoption of a new design system by 20%`
             ]
         },
         {
