@@ -168,9 +168,9 @@ const resData = {
             endDate: new Date(2020, 6, 17, 0, 0, 0, 0),
             location: 'Madison, WI',
             highlighs: [
-                'Oversaw the design and development of corporate(HyCite.com) and customer (RoyalPrestige.com) websites; provided art direction, wire framing and information architecture',
-                'Oversaw the design and development of recruiting website (OportunidadRoyal.com); provided art direction, wire framing, WordPress.org child theme, lead generation forms, and API',
-                'Set up and customized a customer-facing blog using Wordpress.com'
+                'Led the design and development of corporate(HyCite.com) and customer (RoyalPrestige.com) websites; directed UX, wireframes, and data modeling/schema design; implemented JavaScript and aligned cross-vendor delivery',
+                'Led development of a recruitment (OportunidadRoyal.com) website; extended WordPress functionality (PHP/MySQL/JavaScript), defined taxonomy and data structures, and integrated lead generation and APIs',
+                'Configured and customized a customer-facing blog using Wordpress.com, increasing leads by 27%'
             ]
         },
         {
