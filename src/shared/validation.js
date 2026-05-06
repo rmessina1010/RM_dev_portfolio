@@ -34,6 +34,7 @@ class validator {
 
     validate(data = {}, fields = null) {
         if (!fields) { fields = this.fields; }
+        if (Object.prototype.toString.call(fields) !== '[object Object]') { return this.errors;  }
         for (let field in fields) {
             let value = data[field];
             let tests = fields[field];
