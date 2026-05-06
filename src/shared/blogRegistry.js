@@ -2,6 +2,18 @@
 import { myEmail, miniME, mySite } from './siteData';
 const blogIndex = [
     {
+        id: 5,
+        title: "My Second Blog.",
+        slug: "My_Second_Blog",
+        file: '12_6_21_11_06',
+        author: miniME,
+        email: myEmail,
+        home: mySite,
+        date: new Date(2021, 11, 5, 16, 30, 0, 0),
+        tags: ['tag', 'hello', 'dev'],
+        excerpt: 'Hello world. My second blog. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    },
+    {
         id: 4,
         title: "Using CSS3 selectors to label items with submenus in a navigation bar.",
         slug: "Label_items_with_submenus",
