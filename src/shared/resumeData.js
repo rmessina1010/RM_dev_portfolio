@@ -182,8 +182,9 @@ const resData = {
             endDate: new Date(2021, 11, 27, 0, 0, 0, 0),
             location: 'Madison, WI',
             highlighs: [
-                'Designed website for Nobium General Contractors, Escondido, CA',
-                'Designed website for Nemrac Translation Services, Rochester, NY'
+                'Designed and developed Nobium General Contractors’ website (HTML/CSS/Javascript), Escondido, CA',
+                'Designed and developed Nemrac Translation Services’ website (HTML/CSS/PHP/MySQL/JavaScript), Rochester,NY',
+                'Designed and developed HooHaven’s website (HTML/CSS/PHP/MySQL/JavaScript), Rockford,IL'
             ]
         },
         {
