@@ -184,7 +184,7 @@ const resData = {
             highlighs: [
                 'Designed and developed Nobium General Contractors’ website (HTML/CSS/Javascript), Escondido, CA',
                 'Designed and developed Nemrac Translation Services’ website (HTML/CSS/PHP/MySQL/JavaScript), Rochester,NY',
-                'Designed and developed HooHaven’s website (HTML/CSS/PHP/MySQL/JavaScript), Rockford,IL'
+                'Designed and developed HooHaven’s website (HTML/CSS/PHP), Rockford,IL'
             ]
         },
         {
