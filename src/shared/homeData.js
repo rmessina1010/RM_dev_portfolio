@@ -96,7 +96,7 @@ const homeData = [
                 text: null,
                 icon: "iconify",
                 attrs: {
-                    'data-icon': "cib:redux",
+                    'data-icon': "bxl:c-sharp",
                     'data-inline': "false"
                 }
             },
