@@ -161,18 +161,26 @@ const homeData = [
             {
                 head: "PostgresSQL",
                 text: null,
-                icon: "fab fa-postgreSQL",
-            },            {
-                head: "Webpack",
-                text: null,
-                icon: "fab fa-webpack",
+                attrs:{
+                    'data-icon': "bxl:postgresql",
+                    'data-inline': "false"
+                }
             },
             {
-                head: ".NET",
+                head: "Webpack",
+                text: null,
+                icon: "iconify",
+                attrs:{
+                    'data-icon': "cib:webpack",
+                    'data-inline': "false"
+                }
+            },
+            {
+                head: "MaterialUI",
                 text: null,
                 icon: "iconify",
                 attrs: {
-                    'data-icon': "cib:dot-net",
+                    'data-icon': "devicon-plain:materialui",
                     'data-inline': "false"
                 }
              },            {
@@ -185,9 +193,13 @@ const homeData = [
                 }
             },
             {
-                head: "WordPress",
+                head: "Docker",
                 text: null,
-                icon: "fab fa-wordpress",
+                icon: "iconify",
+                attrs: {
+                    'data-icon': "cib:docker",
+                    'data-inline': "false"
+                }
             },    
 
 
