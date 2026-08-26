@@ -152,6 +152,45 @@ const homeData = [
                 text: null,
                 icon: "fab fa-wordpress",
             },
+
+            {
+                head: "Python",
+                text: null,
+                icon: "fab fa-python",
+            },
+            {
+                head: "PostgresSQL",
+                text: null,
+                icon: "fab fa-postgreSQL",
+            },            {
+                head: "Webpack",
+                text: null,
+                icon: "fab fa-webpack",
+            },
+            {
+                head: ".NET",
+                text: null,
+                icon: "iconify",
+                attrs: {
+                    'data-icon': "cib:dot-net",
+                    'data-inline': "false"
+                }
+             },            {
+                head: "C#",
+                text: null,
+                icon: "iconify",
+                attrs: {
+                    'data-icon': "bxl:c-sharp",
+                    'data-inline': "false"
+                }
+            },
+            {
+                head: "WordPress",
+                text: null,
+                icon: "fab fa-wordpress",
+            },    
+
+
             {
                 head: "CSS3",
                 text: null,
