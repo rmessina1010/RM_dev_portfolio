@@ -125,6 +125,11 @@ const homeData = [
                 icon: "fab fa-php",
             },
             {
+                head: "Python",
+                text: null,
+                icon: "fab fa-python",
+            },
+            {
                 head: "MySQL",
                 text: null,
                 icon: "iconify",
@@ -143,28 +148,31 @@ const homeData = [
                 }
             },
             {
+                head: "PostgreSQL",
+                text: null,
+                attrs:{
+                    'data-icon': "cib:postgresql",
+                    'data-inline': "false"
+                }
+            },
+            {
                 head: "Bootstrap",
                 text: null,
                 icon: "fab fa-bootstrap",
             },
             {
+                head: "MaterialUI",
+                text: null,
+                icon: "iconify",
+                attrs: {
+                    'data-icon': "devicon-plain:materialui",
+                    'data-inline': "false"
+                }
+             },
+            {
                 head: "WordPress",
                 text: null,
                 icon: "fab fa-wordpress",
-            },
-
-            {
-                head: "Python",
-                text: null,
-                icon: "fab fa-python",
-            },
-            {
-                head: "PostgresSQL",
-                text: null,
-                attrs:{
-                    'data-icon': "bxl:postgresql",
-                    'data-inline': "false"
-                }
             },
             {
                 head: "Webpack",
@@ -176,14 +184,6 @@ const homeData = [
                 }
             },
             {
-                head: "MaterialUI",
-                text: null,
-                icon: "iconify",
-                attrs: {
-                    'data-icon': "devicon-plain:materialui",
-                    'data-inline': "false"
-                }
-             },            {
                 head: "C#",
                 text: null,
                 icon: "iconify",
@@ -201,8 +201,6 @@ const homeData = [
                     'data-inline': "false"
                 }
             },    
-
-
             {
                 head: "CSS3",
                 text: null,
@@ -213,10 +211,6 @@ const homeData = [
                 text: null,
                 icon: "fab fa-html5",
             },
-
-
-
-
         ]
     },
 
