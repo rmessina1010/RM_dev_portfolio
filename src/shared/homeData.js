@@ -150,8 +150,9 @@ const homeData = [
             {
                 head: "PostgreSQL",
                 text: null,
+                icon: "iconify",
                 attrs:{
-                    'data-icon': "devicon-plain:postgresql",
+                    'data-icon': "cib:postgresql",
                     'data-inline': "false"
                 }
             },
