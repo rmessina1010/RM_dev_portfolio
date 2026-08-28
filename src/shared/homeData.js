@@ -76,8 +76,8 @@ const homeData = [
 
     {
         type: "top",
-        head: "MERN and LAMP stacks, and WordPress, served with lots of syrup and a" + NBSP + "dab" + NBSP + "of" + NBSP + "butter",
-        text: "Just in case you had been wondering what's under the hood. I am a CSS guru, Javascript ninja, and  PHP connoisseur. Am a lifelong-learner, who is always eager to broaden his technical horizons, but my go to took kits are the LAMP and MERN stacks, with a casual bit of Wordpress" + NBSP + "development.",
+        head: "MERN and LAMP stacks, served with syrup and experience on the side.",
+        text: "Just in case you were wondering what's under the hood. I specialize in MERN and LAMP stacks. JavaScript, PHP, CSS, Python and SQL are among my go-to tools. I'm also a lifelong learner who enjoys picking up new technologies, digging into unfamiliar problems, and figuring out how all the pieces fit together. After years of building software, I've learned that good engineering is about more than knowing the latest tools. It's about choosing the right ones, understanding the tradeoffs, and building systems that can scale successfully.",
         clname: "py-5"
     },
     {
