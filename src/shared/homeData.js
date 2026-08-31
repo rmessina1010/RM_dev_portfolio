@@ -43,7 +43,7 @@ const homeData = [
 
         type: "side",
         head: "I am a designer who codes and a coder who" + NBSP + "designs.",
-        text: "<p class='pt-1'>Having a balanced mix of technical and creative abilities, I apply both sides of my brain when deriving solutions. After working as an in the Marketing sector as Art Director, I decided to transition into coding. I have recently earned my Full Stack Web and Mobile Development Certification from <a href='http://nucamp.co' target='_blank' rel='noreferrer' >NuCamp</a> and am ready to tackle new" + NBSP + "challenges.</p>",
+        text: "<p class='pt-1'>Having a balanced mix of technical and creative abilities, I apply both sides of my brain when deriving solutions. After working in the marketing sector as an art director, I decided to transition into coding. I have a Full Stack Web and Mobile Development Certification from <a href='http://nucamp.co' target='_blank' rel='noreferrer' >NuCamp</a>. Most recently, I earned a certification in C#/.NET and am ready to tackle new" + NBSP + "challenges.</p>",
         clname: "py-5",
 
     },
@@ -76,8 +76,8 @@ const homeData = [
 
     {
         type: "top",
-        head: "MERN and LAMP stacks, served with syrup and experience on the side.",
-        text: "Just in case you were wondering what's under the hood. I specialize in MERN and LAMP stacks. JavaScript, PHP, CSS, Python and SQL are among my go-to tools. I'm also a lifelong learner who enjoys picking up new technologies, digging into unfamiliar problems, and figuring out how all the pieces fit together. After years of building software, I've learned that good engineering is about more than knowing the latest tools. It's about choosing the right ones, understanding the tradeoffs, and building systems that can scale successfully.",
+        head: "MERN and LAMP stacks, served with syrup and experience on" + NBSP + "the" + NBSP +"side.",
+        text: "Just in case you were wondering what's under the hood. I specialize in MERN and LAMP stacks. JavaScript, PHP, CSS, Python and SQL are among my go-to tools. I'm also a lifelong learner who enjoys picking up new technologies, digging into unfamiliar problems, and figuring out how all the pieces fit together. After years of building software, I've learned that good engineering is about more than knowing the latest tools. It's about choosing the right ones, understanding the tradeoffs, and building systems that can" + NBSP + "scale" + NBSP + "successfully.",
         clname: "py-5"
     },
     {
