@@ -130,6 +130,11 @@ const homeData = [
                 icon: "fab fa-python",
             },
             {
+                head: "Typescript",
+                text: null,
+                icon: "fab fa-typescript",
+            },
+            {
                 head: "MySQL",
                 text: null,
                 icon: "iconify",
@@ -174,15 +179,6 @@ const homeData = [
                 head: "WordPress",
                 text: null,
                 icon: "fab fa-wordpress",
-            },
-            {
-                head: "Webpack",
-                text: null,
-                icon: "iconify",
-                attrs:{
-                    'data-icon': "cib:webpack",
-                    'data-inline': "false"
-                }
             },
             {
                 head: "C#",
