@@ -45,6 +45,9 @@ jobs:
         run: npm test
 
       - name: Build project
+        env:
+          REACT_APP_SECOND_EMAIL: ${{ secrets.REACT_APP_SECOND_EMAIL }} 
+          REACT_APP_MAIN_EMAIL: ${{ secrets.REACT_APP_MAIN_EMAIL }} 
         run: npm run build
 
       - name: Upload build artifact
