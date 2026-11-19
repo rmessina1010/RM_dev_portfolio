@@ -11,7 +11,14 @@ const blogIndex = [
         home: mySite,
         date: new Date(2022, 11, 5, 16, 30, 0, 0),
         tags: ['tag', 'hello', 'dev'],
-        excerpt: 'Hello world. My third blog. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+        excerpt: 'Hello world. My third blog. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        img:{
+            url:'',
+            alt:'',
+            thumb:''
+        },
+        pubstat:1
+
     },    {
         id: 5,
         title: "My Second Blog.",
@@ -22,7 +29,13 @@ const blogIndex = [
         home: mySite,
         date: new Date(2021, 11, 5, 16, 30, 0, 0),
         tags: ['tag', 'hello', 'dev'],
-        excerpt: 'Hello world. My second blog. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+        excerpt: 'Hello world. My second blog. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        img:{
+            url:'',
+            alt:'',
+            thumb:''
+        },
+        pubstat:1
     },
     {
         id: 4,
@@ -34,7 +47,14 @@ const blogIndex = [
         home: mySite,
         date: new Date(2021, 11, 5, 16, 30, 0, 0),
         tags: ['tag', 'hello', 'dev'],
-        excerpt: 'Hello world. My first blog. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+        excerpt: 'Hello world. My first blog. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        img:{
+            url:'',
+            alt:'',
+            thumb:''
+        },
+        pubstat:1
+
     },
     {
         id: 3,
@@ -45,7 +65,13 @@ const blogIndex = [
         email: myEmail,
         home: mySite,
         date: new Date(2021, 11, 5, 16, 30, 0, 0),
-        tags: ['tag', 'hello', 'dev']
+        tags: ['tag', 'hello', 'dev'],
+        img:{
+            url:'',
+            alt:'',
+            thumb:''
+        },
+        pubstat:1
     },
     {
         id: 2,
@@ -56,7 +82,13 @@ const blogIndex = [
         email: myEmail,
         home: mySite,
         date: new Date(2021, 11, 5, 16, 30, 0, 0),
-        tags: []
+        tags: [],
+        img:{
+            url:'',
+            alt:'',
+            thumb:''
+        },
+        pubstat:1
     },
     {
         id: 1,
@@ -67,7 +99,13 @@ const blogIndex = [
         email: myEmail,
         home: mySite,
         date: new Date(2021, 11, 5, 16, 30, 0, 0),
-        tags: []
+        tags: [],
+        img:{
+            url:'',
+            alt:'',
+            thumb:''
+        },
+        pubstat:1
     },
 ];
 export default blogIndex;
